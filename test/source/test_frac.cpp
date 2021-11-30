@@ -3,8 +3,8 @@
  */
 #include <doctest/doctest.h>
 
-#include <py2cpp/fractions.hpp>
 #include <ostream>
+#include <py2cpp/fractions.hpp>
 
 using namespace fun;
 
