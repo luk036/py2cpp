@@ -9,7 +9,7 @@ if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
   )
 endif()
 
-project(Bingo LANGUAGES CXX)
+project(Py2Cpp LANGUAGES CXX)
 
 # --- Import tools ----
 

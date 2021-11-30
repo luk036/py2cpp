@@ -1,5 +1,5 @@
-#include <bingo/greeter.h>
-#include <bingo/version.h>
+#include <py2cpp/greeter.h>
+#include <py2cpp/version.h>
 
 #include <cxxopts.hpp>
 #include <iostream>
@@ -7,11 +7,11 @@
 #include <unordered_map>
 
 auto main(int argc, char** argv) -> int {
-    const std::unordered_map<std::string, bingo::LanguageCode> languages{
-        {"en", bingo::LanguageCode::EN},
-        {"de", bingo::LanguageCode::DE},
-        {"es", bingo::LanguageCode::ES},
-        {"fr", bingo::LanguageCode::FR},
+    const std::unordered_map<std::string, py2cpp::LanguageCode> languages{
+        {"en", py2cpp::LanguageCode::EN},
+        {"de", py2cpp::LanguageCode::DE},
+        {"es", py2cpp::LanguageCode::ES},
+        {"fr", py2cpp::LanguageCode::FR},
     };
 
     cxxopts::Options options(*argv, "A program to welcome the world!");
@@ -36,7 +36,7 @@ auto main(int argc, char** argv) -> int {
     }
 
     if (result["version"].as<bool>()) {
-        std::cout << "Bingo, version " << BINGO_VERSION << std::endl;
+        std::cout << "Py2Cpp, version " << PY2CPP_VERSION << std::endl;
         return 0;
     }
 
@@ -46,8 +46,8 @@ auto main(int argc, char** argv) -> int {
         return 1;
     }
 
-    bingo::Bingo bingo(name);
-    std::cout << bingo.greet(langIt->second) << std::endl;
+    // py2cpp::Py2Cpp py2cpp(name);
+    // std::cout << py2cpp.greet(langIt->second) << std::endl;
 
     return 0;
 }

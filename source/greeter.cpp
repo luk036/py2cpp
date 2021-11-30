@@ -1,12 +1,12 @@
-#include <bingo/greeter.h>
 #include <fmt/format.h>
+#include <py2cpp/greeter.h>
 
-using namespace bingo;
+using namespace py2cpp;
 using namespace std;
 
-Bingo::Bingo(string _name) : name(move(_name)) {}
+Py2Cpp::Py2Cpp(string _name) : name(move(_name)) {}
 
-std::string Bingo::greet(LanguageCode lang) const {
+std::string Py2Cpp::greet(LanguageCode lang) const {
     switch (lang) {
         default:
         case LanguageCode::EN:
