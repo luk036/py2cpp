@@ -18,13 +18,20 @@ namespace fun {
      * @param[in] a
      * @return T
      */
-    template <typename T> inline constexpr auto abs(const T& a) -> T {
-        if constexpr (std::is_unsigned_v<T>) {
-            return a;
-        } else {
-            return (a < T(0)) ? -a : a;
-        }
-    }
+    template <typename T> inline constexpr 
+    typename std::enable_if<std::is_unsigned<T>::value, T>::type
+    abs(const T& a) { return a; } 
+
+    /**
+     * @brief absolute
+     *
+     * @tparam T
+     * @param[in] a
+     * @return T
+     */
+    template <typename T> inline constexpr 
+    typename std::enable_if<!std::is_unsigned<T>::value, T>::type
+    abs(const T& a) { return a < T(0) ? -a : a; }
 
     /**
      * @brief Greatest common divider

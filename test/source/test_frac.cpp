@@ -20,20 +20,20 @@ TEST_CASE("Fraction") {
     const auto c = 5U;
     const auto d = 6U;
 
-    const auto p = Fraction{a, b};
-    const auto q = Fraction{c, d};
+    const auto p = Fraction<int>{a, b};
+    const auto q = Fraction<int>{c, d};
 
-    CHECK(p == Fraction(30U, 40U));
-    CHECK(p + q == Fraction(19U, 12U));
+    CHECK(p == Fraction<int>(30U, 40U));
+    CHECK(p + q == Fraction<int>(19U, 12U));
     CHECK((p - q) + q == p);
     // CHECK(p != 0);
 }
 
 TEST_CASE("Fraction Special Cases") {
-    const auto p = Fraction{3, 4};
-    const auto inf = Fraction{1, 0};
-    const auto nan = Fraction{0, 0};
-    const auto zero = Fraction{0, 1};
+    const auto p = Fraction<int>{3, 4};
+    const auto inf = Fraction<int>{1, 0};
+    const auto nan = Fraction<int>{0, 0};
+    const auto zero = Fraction<int>{0, 1};
 
     CHECK(-inf < zero);
     CHECK(zero < inf);
