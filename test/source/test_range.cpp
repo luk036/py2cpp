@@ -27,7 +27,8 @@ TEST_CASE("Test Range") {
     // CHECK(R[3] == 3);
 
     auto count = 0;
-    for ([[maybe_unused]] auto a : R) {
+    for (auto&& a : R) {
+        static_assert(sizeof a >= 0, "make comipler happy");
         ++count;
     }
     CHECK(count == R.size());
@@ -41,7 +42,8 @@ TEST_CASE("Test Range2") {
     // CHECK(R[3] == -7);
 
     auto count = 0;
-    for ([[maybe_unused]] auto a : R) {
+    for (auto&& a : R) {
+        static_assert(sizeof a >= 0, "make comipler happy");
         ++count;
     }
     CHECK(count == R.size());
@@ -55,7 +57,8 @@ TEST_CASE("Test Range (char)") {
     // CHECK(R[3] == 'D');
 
     auto count = 0;
-    for ([[maybe_unused]] auto a : R) {
+    for (auto&& a : R) {
+        static_assert(sizeof a >= 0, "make comipler happy");
         ++count;
     }
     CHECK(count == R.size());
@@ -71,7 +74,7 @@ TEST_CASE("Test Range (char)") {
 //     CHECK(R[1] == &A[0] + 1);
 
 //     auto count = 0;
-//     for ([[maybe_unused]] auto _ : R)
+//     for (auto _ : R)
 //     {
 //         ++count;
 //     }

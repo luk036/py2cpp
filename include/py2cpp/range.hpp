@@ -32,9 +32,13 @@ namespace py {
 
         struct iterable_wrapper {
           public:
-            using value_type [[maybe_unused]] = T;  // luk:
-            using key_type [[maybe_unused]] = T;    // luk:
-            using iterator = _iterator;             // luk
+            using value_type = T;  // luk:
+            using key_type = T;    // luk:
+
+            static_assert(sizeof(value_type) >= 0, "make comipler happy");
+            static_assert(sizeof(key_type) >= 0, "make comipler happy");
+
+            using iterator = _iterator;  // luk
             T start;
             T stop;
             constexpr auto begin() const { return iterator{this->start}; }
