@@ -162,14 +162,14 @@ namespace fun {
          *
          * @return const Z&
          */
-        [[nodiscard]] constexpr auto num() const noexcept -> const Z& { return _num; }
+        constexpr auto num() const noexcept -> const Z& { return _num; }
 
         /**
          * @brief
          *
          * @return const Z&
          */
-        [[nodiscard]] constexpr auto den() const noexcept -> const Z& { return _den; }
+        constexpr auto den() const noexcept -> const Z& { return _den; }
 
         /**
          * @brief cross product

@@ -37,16 +37,16 @@ namespace py {
             using iterator = _iterator;             // luk
             T start;
             T stop;
-            [[nodiscard]] constexpr auto begin() const { return iterator{this->start}; }
-            [[nodiscard]] constexpr auto end() const { return iterator{this->stop}; }
-            [[nodiscard]] constexpr auto empty() const -> bool { return this->stop == this->start; }
-            [[nodiscard]] constexpr auto size() const -> size_t {
+            constexpr auto begin() const { return iterator{this->start}; }
+            constexpr auto end() const { return iterator{this->stop}; }
+            constexpr auto empty() const -> bool { return this->stop == this->start; }
+            constexpr auto size() const -> size_t {
                 return static_cast<size_t>(this->stop - this->start);
             }
             constexpr auto operator[](size_t n) const -> T {
                 return T(this->start + n);
             }  // no bounds checking
-            [[nodiscard]] constexpr auto contains(T n) const -> bool {
+            constexpr auto contains(T n) const -> bool {
                 return !(n < this->start) && n < this->stop;
             }
         };
