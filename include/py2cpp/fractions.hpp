@@ -18,9 +18,10 @@ namespace fun {
      * @param[in] a
      * @return T
      */
-    template <typename T> inline constexpr 
-    typename std::enable_if<std::is_unsigned<T>::value, T>::type
-    abs(const T& a) { return a; } 
+    template <typename T>
+    inline constexpr typename std::enable_if<std::is_unsigned<T>::value, T>::type abs(const T& a) {
+        return a;
+    }
 
     /**
      * @brief absolute
@@ -29,9 +30,10 @@ namespace fun {
      * @param[in] a
      * @return T
      */
-    template <typename T> inline constexpr 
-    typename std::enable_if<!std::is_unsigned<T>::value, T>::type
-    abs(const T& a) { return a < T(0) ? -a : a; }
+    template <typename T>
+    inline constexpr typename std::enable_if<!std::is_unsigned<T>::value, T>::type abs(const T& a) {
+        return a < T(0) ? -a : a;
+    }
 
     /**
      * @brief Greatest common divider
