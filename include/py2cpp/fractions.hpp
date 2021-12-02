@@ -400,7 +400,7 @@ namespace fun {
          * @brief reciprocal
          *
          */
-        constexpr void reciprocal() noexcept(std::is_nothrow_swappable_v<Z>) {
+        constexpr void reciprocal() {
             std::swap(this->_num, this->_den);
             this->normalize1();
         }
