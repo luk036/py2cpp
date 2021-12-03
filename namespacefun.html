@@ -79,7 +79,12 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab146a5f3e8d28b96c2a95ee4a9131203" class="m-doc">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) -&gt; T -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6f964c234a34811926e8ca7b134c89a1" class="m-doc">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) -&gt; std::enable_if&lt;std::is_unsigned&lt;T&gt;::value, T&gt;::type <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd>absolute</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a994ac9167b0e61a17a0379daff653140" class="m-doc">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) -&gt; std::enable_if&lt;!std::is_unsigned&lt;T&gt;::value, T&gt;::type <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd>absolute</dd>
             <dt>
@@ -104,13 +109,49 @@
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ab146a5f3e8d28b96c2a95ee4a9131203"><div>
+          <section class="m-doc-details" id="a6f964c234a34811926e8ca7b134c89a1"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="fractions_8hpp.html">&lt;py2cpp/fractions.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab146a5f3e8d28b96c2a95ee4a9131203" class="m-doc-self">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) -&gt; T <span class="m-label m-primary">constexpr</span></span></span>
+              <span class="m-doc-wrap-bumper">std::enable_if&lt;std::is_unsigned&lt;T&gt;::value, T&gt;::type fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f964c234a34811926e8ca7b134c89a1" class="m-doc-self">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) <span class="m-label m-primary">constexpr</span></span></span>
+            </h3>
+            <p>absolute</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>a&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>T</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a994ac9167b0e61a17a0379daff653140"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="fractions_8hpp.html">&lt;py2cpp/fractions.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::enable_if&lt;!std::is_unsigned&lt;T&gt;::value, T&gt;::type fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a994ac9167b0e61a17a0379daff653140" class="m-doc-self">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
             <p>absolute</p>
             <table class="m-table m-fullwidth m-flat">
@@ -308,7 +349,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Py2Cpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.8.17 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Py2Cpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
