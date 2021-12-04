@@ -6,8 +6,6 @@
 // #include <range/v3/view/remove_if.hpp>
 // #include <transranger_view.hpp>
 // #include <transrangers.hpp>
-#include <unordered_set>
-#include <vector>
 
 TEST_CASE("Test Range") {
     // using namespace transrangers;
@@ -64,19 +62,18 @@ TEST_CASE("Test Range (char)") {
     CHECK(count == R.size());
 }
 
-// TEST_CASE("Test Range (pointer)")
-// {
-//     auto A = std::array<double, 4> {0.2, 0.4, 0.1, 0.9};
-//     auto R = py::range(&A[0], &A[0] + 4);
+TEST_CASE("Test Range (pointer)") {
+    auto A = std::array<double, 4>{0.2, 0.4, 0.1, 0.9};
+    auto R = py::range(&A[0], &A[0] + 4);
 
-//     CHECK(!R.empty());
-//     // CHECK(R.contains(&A + 2));
-//     CHECK(R[1] == &A[0] + 1);
+    CHECK(!R.empty());
+    // CHECK(R.contains(&A + 2));
+    CHECK(R[1] == &A[0] + 1);
 
-//     auto count = 0;
-//     for (auto _ : R)
-//     {
-//         ++count;
-//     }
-//     CHECK(count == R.size());
-// }
+    auto count = 0;
+    for (auto _ : R) {
+        static_assert(sizeof _ >= 0, "make comipler happy");
+        ++count;
+    }
+    CHECK(count == R.size());
+}

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>  // import size_t
 #include <initializer_list>
 #include <type_traits>
 #include <unordered_set>

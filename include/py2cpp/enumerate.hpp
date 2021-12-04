@@ -1,6 +1,6 @@
 #pragma once
 
-#include <cstddef>
+#include <cstddef>   // import size_t
 #include <iterator>  // import std::begin() std::end()
 #include <tuple>     // import std::tie()
 #include <type_traits>
@@ -28,8 +28,8 @@ namespace py {
                 ++i;
                 ++iter;
             }
-            auto operator*() const { return std::tie(i, *iter); }
-            auto operator*() { return std::tie(i, *iter); }
+            auto operator*() const { return std::make_pair(i, *iter); }
+            auto operator*() { return std::make_pair(i, *iter); }
         };
 
         struct iterable_wrapper {
