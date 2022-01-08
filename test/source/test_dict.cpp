@@ -1,6 +1,7 @@
-#include <doctest/doctest.h>
+#include <doctest/doctest.h>  // for ResultBuilder, TestCase, CHECK, TEST_CASE
 
-#include <py2cpp/dict.hpp>
+#include <py2cpp/dict.hpp>  // for dict
+#include <utility>          // for pair
 
 TEST_CASE("Test set") {
     using E = std::pair<double, int>;

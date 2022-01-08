@@ -1,8 +1,8 @@
-#include <doctest/doctest.h>
+#include <doctest/doctest.h>  // for ResultBuilder, CHECK, TestCase, TEST...
 
-#include <array>
-#include <py2cpp/enumerate.hpp>
-#include <py2cpp/range.hpp>
+#include <py2cpp/enumerate.hpp>  // for enumerate, iterable_wrapper
+#include <py2cpp/range.hpp>      // for range, iterable_wrapper
+#include <utility>               // for pair
 
 TEST_CASE("Test enumerate") {
     const auto R = py::range(10);
