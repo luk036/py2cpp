@@ -195,14 +195,7 @@ namespace fun {
          * @return false
          */
         constexpr auto operator==(const Z& other) const -> bool {
-            if (this->_den == Z(1) || other == Z(0)) {
-                return this->_num == other;
-            }
-            auto lhs{*this};
-            auto rhs{other};
-            std::swap(lhs._den, rhs);
-            lhs.normalize2();
-            return lhs._num == lhs._den * rhs;
+            return this->_den == Z(1) && this->_num == other;
         }
 
         /**
@@ -264,15 +257,7 @@ namespace fun {
          * @return false
          */
         constexpr auto operator==(const Fraction& other) const -> bool {
-            if (this->_den == other._den) {
-                return this->_num == other._num;
-            }
-            auto lhs{*this};
-            auto rhs{other};
-            std::swap(lhs._den, rhs._num);
-            lhs.normalize2();
-            rhs.normalize2();
-            return lhs._num * rhs._den == lhs._den * rhs._num;
+            return this->_num == other._num && this->_den == other._den;
         }
 
         /**
