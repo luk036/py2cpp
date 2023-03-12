@@ -74,9 +74,8 @@ namespace py {
          *
          * @return auto
          */
-        auto begin() const {
-            using Iter = decltype(Base::begin());
-            return key_iterator<Iter>{Base::begin()};
+        auto begin() const -> key_iterator<decltype(Base::begin())> {
+            return key_iterator<decltype(Base::begin())>{Base::begin()};
         }
 
         /**
@@ -84,9 +83,8 @@ namespace py {
          *
          * @return auto
          */
-        auto end() const {
-            using Iter = decltype(Base::end());
-            return key_iterator<Iter>{Base::end()};
+        auto end() const -> key_iterator<decltype(Base::end())> {
+            return key_iterator<decltype(Base::end())>{Base::end()};
         }
 
         /**

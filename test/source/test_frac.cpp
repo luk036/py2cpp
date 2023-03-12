@@ -8,7 +8,8 @@
 
 using namespace fun;
 
-// auto operator<=>(const cpp_int& a, const cpp_int& b) -> std::strong_ordering {
+// auto operator<=>(const cpp_int& a, const cpp_int& b) -> std::strong_ordering
+// {
 //     if (operator<(a, b)) return std::strong_ordering::less;
 //     if (operator>(a, b)) return std::strong_ordering::greater;
 //     return std::strong_ordering::equivalent;
@@ -53,6 +54,6 @@ TEST_CASE("Fraction Special Cases") {
     CHECK(nan == nan * nan);
     CHECK(inf == inf + inf);
     CHECK(nan == inf - inf);
-    // CHECK( inf + p == nan ); // ???
-    // CHECK( -inf + p == nan ); // ???
+    CHECK(inf - p == inf);
+    CHECK(-inf + p == -inf);
 }
