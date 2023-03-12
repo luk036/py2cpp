@@ -52,7 +52,7 @@
           fun <span class="m-thin">namespace</span>
         </h1>
         <p><span></span></p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -79,45 +79,40 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6f964c234a34811926e8ca7b134c89a1" class="m-doc">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) -&gt; std::enable_if&lt;std::is_unsigned&lt;T&gt;::value, T&gt;::type <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a783990e74152591373e36fe57afb561d" class="m-doc">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) -&gt; typename std::enable_if&lt; std::is_unsigned&lt; T &gt;::value, T &gt;::type -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd>absolute</dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a994ac9167b0e61a17a0379daff653140" class="m-doc">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) -&gt; std::enable_if&lt;!std::is_unsigned&lt;T&gt;::value, T&gt;::type <span class="m-label m-flat m-primary">constexpr</span></span>
-            </dt>
-            <dd>absolute</dd>
+            <dd>absolute (unsigned)</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename _Mn&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1b675f52c0c55bf2e91e21a15b4459cc" class="m-doc">gcd_recur</a>(</span><span class="m-doc-wrap">_Mn __m,
-              _Mn __n) -&gt; _Mn -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a630c84b73664521d59bddc660407d776" class="m-doc">gcd_recur</a>(</span><span class="m-doc-wrap">const _Mn&amp; __m,
+              const _Mn&amp; __n) -&gt; _Mn -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
             <dd>Greatest common divider.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename _Mn&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#af4ce59450570239023ba0caefee8738a" class="m-doc">gcd</a>(</span><span class="m-doc-wrap">_Mn __m,
-              _Mn __n) -&gt; _Mn -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa611aa16a5df449a2c71aa25e53a8ff8" class="m-doc">gcd</a>(</span><span class="m-doc-wrap">const _Mn&amp; __m,
+              const _Mn&amp; __n) -&gt; _Mn -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
             <dd>Greatest common divider.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename _Mn&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab06eb42b697bdc073aa91b89df614199" class="m-doc">lcm</a>(</span><span class="m-doc-wrap">_Mn __m,
-              _Mn __n) -&gt; _Mn -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae87a3052cdf11bb3d49a619d0d6793c1" class="m-doc">lcm</a>(</span><span class="m-doc-wrap">const _Mn&amp; __m,
+              const _Mn&amp; __n) -&gt; _Mn -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
             <dd>Least common multiple.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a6f964c234a34811926e8ca7b134c89a1"><div>
+          <section class="m-doc-details" id="a783990e74152591373e36fe57afb561d"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="fractions_8hpp.html">&lt;py2cpp/fractions.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">std::enable_if&lt;std::is_unsigned&lt;T&gt;::value, T&gt;::type fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6f964c234a34811926e8ca7b134c89a1" class="m-doc-self">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) <span class="m-label m-primary">constexpr</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a783990e74152591373e36fe57afb561d" class="m-doc-self">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) -&gt; typename std::enable_if&lt; std::is_unsigned&lt; T &gt;::value, T &gt;::type</span></span>
             </h3>
-            <p>absolute</p>
+            <p>absolute (unsigned)</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -137,58 +132,17 @@
                   <td></td>
                 </tr>
               </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>T</td>
-                </tr>
-              </tfoot>
             </table>
+<p>absolute (signed)</p>
           </div></section>
-          <section class="m-doc-details" id="a994ac9167b0e61a17a0379daff653140"><div>
-            <h3>
-              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="fractions_8hpp.html">&lt;py2cpp/fractions.hpp&gt;</a></div>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">std::enable_if&lt;!std::is_unsigned&lt;T&gt;::value, T&gt;::type fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a994ac9167b0e61a17a0379daff653140" class="m-doc-self">abs</a>(</span><span class="m-doc-wrap">const T&amp; a) <span class="m-label m-primary">constexpr</span></span></span>
-            </h3>
-            <p>absolute</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Template parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">T</td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>a&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th>Returns</th>
-                  <td>T</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="a1b675f52c0c55bf2e91e21a15b4459cc"><div>
+          <section class="m-doc-details" id="a630c84b73664521d59bddc660407d776"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="fractions_8hpp.html">&lt;py2cpp/fractions.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename _Mn&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1b675f52c0c55bf2e91e21a15b4459cc" class="m-doc-self">gcd_recur</a>(</span><span class="m-doc-wrap">_Mn __m,
-              _Mn __n) -&gt; _Mn <span class="m-label m-primary">constexpr</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a630c84b73664521d59bddc660407d776" class="m-doc-self">gcd_recur</a>(</span><span class="m-doc-wrap">const _Mn&amp; __m,
+              const _Mn&amp; __n) -&gt; _Mn</span></span>
             </h3>
             <p>Greatest common divider.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -222,14 +176,14 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="af4ce59450570239023ba0caefee8738a"><div>
+          <section class="m-doc-details" id="aa611aa16a5df449a2c71aa25e53a8ff8"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="fractions_8hpp.html">&lt;py2cpp/fractions.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename _Mn&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af4ce59450570239023ba0caefee8738a" class="m-doc-self">gcd</a>(</span><span class="m-doc-wrap">_Mn __m,
-              _Mn __n) -&gt; _Mn <span class="m-label m-primary">constexpr</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa611aa16a5df449a2c71aa25e53a8ff8" class="m-doc-self">gcd</a>(</span><span class="m-doc-wrap">const _Mn&amp; __m,
+              const _Mn&amp; __n) -&gt; _Mn</span></span>
             </h3>
             <p>Greatest common divider.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -263,14 +217,14 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ab06eb42b697bdc073aa91b89df614199"><div>
+          <section class="m-doc-details" id="ae87a3052cdf11bb3d49a619d0d6793c1"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="fractions_8hpp.html">&lt;py2cpp/fractions.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename _Mn&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab06eb42b697bdc073aa91b89df614199" class="m-doc-self">lcm</a>(</span><span class="m-doc-wrap">_Mn __m,
-              _Mn __n) -&gt; _Mn <span class="m-label m-primary">constexpr</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae87a3052cdf11bb3d49a619d0d6793c1" class="m-doc-self">lcm</a>(</span><span class="m-doc-wrap">const _Mn&amp; __m,
+              const _Mn&amp; __n) -&gt; _Mn</span></span>
             </h3>
             <p>Least common multiple.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -343,8 +297,8 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">

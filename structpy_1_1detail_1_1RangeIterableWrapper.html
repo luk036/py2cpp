@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>documentation/pages/ directory | Py2Cpp</title>
+  <title>py::detail::RangeIterableWrapper struct | Py2Cpp</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,9 +49,83 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_138aff360eb965c43b94267b8d1ce09e.html">documentation</a>/</span>pages<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="range_8hpp.html">&lt;py2cpp/range.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacepy_1_1detail.html">detail</a>::<wbr/></span>RangeIterableWrapper <span class="m-thin">struct</span>
         </h1>
         <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="af5534335a45c10de97cc9c8b009f88e9">
+              using <a href="#af5534335a45c10de97cc9c8b009f88e9" class="m-doc-self">value_type</a> = T
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0d9c91dda1c136546d72ebb3f5952c10">
+              using <a href="#a0d9c91dda1c136546d72ebb3f5952c10" class="m-doc-self">key_type</a> = T
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2792e4fd1f53c5a1d8b1e4b31fd0de2">
+              using <a href="#ae2792e4fd1f53c5a1d8b1e4b31fd0de2" class="m-doc-self">iterator</a> = <a href="structpy_1_1detail_1_1RangeIterator.html" class="m-doc">RangeIterator</a>&lt;T&gt;
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a1f73b6a8149bb754de56fe1ae0966e3a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1f73b6a8149bb754de56fe1ae0966e3a" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const -&gt; iterator -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a733d2d5d930fa03d0b8f55c18842c275">
+              <span class="m-doc-wrap-bumper">auto <a href="#a733d2d5d930fa03d0b8f55c18842c275" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const -&gt; iterator -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a89d601efcb03039e521c7898181fda63">
+              <span class="m-doc-wrap-bumper">auto <a href="#a89d601efcb03039e521c7898181fda63" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab1180dd92049de86e4c1cf1aac016232">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab1180dd92049de86e4c1cf1aac016232" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aec9b34d375f2388d04808bcadc9144fa">
+              <span class="m-doc-wrap-bumper">auto <a href="#aec9b34d375f2388d04808bcadc9144fa" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">size_t n) const -&gt; T -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a855c14169d5672b3dcf0043a839925bb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a855c14169d5672b3dcf0043a839925bb" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">T n) const -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a74db35d89cb895008b66fec226ff1442">
+              T <a href="#a74db35d89cb895008b66fec226ff1442" class="m-doc-self">start</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af92a51db9f6cc92edcc7c09975728fe3">
+              T <a href="#af92a51db9f6cc92edcc7c09975728fe3" class="m-doc-self">stop</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>

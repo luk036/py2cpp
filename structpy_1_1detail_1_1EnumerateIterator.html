@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>documentation/pages/ directory | Py2Cpp</title>
+  <title>py::detail::EnumerateIterator struct | Py2Cpp</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,9 +49,67 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_138aff360eb965c43b94267b8d1ce09e.html">documentation</a>/</span>pages<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="enumerate_8hpp.html">&lt;py2cpp/enumerate.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacepy_1_1detail.html">detail</a>::<wbr/></span>EnumerateIterator <span class="m-thin">struct</span>
         </h1>
         <p><span></span></p>
+        <nav class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
+          <dl class="m-doc">
+            <dt id="ad2a3464c127f33ebff8e2879934270c0">
+              using <a href="#ad2a3464c127f33ebff8e2879934270c0" class="m-doc-self">iter_ref</a> = typename std::iterator_traits&lt;<a href="structpy_1_1detail_1_1EnumerateIterator.html#aa5c87a73c649c15002a86963cac3610a" class="m-doc">TIter</a>&gt;::reference
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a1c02d0b759267a494ec6be2a8c9957b9">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c02d0b759267a494ec6be2a8c9957b9" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="structpy_1_1detail_1_1EnumerateIterator.html" class="m-doc">EnumerateIterator</a>&amp; other) const -&gt; bool -&gt; auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6d29085b06298809de5459755975163a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6d29085b06298809de5459755975163a" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">) -&gt; <a href="structpy_1_1detail_1_1EnumerateIterator.html" class="m-doc">EnumerateIterator</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9236d2c77c04eb774df25cbe02166105">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9236d2c77c04eb774df25cbe02166105" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; std::pair&lt; size_t, iter_ref &gt; -&gt; auto</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="aa5c87a73c649c15002a86963cac3610a">
+              decltype(std::begin(std::declval&lt;T&gt;())) typedef <a href="#aa5c87a73c649c15002a86963cac3610a" class="m-doc-self">TIter</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7ebc55d873676ca34e10b0fb0c2903ae">
+              size_t <a href="#a7ebc55d873676ca34e10b0fb0c2903ae" class="m-doc-self">i</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a9f38e5a48d4c05bfea5604d8de525931">
+              <a href="structpy_1_1detail_1_1EnumerateIterator.html#aa5c87a73c649c15002a86963cac3610a" class="m-doc">TIter</a> <a href="#a9f38e5a48d4c05bfea5604d8de525931" class="m-doc-self">iter</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
       </div>
     </div>
   </div>

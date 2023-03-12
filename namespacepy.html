@@ -52,18 +52,26 @@
           py <span class="m-thin">namespace</span>
         </h1>
         <p><span></span></p>
-        <div class="m-block m-default">
+        <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
                 <li><a href="#nested-classes">Classes</a></li>
                 <li><a href="#func-members">Functions</a></li>
               </ul>
             </li>
           </ul>
-        </div>
+        </nav>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespacepy_1_1detail.html" class="m-doc">detail</a></dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
         <section id="nested-classes">
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
@@ -99,19 +107,24 @@
             </dt>
             <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T, typename TIter = decltype(std::begin(std::declval&lt;T&gt;())), typename = decltype(std::end(std::declval&lt;T&gt;()))&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a13b079f9cc2ef2797f2908169c6e24c4" class="m-doc">enumerate</a>(</span><span class="m-doc-wrap">T&amp;&amp; iterable) -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc">enumerate</a>(</span><span class="m-doc-wrap">T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; T &gt; -&gt; auto</span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6c0a41716a24bed07cbf8b2d84132f96" class="m-doc">range</a>(</span><span class="m-doc-wrap">T start,
-              T stop) -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt; -&gt; auto</span>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa33bdd0eaafa007b725ce61a2ce6279a" class="m-doc">range</a>(</span><span class="m-doc-wrap">T start,
+              T stop) -&gt; detail::RangeIterableWrapper&lt; T &gt; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
             <dd><span></span></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ae0ca10fb60f3b59aa5a9265a80526904" class="m-doc">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; auto</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9a74b6afc4a6241f5aa3c767b4a21ca2" class="m-doc">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; detail::RangeIterableWrapper&lt; T &gt; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
             <dd><span></span></dd>
             <dt>
@@ -212,13 +225,13 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a13b079f9cc2ef2797f2908169c6e24c4"><div>
+          <section class="m-doc-details" id="ae52b5f7656b41276a9d47bf0cc63dc9c"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="enumerate_8hpp.html">&lt;py2cpp/enumerate.hpp&gt;</a></div>
               <div class="m-doc-template">
-                template&lt;typename T, typename TIter = decltype(std::begin(std::declval&lt;T&gt;())), typename = decltype(std::end(std::declval&lt;T&gt;()))&gt;
+                template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a13b079f9cc2ef2797f2908169c6e24c4" class="m-doc-self">enumerate</a>(</span><span class="m-doc-wrap">T&amp;&amp; iterable) <span class="m-label m-primary">constexpr</span></span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc-self">enumerate</a>(</span><span class="m-doc-wrap">T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; T &gt;</span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>
@@ -227,10 +240,6 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">T</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>TIter</td>
                   <td></td>
                 </tr>
               </tbody>
@@ -251,24 +260,59 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a6c0a41716a24bed07cbf8b2d84132f96"><div>
+          <section class="m-doc-details" id="aca0d40275ed3e1783ca1a9c0a2ea8cc5"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="enumerate_8hpp.html">&lt;py2cpp/enumerate.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc-self">const_enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt;</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>iterable&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>constexpr auto</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa33bdd0eaafa007b725ce61a2ce6279a"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="range_8hpp.html">&lt;py2cpp/range.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c0a41716a24bed07cbf8b2d84132f96" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T start,
-              T stop) <span class="m-label m-primary">constexpr</span></span></span>
+              <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa33bdd0eaafa007b725ce61a2ce6279a" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T start,
+              T stop) -&gt; detail::RangeIterableWrapper&lt; T &gt;</span></span>
             </h3>
             <p><span></span></p>
           </div></section>
-          <section class="m-doc-details" id="ae0ca10fb60f3b59aa5a9265a80526904"><div>
+          <section class="m-doc-details" id="a9a74b6afc4a6241f5aa3c767b4a21ca2"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="range_8hpp.html">&lt;py2cpp/range.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae0ca10fb60f3b59aa5a9265a80526904" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T stop)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a74b6afc4a6241f5aa3c767b4a21ca2" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; detail::RangeIterableWrapper&lt; T &gt;</span></span>
             </h3>
             <p><span></span></p>
           </div></section>
@@ -386,8 +430,8 @@
     </div>
   </div>
 </div>
-<script src="search-v1.js"></script>
-<script src="searchdata-v1.js" async="async"></script>
+<script src="search-v2.js"></script>
+<script src="searchdata-v2.js" async="async"></script>
 <footer><nav>
   <div class="m-container">
     <div class="m-row">
