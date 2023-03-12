@@ -1,4 +1,4 @@
-#include <doctest/doctest.h>  // for ResultBuilder, TestCase, CHECK, TEST_CASE
+#include <doctest/doctest.h> // for ResultBuilder, TestCase, CHECK, TEST_CASE
 
 // #include <py2cpp/dict.hpp>  // for dict, key_iterator
 // #include <unordered_map>    // for operator!=, __hash_map_const_iterator
