@@ -18,6 +18,11 @@ template <typename Iter> struct key_iterator : Iter {
     Iter::operator++();
     return *this;
   }
+  auto operator++(int) -> key_iterator {
+    auto old = *this;
+    ++*this;
+    return old;
+  }
 };
 
 /**
