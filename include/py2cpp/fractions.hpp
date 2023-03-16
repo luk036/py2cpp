@@ -207,13 +207,16 @@ template <typename Z> struct Fraction {
    * @return true
    * @return false
    */
-  friend CONSTEXPR14 auto operator==(Fraction lhs, Z rhs) -> bool {
+  friend CONSTEXPR14 auto operator==(const Fraction &lhs, const Z &rhs)
+      -> bool {
     if (lhs._den == Z(1) || rhs == Z(0)) {
       return lhs._num == rhs;
     }
-    std::swap(lhs._den, rhs);
-    lhs.normalize2();
-    return lhs._num == lhs._den * rhs;
+    auto lhs2{lhs};
+    auto rhs2{rhs};
+    std::swap(lhs2._den, rhs2);
+    lhs2.normalize2();
+    return lhs2._num < lhs2._den * rhs2;
   }
 
   /**
@@ -224,13 +227,15 @@ template <typename Z> struct Fraction {
    * @return true
    * @return false
    */
-  friend CONSTEXPR14 auto operator<(Fraction lhs, Z rhs) -> bool {
+  friend CONSTEXPR14 auto operator<(const Fraction &lhs, const Z &rhs) -> bool {
     if (lhs._den == Z(1) || rhs == Z(0)) {
       return lhs._num < rhs;
     }
-    std::swap(lhs._den, rhs._num);
-    lhs.normalize2();
-    return lhs._num < lhs._den * rhs;
+    auto lhs2{lhs};
+    auto rhs2{rhs};
+    std::swap(lhs2._den, rhs2);
+    lhs2.normalize2();
+    return lhs2._num < lhs2._den * rhs2;
   }
 
   /**
@@ -241,13 +246,15 @@ template <typename Z> struct Fraction {
    * @return true
    * @return false
    */
-  friend CONSTEXPR14 auto operator<(Z lhs, Fraction rhs) -> bool {
+  friend CONSTEXPR14 auto operator<(const Z &lhs, const Fraction &rhs) -> bool {
     if (rhs._den == Z(1) || lhs == Z(0)) {
       return lhs < rhs._num;
     }
-    std::swap(rhs._den, lhs);
-    rhs.normalize2();
-    return rhs._den * lhs < rhs._num;
+    auto lhs2{lhs};
+    auto rhs2{rhs};
+    std::swap(rhs2._den, lhs2);
+    rhs2.normalize2();
+    return rhs2._den * lhs2 < rhs2._num;
   }
 
   /**
@@ -279,14 +286,17 @@ template <typename Z> struct Fraction {
    * @return true
    * @return false
    */
-  friend CONSTEXPR14 auto operator==(Fraction lhs, Fraction rhs) -> bool {
+  friend CONSTEXPR14 auto operator==(const Fraction &lhs, const Fraction &rhs)
+      -> bool {
     if (lhs._den == rhs._den) {
       return lhs._num == rhs._num;
     }
-    std::swap(lhs._den, rhs._num);
-    lhs.normalize2();
-    rhs.normalize2();
-    return lhs._num * rhs._den == lhs._den * rhs._num;
+    auto lhs2{lhs};
+    auto rhs2{rhs};
+    std::swap(lhs2._den, rhs2._num);
+    lhs2.normalize2();
+    rhs2.normalize2();
+    return lhs2._num * rhs2._den == lhs2._den * rhs2._num;
   }
 
   /**
@@ -297,14 +307,17 @@ template <typename Z> struct Fraction {
    * @return true
    * @return false
    */
-  friend CONSTEXPR14 auto operator<(Fraction lhs, Fraction rhs) -> bool {
+  friend CONSTEXPR14 auto operator<(const Fraction &lhs, const Fraction &rhs)
+      -> bool {
     if (lhs._den == rhs._den) {
       return lhs._num < rhs._num;
     }
-    std::swap(lhs._den, rhs._num);
-    lhs.normalize2();
-    rhs.normalize2();
-    return lhs._num * rhs._den < lhs._den * rhs._num;
+    auto lhs2{lhs};
+    auto rhs2{rhs};
+    std::swap(lhs2._den, rhs2._num);
+    lhs2.normalize2();
+    rhs2.normalize2();
+    return lhs2._num * rhs2._den < lhs2._den * rhs2._num;
   }
 
   /**
@@ -526,7 +539,7 @@ template <typename Z> struct Fraction {
    * @param[in] rhs
    * @return Fraction&
    */
-  CONSTEXPR14 auto operator/=(const Z &rhs) -> Fraction & {
+  CONSTEXPR14 auto operator/=(Z rhs) -> Fraction & {
     std::swap(this->_den, rhs);
     this->normalize();
     this->_den *= rhs;
