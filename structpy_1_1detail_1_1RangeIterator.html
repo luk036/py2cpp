@@ -70,8 +70,28 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
+            <dt id="ade2829d5f37b6c8cf1a3e39290a795b2">
+              using <a href="#ade2829d5f37b6c8cf1a3e39290a795b2" class="m-doc-self">iterator_category</a> = std::output_iterator_tag
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1ddcf25ad7081dda5060175261beaf56">
+              using <a href="#a1ddcf25ad7081dda5060175261beaf56" class="m-doc-self">difference_type</a> = std::ptrdiff_t
+            </dt>
+            <dd><span></span></dd>
             <dt id="a4779278787520be7a3a6bbcc9e54bac0">
               using <a href="#a4779278787520be7a3a6bbcc9e54bac0" class="m-doc-self">value_type</a> = T
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5d99299378593030b643830a3ebb09f9">
+              using <a href="#a5d99299378593030b643830a3ebb09f9" class="m-doc-self">pointer</a> = T*
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ae2bffa4b388dd2644443338b84ff373f">
+              using <a href="#ae2bffa4b388dd2644443338b84ff373f" class="m-doc-self">reference</a> = T&amp;
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ac09aaee503586e4bcda9a5da506f63b5">
+              using <a href="#ac09aaee503586e4bcda9a5da506f63b5" class="m-doc-self">const_reference</a> = const T&amp;
             </dt>
             <dd><span></span></dd>
             <dt id="aff8f1ca031bc039d494af0506367074d">
@@ -91,12 +111,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a74ac5bc672b007238f0fb6d0136f2226" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="structpy_1_1detail_1_1RangeIterator.html" class="m-doc">RangeIterator</a>&amp; other) const -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a731b27521c5b642c342f450e62b84f6c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a731b27521c5b642c342f450e62b84f6c" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; const T &amp; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
+            <dt id="a95a7f17c2e3a06e95a8da305b7d14a15">
+              <span class="m-doc-wrap-bumper">auto <a href="#a95a7f17c2e3a06e95a8da305b7d14a15" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; const_reference -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a852191f127bf5127f4ae162b157d01ff">
-              <span class="m-doc-wrap-bumper">auto <a href="#a852191f127bf5127f4ae162b157d01ff" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) -&gt; T &amp; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
+            <dt id="ae263541e74473b3a448a7ab427a42c17">
+              <span class="m-doc-wrap-bumper">auto <a href="#ae263541e74473b3a448a7ab427a42c17" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) -&gt; reference -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
             <dd><span></span></dd>
             <dt id="af3eeaf1b7ccf576773a812899b841e03">
