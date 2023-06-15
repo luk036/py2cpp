@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>py2cpp/ directory | Py2Cpp</title>
+  <title>py::Range struct | Py2Cpp</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,7 +49,9 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          py2cpp<span class="m-breadcrumb">/</span> <span class="m-thin">directory</span>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="range_8hpp.html">&lt;py2cpp/range.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span>Range <span class="m-thin">struct</span>
         </h1>
         <p><span></span></p>
         <nav class="m-block m-default">
@@ -58,31 +60,69 @@
             <li>
               Reference
               <ul>
-                <li><a href="#files">Files</a></li>
+                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="files">
-          <h2><a href="#files">Files</a></h2>
+        <section id="pub-types">
+          <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt>file <a href="dict_8hpp.html" class="m-doc">dict.hpp</a></dt>
+            <dt id="a346a047b8f0b0e4f9365aa13f8f84fcc">
+              using <a href="#a346a047b8f0b0e4f9365aa13f8f84fcc" class="m-doc-self">iterator</a> = <a href="structpy_1_1RangeIterator.html" class="m-doc">RangeIterator</a>&lt;T&gt;
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="enumerate_8hpp.html" class="m-doc">enumerate.hpp</a></dt>
+            <dt id="a026203c90a4eed48024ffc78def39f23">
+              using <a href="#a026203c90a4eed48024ffc78def39f23" class="m-doc-self">value_type</a> = T
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="fractions_8hpp.html" class="m-doc">fractions.hpp</a></dt>
+            <dt id="a23e5c8c3067ae4adb33a68952d677e76">
+              using <a href="#a23e5c8c3067ae4adb33a68952d677e76" class="m-doc-self">key_type</a> = T
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="greeter_8h.html" class="m-doc">greeter.h</a></dt>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="a48943ccca57cab44d6d770341e7f598b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a48943ccca57cab44d6d770341e7f598b" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const -&gt; iterator -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="lict_8hpp.html" class="m-doc">lict.hpp</a></dt>
+            <dt id="a184303f2ad9999699675d02eb8f7615c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a184303f2ad9999699675d02eb8f7615c" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const -&gt; iterator -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="nx2bgl_8hpp.html" class="m-doc">nx2bgl.hpp</a></dt>
+            <dt id="a8635d708684f2296823ae0b4677be56f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8635d708684f2296823ae0b4677be56f" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="py2cpp_8hpp.html" class="m-doc">py2cpp.hpp</a></dt>
+            <dt id="a528c312d10223444e652795bd5ec1c3c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a528c312d10223444e652795bd5ec1c3c" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="range_8hpp.html" class="m-doc">range.hpp</a></dt>
+            <dt id="ab8ba8efc844ec1843233f7bac3b88ee5">
+              <span class="m-doc-wrap-bumper">auto <a href="#ab8ba8efc844ec1843233f7bac3b88ee5" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">size_t n) const -&gt; T -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
             <dd><span></span></dd>
-            <dt>file <a href="set_8hpp.html" class="m-doc">set.hpp</a></dt>
+            <dt id="a9a8041d28b39f8b6e9f91fe28fbba8e6">
+              <span class="m-doc-wrap-bumper">auto <a href="#a9a8041d28b39f8b6e9f91fe28fbba8e6" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">T n) const -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a0790f69171b6f2beb7e5a7a632bfe72d">
+              T <a href="#a0790f69171b6f2beb7e5a7a632bfe72d" class="m-doc-self">start</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aad409638e69266b9368235f2e5569acd">
+              T <a href="#aad409638e69266b9368235f2e5569acd" class="m-doc-self">stop</a>
+            </dt>
             <dd><span></span></dd>
           </dl>
         </section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>py::detail::RangeIterator struct | Py2Cpp</title>
+  <title>py::EdgeView class | Py2Cpp</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,94 +49,133 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="range_8hpp.html">&lt;py2cpp/range.hpp&gt;</a></div>
-          <div class="m-doc-template">template&lt;typename T&gt;</div>
-          <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacepy_1_1detail.html">detail</a>::<wbr/></span>RangeIterator <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="nx2bgl_8hpp.html">&lt;py2cpp/nx2bgl.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename Graph&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span>EdgeView <span class="m-thin">class</span>
         </h1>
-        <p><span></span></p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">Graph</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#pub-types">Public types</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="ade2829d5f37b6c8cf1a3e39290a795b2">
-              using <a href="#ade2829d5f37b6c8cf1a3e39290a795b2" class="m-doc-self">iterator_category</a> = std::output_iterator_tag
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ab32f1b1e2fb33d1f6af84f09e5a38ea4" class="m-doc">EdgeView</a>(</span><span class="m-doc-wrap">const Graph&amp; gra) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a1ddcf25ad7081dda5060175261beaf56">
-              using <a href="#a1ddcf25ad7081dda5060175261beaf56" class="m-doc-self">difference_type</a> = std::ptrdiff_t
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a4779278787520be7a3a6bbcc9e54bac0">
-              using <a href="#a4779278787520be7a3a6bbcc9e54bac0" class="m-doc-self">value_type</a> = T
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a5d99299378593030b643830a3ebb09f9">
-              using <a href="#a5d99299378593030b643830a3ebb09f9" class="m-doc-self">pointer</a> = T*
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ae2bffa4b388dd2644443338b84ff373f">
-              using <a href="#ae2bffa4b388dd2644443338b84ff373f" class="m-doc-self">reference</a> = T&amp;
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ac09aaee503586e4bcda9a5da506f63b5">
-              using <a href="#ac09aaee503586e4bcda9a5da506f63b5" class="m-doc-self">const_reference</a> = const T&amp;
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aff8f1ca031bc039d494af0506367074d">
-              using <a href="#aff8f1ca031bc039d494af0506367074d" class="m-doc-self">key_type</a> = T
-            </dt>
-            <dd><span></span></dd>
+            <dd>Construct a new Edge View object.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a26a7e59bb7936e620e83574600954b8a">
-              <span class="m-doc-wrap-bumper">auto <a href="#a26a7e59bb7936e620e83574600954b8a" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="structpy_1_1detail_1_1RangeIterator.html" class="m-doc">RangeIterator</a>&amp; other) const -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            <dt id="a91139857703291e868cf4398e9aca8bf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a91139857703291e868cf4398e9aca8bf" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
             <dd><span></span></dd>
-            <dt id="a74ac5bc672b007238f0fb6d0136f2226">
-              <span class="m-doc-wrap-bumper">auto <a href="#a74ac5bc672b007238f0fb6d0136f2226" class="m-doc-self">operator==</a>(</span><span class="m-doc-wrap">const <a href="structpy_1_1detail_1_1RangeIterator.html" class="m-doc">RangeIterator</a>&amp; other) const -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#adb8ae45c5afd308c36465cce27fe5af0" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a95a7f17c2e3a06e95a8da305b7d14a15">
-              <span class="m-doc-wrap-bumper">auto <a href="#a95a7f17c2e3a06e95a8da305b7d14a15" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; const_reference -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa1d106b81f4aabdc1cb90dbd47b8dcf1" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ae263541e74473b3a448a7ab427a42c17">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae263541e74473b3a448a7ab427a42c17" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) -&gt; reference -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
+            <dd></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9bd9082580727131788a48f62f2e8a7f" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="af3eeaf1b7ccf576773a812899b841e03">
-              <span class="m-doc-wrap-bumper">auto <a href="#af3eeaf1b7ccf576773a812899b841e03" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">) -&gt; RangeIterator &amp; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a0ddd0bc93d8659dc2010aa87c111b53c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a0ddd0bc93d8659dc2010aa87c111b53c" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">int) -&gt; RangeIterator -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
-            </dt>
-            <dd><span></span></dd>
+            <dd></dd>
           </dl>
         </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a1d037839787d3ed11dcd77f22250fce7">
-              T <a href="#a1d037839787d3ed11dcd77f22250fce7" class="m-doc-self">i</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ab32f1b1e2fb33d1f6af84f09e5a38ea4"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Graph&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> py::<wbr />EdgeView&lt;Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab32f1b1e2fb33d1f6af84f09e5a38ea4" class="m-doc-self">EdgeView</a>(</span><span class="m-doc-wrap">const Graph&amp; gra) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Construct a new Edge View object.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">gra&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="adb8ae45c5afd308c36465cce27fe5af0"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Graph&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />EdgeView&lt;Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adb8ae45c5afd308c36465cce27fe5af0" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>auto</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa1d106b81f4aabdc1cb90dbd47b8dcf1"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Graph&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />EdgeView&lt;Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa1d106b81f4aabdc1cb90dbd47b8dcf1" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>auto</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a9bd9082580727131788a48f62f2e8a7f"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Graph&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />EdgeView&lt;Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9bd9082580727131788a48f62f2e8a7f" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>auto</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>
