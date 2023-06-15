@@ -66,17 +66,14 @@ public:
   }
 };
 
-
-template <typename T>
-CONSTEXPR14 auto range(T start, T stop) -> Range<T> {
+template <typename T> CONSTEXPR14 auto range(T start, T stop) -> Range<T> {
   if (stop < start) {
     stop = start;
   }
   return Range<T>{start, stop};
 }
 
-template <typename T>
-CONSTEXPR14 auto range(T stop) -> Range<T> {
+template <typename T> CONSTEXPR14 auto range(T stop) -> Range<T> {
   return range(T(0), stop);
 }
 

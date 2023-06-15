@@ -7,17 +7,19 @@
 namespace py {
 
 template <typename T> class Lict {
+public:
   using key_type = size_t;
   using value_type = std::pair<size_t, T>;
   using iterator = py::Range<key_type>::iterator;
+  using const_iterator = py::Range<key_type>::iterator;
 
 private:
-  std::vector<T> _lst;
   py::Range<key_type> _rng;
+  std::vector<T> _lst;
 
 public:
   Lict(std::vector<T> lst)
-      : _lst(std::move(lst)), _rng{py::range(lst.size())} {}
+      : _rng{py::range(lst.size())}, _lst(std::move(lst)) {}
 
   T &operator[](const key_type &key) { return this->_lst[key]; }
 
@@ -25,19 +27,17 @@ public:
 
   // void __delitem__() { throw std::runtime_error("NotImplementedError"); }
 
-  iterator begin() { return this->_rng.begin(); }
+  iterator begin() const { return this->_rng.begin(); }
 
-  iterator end() { return this->_rng.end(); }
+  iterator end() const { return this->_rng.end(); }
 
-  bool contains(const key_type& key) const {
-    return this->_rng.contains(key);
-  }
+  bool contains(const key_type &key) const { return this->_rng.contains(key); }
 
-  size_t size() { return this->_lst.size(); }
+  size_t size() const { return this->_rng.size(); }
 
-  auto& values() { return this->_lst; }
+  auto &values() { return this->_lst; }
 
-  const auto& values() const { return this->_lst; }
+  const auto &values() const { return this->_lst; }
 
   auto items() { return py::enumerate(this->_lst); }
 };
