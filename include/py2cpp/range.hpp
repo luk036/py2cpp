@@ -12,8 +12,6 @@
 
 namespace py {
 
-namespace detail {
-
 template <typename T> struct RangeIterator {
   using iterator_category = std::output_iterator_tag;
   using difference_type = std::ptrdiff_t;
@@ -43,7 +41,7 @@ template <typename T> struct RangeIterator {
   }
 };
 
-template <typename T> struct RangeIterableWrapper {
+template <typename T> struct Range {
 public:
   using iterator = RangeIterator<T>;
   using value_type = T;
@@ -68,18 +66,17 @@ public:
   }
 };
 
-} // namespace detail
 
 template <typename T>
-CONSTEXPR14 auto range(T start, T stop) -> detail::RangeIterableWrapper<T> {
+CONSTEXPR14 auto range(T start, T stop) -> Range<T> {
   if (stop < start) {
     stop = start;
   }
-  return detail::RangeIterableWrapper<T>{start, stop};
+  return Range<T>{start, stop};
 }
 
 template <typename T>
-CONSTEXPR14 auto range(T stop) -> detail::RangeIterableWrapper<T> {
+CONSTEXPR14 auto range(T stop) -> Range<T> {
   return range(T(0), stop);
 }
 

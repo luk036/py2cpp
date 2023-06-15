@@ -38,6 +38,7 @@ class dict : public std::unordered_map<Key, T> {
 
 public:
   using value_type = std::pair<const Key, T>;
+  using key_type = Key;
 
   /**
    * @brief Construct a new dict object
