@@ -200,10 +200,20 @@ public:
   // GrAdaptor& operator=(const GrAdaptor&) = delete; // don't assign
   // GrAdaptor(GrAdaptor&&) noexcept = default;                // don't copy
 
+  /**
+   * @brief
+   *
+   * @return auto
+   */
   [[nodiscard]] auto number_of_nodes() const {
     return boost::num_vertices(*this);
   }
 
+  /**
+   * @brief
+   *
+   * @return auto
+   */
   [[nodiscard]] auto number_of_edges() const { return boost::num_edges(*this); }
 
   /**

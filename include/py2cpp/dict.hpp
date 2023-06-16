@@ -10,6 +10,11 @@
 
 namespace py {
 
+/**
+ * @brief
+ *
+ * @tparam Iter
+ */
 template <typename Iter> struct key_iterator : Iter {
   explicit key_iterator(Iter it) : Iter(it) {}
   auto operator*() const -> const auto & { return Iter::operator*().first; }
