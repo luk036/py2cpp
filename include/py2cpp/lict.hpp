@@ -47,6 +47,14 @@ public:
    */
   const T &operator[](const key_type &key) const { return this->_lst[key]; }
 
+  /**
+   * @brief
+   *
+   * @param key
+   * @return const T&
+   */
+  const T &at(const key_type &key) const { return this->_lst.at(key); }
+
   // void erase() { throw std::runtime_error("NotImplementedError"); }
 
   /**

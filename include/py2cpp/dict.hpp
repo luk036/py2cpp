@@ -136,6 +136,15 @@ public:
    *
    * @return _Self&
    */
+  auto at(const Key &k) const -> const T & {
+    return this->at(k); // luk: a bug in std::unordered_map?
+  }
+
+  /**
+   * @brief
+   *
+   * @return _Self&
+   */
   auto operator[](const Key &k) -> T & { return Base::operator[](k); }
 
   /**
