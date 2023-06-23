@@ -79,7 +79,7 @@
               <div class="m-doc-template">template&lt;typename Iter&gt;</div>
               struct <a href="structpy_1_1key__iterator.html" class="m-doc">key_iterator</a>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Key, typename T&gt;</div>
               class <a href="classpy_1_1dict.html" class="m-doc">dict</a>
@@ -89,7 +89,7 @@
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               class <a href="classpy_1_1Lict.html" class="m-doc">Lict</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Dict-like data structure by std::vector and <a href="structpy_1_1Range.html" class="m-doc">Range</a>.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Graph&gt;</div>
               class <a href="classpy_1_1VertexView.html" class="m-doc">VertexView</a>
@@ -114,12 +114,12 @@
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               struct <a href="structpy_1_1RangeIterator.html" class="m-doc">RangeIterator</a>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               struct <a href="structpy_1_1Range.html" class="m-doc">Range</a>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Key&gt;</div>
               class <a href="classpy_1_1set.html" class="m-doc">set</a>
@@ -156,12 +156,12 @@
               <span class="m-doc-wrap-bumper">auto <a href="#aa3bac90078811ece454df0f02e793c1a" class="m-doc">range</a>(</span><span class="m-doc-wrap">T start,
               T stop) -&gt; Range&lt; T &gt; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#a2007865844cedb1644eb541f909c466b" class="m-doc">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; Range&lt; T &gt; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd><span></span></dd>
+            <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Key&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#afb1aca4e9ad090e5d1fce753fc79d29c" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap">const Key&amp; key,
@@ -290,7 +290,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>constexpr auto</td>
+                  <td>detail::EnumerateIterableWrapper&lt;T&gt;</td>
                 </tr>
               </tfoot>
             </table>
@@ -318,14 +318,14 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>iterable&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>iterable</td>
                   <td></td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>constexpr auto</td>
+                  <td>detail::EnumerateIterableWrapper&lt;const T&gt;</td>
                 </tr>
               </tfoot>
             </table>
@@ -339,7 +339,36 @@
               <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3bac90078811ece454df0f02e793c1a" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T start,
               T stop) -&gt; Range&lt; T &gt;</span></span>
             </h3>
-            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>start</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>stop</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Range&lt;T&gt;</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
           <section class="m-doc-details" id="a2007865844cedb1644eb541f909c466b"><div>
             <h3>
@@ -349,7 +378,32 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2007865844cedb1644eb541f909c466b" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; Range&lt; T &gt;</span></span>
             </h3>
-            <p><span></span></p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>stop</td>
+                  <td></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Range&lt;T&gt;</td>
+                </tr>
+              </tfoot>
+            </table>
           </div></section>
           <section class="m-doc-details" id="afb1aca4e9ad090e5d1fce753fc79d29c"><div>
             <h3>
