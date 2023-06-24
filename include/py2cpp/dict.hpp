@@ -128,7 +128,7 @@ public:
    * @return _Self&
    */
   auto operator[](const Key &k) const -> const T & {
-    return this->at(k); // luk: a bug in std::unordered_map?
+    return Base::at(k); // luk: a bug in std::unordered_map?
   }
 
   /**
@@ -137,7 +137,7 @@ public:
    * @return _Self&
    */
   auto at(const Key &k) const -> const T & {
-    return this->at(k); // luk: a bug in std::unordered_map?
+    return Base::at(k); // luk: a bug in std::unordered_map?
   }
 
   /**

@@ -14,7 +14,7 @@ namespace py {
 template <typename T> class Lict {
 public:
   using key_type = size_t;
-  using value_type = std::pair<size_t, T>;
+  using value_type = T;
   using iterator = py::Range<key_type>::iterator;
   using const_iterator = py::Range<key_type>::iterator;
 
@@ -45,7 +45,7 @@ public:
    * @param key
    * @return const T&
    */
-  const T &operator[](const key_type &key) const { return this->_lst[key]; }
+  const T &operator[](const key_type &key) const { return this->_lst.at(key); }
 
   /**
    * @brief
