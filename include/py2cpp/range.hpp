@@ -87,7 +87,7 @@ template <typename T> struct RangeIterator {
 };
 
 /**
- * @brief
+ * @brief Range
  *
  * @tparam T
  */
@@ -157,7 +157,11 @@ public:
 };
 
 /**
- * @brief
+ * @brief range(T start, T stop)
+ *
+ * The `range(T start, T stop)` function is creating a range of values from
+ * `start` to `stop`. It returns a `Range<T>` object that represents the range.
+ * The range includes all values from `start` up to, but not including, `stop`.
  *
  * @tparam T
  * @param start
@@ -172,7 +176,11 @@ template <typename T> CONSTEXPR14 auto range(T start, T stop) -> Range<T> {
 }
 
 /**
- * @brief
+ * @brief range(T stop)
+ *
+ * The `range(T stop)` function is creating a range of values from 0 to `stop`.
+ * It returns a `Range<T>` object that represents the range. The range includes
+ * all values from 0 up to, but not including, `stop`.
  *
  * @tparam T
  * @param stop

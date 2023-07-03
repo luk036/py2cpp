@@ -83,7 +83,13 @@ template <typename T> struct EnumerateIterableWrapper {
 } // namespace detail
 
 /**
- * @brief
+ * @brief enumerate(T &iterable)
+ *
+ * The `enumerate(T &iterable)` function is a utility function that allows you
+ * to iterate over a container or range and also get the index of each element
+ * in the iteration. It returns an instance of the
+ * `detail::EnumerateIterableWrapper<T>` class, which provides a range-based for
+ * loop compatible interface.
  *
  * @tparam T
  * @param[in] iterable
@@ -95,7 +101,14 @@ inline auto enumerate(T &iterable) -> detail::EnumerateIterableWrapper<T> {
 }
 
 /**
- * @brief
+ * @brief const_enumerate(const T &iterable)
+ *
+ * The `const_enumerate(const T &iterable)` function is a utility function that
+ * allows you to iterate over a constant container or range and also get the
+ * index of each element in the iteration. It returns an instance of the
+ * `detail::EnumerateIterableWrapper<const T>` class, which provides a
+ * range-based for loop compatible interface. This function is useful when you
+ * want to iterate over a constant container without modifying its elements.
  *
  * @tparam T
  * @param iterable
