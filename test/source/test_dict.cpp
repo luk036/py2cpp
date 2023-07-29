@@ -5,12 +5,12 @@
 #include <utility> // for pair
 
 TEST_CASE("Test py::dict") {
-  using E = std::pair<double, int>;
-  const auto S = py::dict<double, int>{E{0.1, 1}, E{0.3, 3}, E{0.4, 4}};
-  auto count = 0;
-  for (const auto &p : S) {
-    static_assert(sizeof(p) >= 0, "make compiler happy");
-    ++count;
-  }
-  CHECK(count == 3);
+    using E = std::pair<double, int>;
+    const auto S = py::dict<double, int>{E{0.1, 1}, E{0.3, 3}, E{0.4, 4}};
+    auto count = 0;
+    for (const auto &p : S) {
+        static_assert(sizeof(p) >= 0, "make compiler happy");
+        ++count;
+    }
+    CHECK(count == 3);
 }
