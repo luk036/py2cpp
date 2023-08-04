@@ -1,4 +1,4 @@
-name: py2cpp-cpp
+name: py2cpp
 channels:
   - conda-forge
 dependencies:
