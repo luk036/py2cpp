@@ -1,11 +1,10 @@
-#include <py2cpp/greeter.h> // for LanguageCode, LanguageCode::DE, Language...
-#include <py2cpp/version.h> // for PY2CPP_VERSION
+#include <py2cpp/greeter.h>
+#include <py2cpp/version.h>
 
-#include <cxxopts.hpp>   // for value, OptionAdder, Options, OptionValue
-#include <iostream>      // for operator<<, endl, basic_ostream, ostream
-#include <memory>        // for shared_ptr, __shared_ptr_access
-#include <string>        // for string, hash, operator<<, operator==
-#include <unordered_map> // for operator==, unordered_map, _Node_const_i...
+#include <cxxopts.hpp>
+#include <iostream>
+#include <string>
+#include <unordered_map>
 
 auto main(int argc, char **argv) -> int {
     const std::unordered_map<std::string, py2cpp::LanguageCode> languages{

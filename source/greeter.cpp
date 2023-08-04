@@ -1,10 +1,9 @@
-#include <fmt/format.h>
 #include <py2cpp/greeter.h>
+#include <fmt/format.h>
 
 using namespace py2cpp;
-using namespace std;
 
-Py2Cpp::Py2Cpp(string _name) : name(move(_name)) {}
+Py2Cpp::Py2Cpp(std::string _name) : name(std::move(_name)) {}
 
 std::string Py2Cpp::greet(LanguageCode lang) const {
     switch (lang) {

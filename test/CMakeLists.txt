@@ -1,47 +1,60 @@
+cmake_minimum_required(VERSION 3.14...3.22)
+
+project(Py2CppTests LANGUAGES CXX)
+
 # ---- Options ----
 
 option(ENABLE_TEST_COVERAGE "Enable test coverage" OFF)
-# option(TEST_INSTALLED_VERSION "Test the version found by find_package" OFF)
+option(TEST_INSTALLED_VERSION "Test the version found by find_package" OFF)
+
+# --- Import tools ----
+
+include(../cmake/tools.cmake)
 
 # ---- Dependencies ----
 
-CPMAddPackage("gh:doctest/doctest#v2.4.9")
-CPMAddPackage("gh:TheLartians/Format.cmake@1.7.0")
+include(../cmake/CPM.cmake)
 
-# if(TEST_INSTALLED_VERSION) find_package(${PROJECT_NAME} REQUIRED) else() CPMAddPackage(NAME
-# ${PROJECT_NAME} SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..) endif()
+CPMAddPackage("gh:doctest/doctest@2.4.9")
+CPMAddPackage("gh:TheLartians/Format.cmake@1.7.3")
+
+if(TEST_INSTALLED_VERSION)
+  find_package(Py2Cpp REQUIRED)
+else()
+  CPMAddPackage(NAME Py2Cpp SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
+endif()
 
 # ---- Create binary ----
 
 file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp)
-add_executable(${PROJECT_NAME}Tests ${sources})
-target_link_libraries(
-  ${PROJECT_NAME}Tests doctest::doctest ${PROJECT_NAME}::${PROJECT_NAME} ${SPECIFIC_LIBS}
-)
-set_target_properties(${PROJECT_NAME}Tests PROPERTIES CXX_STANDARD 14)
+add_executable(${PROJECT_NAME} ${sources})
+target_link_libraries(${PROJECT_NAME} doctest::doctest Py2Cpp::Py2Cpp)
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
 
 # enable compiler warnings
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "GNU")
-  target_compile_options(${PROJECT_NAME} INTERFACE -Wall -Wpedantic -Wextra -Werror)
-elseif(MSVC)
-  target_compile_options(${PROJECT_NAME} INTERFACE /std:c++latest /W4 /WX /wd4819 /wd4146)
-  target_compile_definitions(${PROJECT_NAME}Tests PUBLIC DOCTEST_CONFIG_USE_STD_HEADERS)
+if(NOT TEST_INSTALLED_VERSION)
+  if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    target_compile_options(Py2Cpp INTERFACE -Wall -Wpedantic -Wextra -Werror)
+  elseif(MSVC)
+    target_compile_options(Py2Cpp INTERFACE /W4 /WX /wd4819)
+    target_compile_definitions(${PROJECT_NAME} INTERFACE DOCTEST_CONFIG_USE_STD_HEADERS)
+  endif()
 endif()
 
-# ---- Add ${PROJECT_NAME}Tests ----
+# ---- Add Py2CppTests ----
 
 enable_testing()
 
 # Note: doctest and similar testing frameworks can automatically configure CMake tests. For other
-# testing frameworks add the tests target instead: add_test(NAME py2cppTests COMMAND
-# ${PROJECT_NAME}Tests)
+# testing frameworks add the tests target instead: add_test(NAME ${PROJECT_NAME} COMMAND
+# ${PROJECT_NAME})
 
-string(TOLOWER ${PROJECT_NAME} PROJECT_FILE_NAME)
-add_test(NAME ${PROJECT_FILE_NAME}Tests COMMAND ${PROJECT_NAME}Tests)
+include(${doctest_SOURCE_DIR}/scripts/cmake/doctest.cmake)
+doctest_discover_tests(${PROJECT_NAME})
 
 # ---- code coverage ----
 
 if(ENABLE_TEST_COVERAGE)
-  target_compile_options(${PROJECT_NAME} INTERFACE -O0 -g -fprofile-arcs -ftest-coverage)
-  target_link_options(${PROJECT_NAME} INTERFACE -fprofile-arcs -ftest-coverage)
+  target_compile_options(Py2Cpp INTERFACE -O0 -g -fprofile-arcs -ftest-coverage)
+  target_link_options(Py2Cpp INTERFACE -fprofile-arcs -ftest-coverage)
 endif()
