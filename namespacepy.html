@@ -76,8 +76,8 @@
           <h2><a href="#nested-classes">Classes</a></h2>
           <dl class="m-doc">
             <dt>
-              <div class="m-doc-template">template&lt;typename Iter&gt;</div>
-              struct <a href="structpy_1_1key__iterator.html" class="m-doc">key_iterator</a>
+              <div class="m-doc-template">template&lt;typename Vertex, typename Graph&gt;</div>
+              class <a href="classpy_1_1_atlas_view.html" class="m-doc">AtlasView</a>
             </dt>
             <dd></dd>
             <dt>
@@ -86,43 +86,43 @@
             </dt>
             <dd></dd>
             <dt>
-              <div class="m-doc-template">template&lt;typename T&gt;</div>
-              class <a href="classpy_1_1Lict.html" class="m-doc">Lict</a>
-            </dt>
-            <dd>Dict-like data structure by std::vector and <a href="structpy_1_1Range.html" class="m-doc">Range</a>.</dd>
-            <dt>
               <div class="m-doc-template">template&lt;typename Graph&gt;</div>
-              class <a href="classpy_1_1VertexView.html" class="m-doc">VertexView</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Graph&gt;</div>
-              class <a href="classpy_1_1EdgeView.html" class="m-doc">EdgeView</a>
-            </dt>
-            <dd></dd>
-            <dt>
-              <div class="m-doc-template">template&lt;typename Vertex, typename Graph&gt;</div>
-              class <a href="classpy_1_1AtlasView.html" class="m-doc">AtlasView</a>
+              class <a href="classpy_1_1_edge_view.html" class="m-doc">EdgeView</a>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename _Graph&gt;</div>
-              class <a href="classpy_1_1GrAdaptor.html" class="m-doc">GrAdaptor</a>
+              class <a href="classpy_1_1_gr_adaptor.html" class="m-doc">GrAdaptor</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Iter&gt;</div>
+              struct <a href="structpy_1_1key__iterator.html" class="m-doc">key_iterator</a>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structpy_1_1RangeIterator.html" class="m-doc">RangeIterator</a>
+              class <a href="classpy_1_1_lict.html" class="m-doc">Lict</a>
             </dt>
-            <dd></dd>
+            <dd>Dict-like data structure by std::vector and <a href="structpy_1_1_range.html" class="m-doc">Range</a>.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              struct <a href="structpy_1_1Range.html" class="m-doc">Range</a>
+              struct <a href="structpy_1_1_range.html" class="m-doc">Range</a>
+            </dt>
+            <dd><a href="structpy_1_1_range.html" class="m-doc">Range</a>.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
+              struct <a href="structpy_1_1_range_iterator.html" class="m-doc">RangeIterator</a>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Key&gt;</div>
               class <a href="classpy_1_1set.html" class="m-doc">set</a>
+            </dt>
+            <dd></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Graph&gt;</div>
+              class <a href="classpy_1_1_vertex_view.html" class="m-doc">VertexView</a>
             </dt>
             <dd></dd>
           </dl>
@@ -145,23 +145,23 @@
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc">enumerate</a>(</span><span class="m-doc-wrap">T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; T &gt; -&gt; auto</span>
             </dt>
-            <dd></dd>
+            <dd><a href="namespacepy.html#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc">enumerate(T &amp;iterable)</a></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt; -&gt; auto</span>
             </dt>
-            <dd></dd>
+            <dd><a href="namespacepy.html#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_<wbr />enumerate(const T &amp;iterable)</a></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#aa3bac90078811ece454df0f02e793c1a" class="m-doc">range</a>(</span><span class="m-doc-wrap">T start,
-              T stop) -&gt; Range&lt; T &gt; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
+              T stop) -&gt; Range&lt; T &gt; -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd><a href="namespacepy.html#aa3bac90078811ece454df0f02e793c1a" class="m-doc">range(T start, T stop)</a></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2007865844cedb1644eb541f909c466b" class="m-doc">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; Range&lt; T &gt; -&gt; <a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2007865844cedb1644eb541f909c466b" class="m-doc">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; Range&lt; T &gt; -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd><a href="namespacepy.html#a2007865844cedb1644eb541f909c466b" class="m-doc">range(T stop)</a></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Key&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#afb1aca4e9ad090e5d1fce753fc79d29c" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap">const Key&amp; key,
@@ -268,6 +268,7 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc-self">enumerate</a>(</span><span class="m-doc-wrap">T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; T &gt;</span></span>
             </h3>
+            <p><a href="namespacepy.html#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc">enumerate(T &amp;iterable)</a></p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -294,6 +295,7 @@
                 </tr>
               </tfoot>
             </table>
+<p>The <code>enumerate(T &amp;iterable)</code> function is a utility function that allows you to iterate over a container or range and also get the index of each element in the iteration. It returns an instance of the <code><a href="structpy_1_1detail_1_1_enumerate_iterable_wrapper.html" class="m-doc">detail::<wbr />EnumerateIterableWrapper</a>&lt;T&gt;</code> class, which provides a range-based for loop compatible interface.</p>
           </div></section>
           <section class="m-doc-details" id="aca0d40275ed3e1783ca1a9c0a2ea8cc5"><div>
             <h3>
@@ -303,6 +305,7 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc-self">const_enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt;</span></span>
             </h3>
+            <p><a href="namespacepy.html#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_<wbr />enumerate(const T &amp;iterable)</a></p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -329,6 +332,7 @@
                 </tr>
               </tfoot>
             </table>
+<p>The <code>const_enumerate(const T &amp;iterable)</code> function is a utility function that allows you to iterate over a constant container or range and also get the index of each element in the iteration. It returns an instance of the <code><a href="structpy_1_1detail_1_1_enumerate_iterable_wrapper.html" class="m-doc">detail::<wbr />EnumerateIterableWrapper</a>&lt;const T&gt;</code> class, which provides a range-based for loop compatible interface. This function is useful when you want to iterate over a constant container without modifying its elements.</p>
           </div></section>
           <section class="m-doc-details" id="aa3bac90078811ece454df0f02e793c1a"><div>
             <h3>
@@ -336,9 +340,10 @@
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3bac90078811ece454df0f02e793c1a" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T start,
+              <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3bac90078811ece454df0f02e793c1a" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T start,
               T stop) -&gt; Range&lt; T &gt;</span></span>
             </h3>
+            <p><a href="namespacepy.html#aa3bac90078811ece454df0f02e793c1a" class="m-doc">range(T start, T stop)</a></p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -369,6 +374,7 @@
                 </tr>
               </tfoot>
             </table>
+<p>The <code><a href="namespacepy.html#aa3bac90078811ece454df0f02e793c1a" class="m-doc">range(T start, T stop)</a></code> function is creating a range of values from <code>start</code> to <code>stop</code>. It returns a <code><a href="structpy_1_1_range.html" class="m-doc">Range</a>&lt;T&gt;</code> object that represents the range. The range includes all values from <code>start</code> up to, but not including, <code>stop</code>.</p>
           </div></section>
           <section class="m-doc-details" id="a2007865844cedb1644eb541f909c466b"><div>
             <h3>
@@ -376,8 +382,9 @@
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="range_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2007865844cedb1644eb541f909c466b" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; Range&lt; T &gt;</span></span>
+              <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2007865844cedb1644eb541f909c466b" class="m-doc-self">range</a>(</span><span class="m-doc-wrap">T stop) -&gt; Range&lt; T &gt;</span></span>
             </h3>
+            <p><a href="namespacepy.html#a2007865844cedb1644eb541f909c466b" class="m-doc">range(T stop)</a></p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -404,6 +411,7 @@
                 </tr>
               </tfoot>
             </table>
+<p>The <code><a href="namespacepy.html#a2007865844cedb1644eb541f909c466b" class="m-doc">range(T stop)</a></code> function is creating a range of values from 0 to <code>stop</code>. It returns a <code><a href="structpy_1_1_range.html" class="m-doc">Range</a>&lt;T&gt;</code> object that represents the range. The range includes all values from 0 up to, but not including, <code>stop</code>.</p>
           </div></section>
           <section class="m-doc-details" id="afb1aca4e9ad090e5d1fce753fc79d29c"><div>
             <h3>
@@ -525,7 +533,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Py2Cpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Py2Cpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.7 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
