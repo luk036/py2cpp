@@ -1,6 +1,6 @@
-#include <doctest/doctest.h> // for ResultBuilder, TestCase, CHECK, TEST_CASE
+#include <doctest/doctest.h>  // for ResultBuilder, TestCase, CHECK, TEST_CASE
 
-#include <py2cpp/set.hpp> // for set
+#include <py2cpp/set.hpp>  // for set
 
 TEST_CASE("Test set") {
     const auto S = py::set<int>{1, 3, 4, 5, 1};

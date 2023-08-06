@@ -1,6 +1,6 @@
-#include <doctest/doctest.h> // for ResultBuilder, TestCase, CHECK, TEST_CASE
+#include <doctest/doctest.h>  // for ResultBuilder, TestCase, CHECK, TEST_CASE
 
-#include <py2cpp/lict.hpp> // for Lict, key_iterator
+#include <py2cpp/lict.hpp>  // for Lict, key_iterator
 #include <vector>
 
 TEST_CASE("Test Lict") {

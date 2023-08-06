@@ -1,119 +1,115 @@
 #pragma once
 
+#include <vector>
+
 #include "enumerate.hpp"
 #include "range.hpp"
-#include <vector>
 
 namespace py {
 
-/**
- * @brief Dict-like data structure by std::vector and Range
- *
- * @tparam T
- */
-template <typename T> class Lict {
-  public:
-    using key_type = size_t;
-    using value_type = T;
-    using iterator = py::Range<key_type>::iterator;
-    using const_iterator = py::Range<key_type>::iterator;
-
-  private:
-    py::Range<key_type> _rng;
-    std::vector<T> _lst;
-
-  public:
     /**
-     * @brief Construct a new Lict object
+     * @brief Dict-like data structure by std::vector and Range
      *
-     * @param lst
+     * @tparam T
      */
-    explicit Lict(std::vector<T> lst)
-        : _rng{py::range(lst.size())}, _lst(std::move(lst)) {}
+    template <typename T> class Lict {
+      public:
+        using key_type = size_t;
+        using value_type = T;
+        using iterator = py::Range<key_type>::iterator;
+        using const_iterator = py::Range<key_type>::iterator;
 
-    /**
-     * @brief
-     *
-     * @param key
-     * @return T&
-     */
-    T &operator[](const key_type &key) { return this->_lst[key]; }
+      private:
+        py::Range<key_type> _rng;
+        std::vector<T> _lst;
 
-    /**
-     * @brief
-     *
-     * @param key
-     * @return const T&
-     */
-    const T &operator[](const key_type &key) const {
-        return this->_lst.at(key);
-    }
+      public:
+        /**
+         * @brief Construct a new Lict object
+         *
+         * @param lst
+         */
+        explicit Lict(std::vector<T> lst) : _rng{py::range(lst.size())}, _lst(std::move(lst)) {}
 
-    /**
-     * @brief
-     *
-     * @param key
-     * @return const T&
-     */
-    const T &at(const key_type &key) const { return this->_lst.at(key); }
+        /**
+         * @brief
+         *
+         * @param key
+         * @return T&
+         */
+        T &operator[](const key_type &key) { return this->_lst[key]; }
 
-    // void erase() { throw std::runtime_error("NotImplementedError"); }
+        /**
+         * @brief
+         *
+         * @param key
+         * @return const T&
+         */
+        const T &operator[](const key_type &key) const { return this->_lst.at(key); }
 
-    /**
-     * @brief
-     *
-     * @return iterator
-     */
-    iterator begin() const { return this->_rng.begin(); }
+        /**
+         * @brief
+         *
+         * @param key
+         * @return const T&
+         */
+        const T &at(const key_type &key) const { return this->_lst.at(key); }
 
-    /**
-     * @brief
-     *
-     * @return iterator
-     */
-    iterator end() const { return this->_rng.end(); }
+        // void erase() { throw std::runtime_error("NotImplementedError"); }
 
-    /**
-     * @brief
-     *
-     * @param key
-     * @return true
-     * @return false
-     */
-    bool contains(const key_type &key) const {
-        return this->_rng.contains(key);
-    }
+        /**
+         * @brief
+         *
+         * @return iterator
+         */
+        iterator begin() const { return this->_rng.begin(); }
 
-    /**
-     * @brief
-     *
-     * @return size_t
-     */
-    size_t size() const { return this->_rng.size(); }
+        /**
+         * @brief
+         *
+         * @return iterator
+         */
+        iterator end() const { return this->_rng.end(); }
 
-    /**
-     * @brief
-     *
-     * @return auto&
-     */
-    auto &values() { return this->_lst; }
+        /**
+         * @brief
+         *
+         * @param key
+         * @return true
+         * @return false
+         */
+        bool contains(const key_type &key) const { return this->_rng.contains(key); }
 
-    /**
-     * @brief
-     *
-     * @return const auto&
-     */
-    const auto &values() const { return this->_lst; }
+        /**
+         * @brief
+         *
+         * @return size_t
+         */
+        size_t size() const { return this->_rng.size(); }
 
-    /**
-     * @brief
-     *
-     * @return auto
-     */
-    auto items() { return py::enumerate(this->_lst); }
-};
+        /**
+         * @brief
+         *
+         * @return auto&
+         */
+        auto &values() { return this->_lst; }
 
-} // namespace py
+        /**
+         * @brief
+         *
+         * @return const auto&
+         */
+        const auto &values() const { return this->_lst; }
+
+        /**
+         * @brief
+         *
+         * @return auto
+         */
+        auto items() { return py::enumerate(this->_lst); }
+    };
+
+}  // namespace py
 
 // int main() {
 //   Lict<int> a(std::vector<int>(8, 0));
