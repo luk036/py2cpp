@@ -10,6 +10,9 @@ namespace py {
     /**
      * @brief Dict-like data structure by std::vector and Range
      *
+     * The `Lict` class is a custom implementation of an unordered mapping with integer keys and
+     * generic values, which adapts a vector to behave like a dictionary.
+     *
      * @tparam T
      */
     template <typename T> class Lict {
@@ -25,33 +28,57 @@ namespace py {
 
       public:
         /**
-         * @brief Construct a new Lict object
+         * @brief Constructor for a dictionary-like adaptor for a vector.
          *
-         * @param lst
+         * @param[in] lst The `lst` parameter is a vector. It is used to initialize the `self.lst`
+         * attribute of the class
          */
         explicit Lict(std::vector<T> lst) : _rng{py::range(lst.size())}, _lst(std::move(lst)) {}
 
         /**
-         * @brief
+         * @brief This function allows you to access an element in a Lict object by its index.
          *
-         * @param key
-         * @return T&
-         */
-        T &operator[](const key_type &key) { return this->_lst[key]; }
-
-        /**
-         * @brief
+         * @param[in] key The `key` parameter is of type `size_t` and it represents the index of the
+         * element that you want to retrieve from the list
          *
-         * @param key
-         * @return const T&
+         * @return the item at the specified index in the `lst` attribute.
+         *
+         * Examples:
+         *   >>> auto a = Lict({1, 4, 3, 6});
+         *   >>> a[2]
+         *   3
+         *
          */
         const T &operator[](const key_type &key) const { return this->_lst.at(key); }
 
         /**
-         * @brief
+         * @brief This function sets the value at a given index in a list-like object.
          *
-         * @param key
-         * @return const T&
+         * @param[in] key The key parameter represents the index at which the new value should be
+         * set in the list
+         *
+         * Examples:
+         *   >>> auto a = Lict({1, 4, 3, 6});
+         *   >>> a[2] = 7
+         *   >>> a[2]
+         *   7
+         *
+         */
+        T &operator[](const key_type &key) { return this->_lst[key]; }
+
+        /**
+         * @brief This function allows you to access an element in a Lict object by its index.
+         *
+         * @param[in] key The `key` parameter is of type `size_t` and it represents the index of the
+         * element that you want to retrieve from the list
+         *
+         * @return the item at the specified index in the `lst` attribute.
+         *
+         * Examples:
+         *   >>> auto a = Lict({1, 4, 3, 6});
+         *   >>> a.at(2)
+         *   3
+         *
          */
         const T &at(const key_type &key) const { return this->_lst.at(key); }
 
@@ -72,39 +99,84 @@ namespace py {
         iterator end() const { return this->_rng.end(); }
 
         /**
-         * @brief
+         * @brief The `contains` function checks if a given value is present in the `rng` attribute
+         * of the object.
          *
-         * @param key
-         * @return true
-         * @return false
+         * @param[in] key The `key` parameter represents the value that we want to check if it is
+         * present in the `self.rng` attribute
+         * @return The method is returning a boolean value, indicating whether the given value is
+         * present in the `self.rng` attribute.
+         *
+         * Examples:
+         *   >>> auto a = Lict({1, 4, 3, 6});
+         *   >>> a.contains(2)
+         *   true
          */
         bool contains(const key_type &key) const { return this->_rng.contains(key); }
 
         /**
-         * @brief
+         * @brief This function returns the length of the `rng` attribute of the object.
          *
-         * @return size_t
+         * @return The `size` function is returning the size of the `self.rng` attribute.
+         *
+         * Examples:
+         *   >>> auto a = Lict({1, 4, 3, 6});
+         *   >>> a.size()
+         *   4
          */
         size_t size() const { return this->_rng.size(); }
 
         /**
-         * @brief
+         * @brief The `values` function returns an iterator that yields the elements of the `lst`
+         * attribute of the `Lict` object.
          *
-         * @return auto&
-         */
-        auto &values() { return this->_lst; }
-
-        /**
-         * @brief
+         * @return The `values` method returns a const reference to the vector object.
          *
-         * @return const auto&
+         * Examples:
+         *   >>> const auto a = Lict({1, 4, 3, 6});
+         *   >>> for (const auto &i : a.values()) {
+         *   ...     fmt::print(i);
+         *   ... }
+         *   1
+         *   4
+         *   3
+         *   6
          */
         const auto &values() const { return this->_lst; }
 
         /**
-         * @brief
+         * @brief The `values` function returns an iterator that yields the elements of the `lst`
+         * attribute of the `Lict` object.
          *
-         * @return auto
+         * @return The `values` method returns a reference to the vector object.
+         *
+         * Examples:
+         *   >>> auto a = Lict({1, 4, 3, 6});
+         *   >>> for (auto& i : a.values()) {
+         *   ...     i += 1;
+         *   ...     fmt::print(i);
+         *   ... }
+         *   2
+         *   5
+         *   4
+         *   7
+         */
+        auto &values() { return this->_lst; }
+
+        /**
+         * @brief The function returns an enumeration of the items in the list.
+         *
+         * @return: The `items` method is returning an enumeration of the `lst` attribute.
+         *
+         * Examples:
+         *   >>> auto a = Lict({1, 4, 3, 6});
+         *   >>> for (auto& [key, value] : a.items()) {
+         *   ...     fmt::print(key, value);
+         *   ... }
+         *   (0, 1)
+         *   (1, 4)
+         *   (2, 3)
+         *   (3, 6)
          */
         auto items() { return py::enumerate(this->_lst); }
     };

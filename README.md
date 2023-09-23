@@ -12,7 +12,7 @@
 # py2cpp
 
 
-## Features
+## ✨ Features
 
 - [Modern CMake practices](https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/)
 - Suited for single header libraries and projects of any scale
