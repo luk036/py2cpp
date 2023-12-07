@@ -31,14 +31,12 @@ namespace py {
         /**
          * @brief Not equal to
          *
-         * The `operator!=` function is an overloaded operator that checks if the
-         * current iterator is not equal to another iterator. It takes another
-         * `RangeIterator` object `other` as a parameter and returns a boolean value
-         * indicating whether the two iterators are not equal.
-         *
-         * @param other
-         * @return true
-         * @return false
+         * The `operator!=` function checks if the current iterator is not equal to another iterator.
+         * 
+         * @param other `other` is a `RangeIterator` object that represents another iterator.
+         * 
+         * @return The `operator!=` function returns a boolean value indicating whether the two
+         * iterators are not equal.
          */
         constexpr auto operator!=(const RangeIterator &other) const -> bool {
             return this->i != other.i;
@@ -47,38 +45,33 @@ namespace py {
         /**
          * @brief Equal to operator
          *
-         * The `operator==` function is an overloaded operator that checks if the
-         * current iterator is equal to another iterator. It takes another
-         * `RangeIterator` object `other` as a parameter and returns a boolean value
-         * indicating whether the two iterators are equal.
-         *
-         * @param other
-         * @return true
-         * @return false
+         * The `operator==` function checks if the current iterator is equal to another iterator.
+         * 
+         * @param other `other` is a `RangeIterator` object that is being compared to the current
+         * iterator.
+         * 
+         * @return The `operator==` function returns a boolean value indicating whether the two
+         * iterators are equal.
          */
         constexpr auto operator==(const RangeIterator &other) const -> bool {
             return this->i == other.i;
         }
 
         /**
-         * @brief
-         *
-         * The code snippet you provided is defining the `operator*()` function for
-         * the `RangeIterator` struct. This function is used to dereference the
-         * iterator and return the value it points to.
-         *
-         * @return const_reference
+         * The `operator*()` function is used to dereference the iterator and return the value it
+         * points to.
+         * 
+         * @return The `operator*()` function is returning a `const_reference`, which is the value that
+         * the iterator points to.
          */
         CONSTEXPR14 auto operator*() const -> const_reference { return this->i; }
 
         /**
-         * @brief
-         *
-         * The code snippet you provided is defining the `operator*()` function for
-         * the `RangeIterator` struct. This function is used to dereference the
-         * iterator and return the value it points to.
-         *
-         * @return reference
+         * The `operator*()` function is used to dereference the iterator and return the value it
+         * points to.
+         * 
+         * @return The `operator*()` function is returning a reference to the value that the iterator
+         * points to.
          */
         CONSTEXPR14 auto operator*() -> reference { return this->i; }
 
@@ -127,9 +120,6 @@ namespace py {
         using iterator = RangeIterator<T>;
         using value_type = T;
         using key_type = T;
-
-        // static_assert(sizeof(value_type) >= 0, "make compiler happy");
-        // static_assert(sizeof(key_type) >= 0, "make compiler happy");
 
         T start;
         T stop;
