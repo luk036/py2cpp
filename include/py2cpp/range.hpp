@@ -31,10 +31,11 @@ namespace py {
         /**
          * @brief Not equal to
          *
-         * The `operator!=` function checks if the current iterator is not equal to another iterator.
-         * 
+         * The `operator!=` function checks if the current iterator is not equal to another
+         * iterator.
+         *
          * @param other `other` is a `RangeIterator` object that represents another iterator.
-         * 
+         *
          * @return The `operator!=` function returns a boolean value indicating whether the two
          * iterators are not equal.
          */
@@ -46,10 +47,10 @@ namespace py {
          * @brief Equal to operator
          *
          * The `operator==` function checks if the current iterator is equal to another iterator.
-         * 
+         *
          * @param other `other` is a `RangeIterator` object that is being compared to the current
          * iterator.
-         * 
+         *
          * @return The `operator==` function returns a boolean value indicating whether the two
          * iterators are equal.
          */
@@ -60,18 +61,18 @@ namespace py {
         /**
          * The `operator*()` function is used to dereference the iterator and return the value it
          * points to.
-         * 
-         * @return The `operator*()` function is returning a `const_reference`, which is the value that
-         * the iterator points to.
+         *
+         * @return The `operator*()` function is returning a `const_reference`, which is the value
+         * that the iterator points to.
          */
         CONSTEXPR14 auto operator*() const -> const_reference { return this->i; }
 
         /**
          * The `operator*()` function is used to dereference the iterator and return the value it
          * points to.
-         * 
-         * @return The `operator*()` function is returning a reference to the value that the iterator
-         * points to.
+         *
+         * @return The `operator*()` function is returning a reference to the value that the
+         * iterator points to.
          */
         CONSTEXPR14 auto operator*() -> reference { return this->i; }
 
