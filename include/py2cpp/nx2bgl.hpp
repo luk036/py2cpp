@@ -249,7 +249,7 @@ namespace py {
          * @brief
          *
          * @tparam Edge
-         * @param e
+         * @param[in] e
          * @return Vertex
          */
         template <typename Edge> auto source(const Edge &e) const -> Vertex {
