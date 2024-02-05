@@ -48,8 +48,8 @@ namespace py {
          *
          * The `operator==` function checks if the current iterator is equal to another iterator.
          *
-         * @param[in] other `other` is a `RangeIterator` object that is being compared to the current
-         * iterator.
+         * @param[in] other `other` is a `RangeIterator` object that is being compared to the
+         * current iterator.
          *
          * @return The `operator==` function returns a boolean value indicating whether the two
          * iterators are equal.
