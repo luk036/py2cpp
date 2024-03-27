@@ -50,21 +50,10 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="enumerate_8hpp.html">&lt;py2cpp/enumerate.hpp&gt;</a></div>
-          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <div class="m-doc-template">template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">T</a>&gt;</div>
           <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacepy_1_1detail.html">detail</a>::<wbr/></span>EnumerateIterator <span class="m-thin">struct</span>
         </h1>
         <p><a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a>.</p>
-        <table class="m-table m-fullwidth m-flat">
-          <thead>
-            <tr><th colspan="2">Template parameters</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="width: 1%">T</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -83,11 +72,11 @@
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
             <dt id="aa21218f3d29db33faeaf1289427e3c81">
-              using <a href="#aa21218f3d29db33faeaf1289427e3c81" class="m-doc-self">TIter</a> = decltype(std::begin(std::declval&lt;T&gt;()))
+              using <a href="#aa21218f3d29db33faeaf1289427e3c81" class="m-doc-self">TIter</a> = <a href="classpy_1_1_edge_view.html" class="m-doc">decltype</a>(std::begin(std::declval&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">T</a>&gt;()))
             </dt>
             <dd><span></span></dd>
             <dt id="ad2a3464c127f33ebff8e2879934270c0">
-              using <a href="#ad2a3464c127f33ebff8e2879934270c0" class="m-doc-self">iter_ref</a> = typename std::iterator_traits&lt;<a href="structpy_1_1detail_1_1_enumerate_iterator.html#aa21218f3d29db33faeaf1289427e3c81" class="m-doc">TIter</a>&gt;::reference
+              using <a href="#ad2a3464c127f33ebff8e2879934270c0" class="m-doc-self">iter_ref</a> = <a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> std::iterator_traits&lt;<a href="structpy_1_1detail_1_1_enumerate_iterator.html#aa21218f3d29db33faeaf1289427e3c81" class="m-doc">TIter</a>&gt;::reference
             </dt>
             <dd><span></span></dd>
           </dl>
@@ -96,7 +85,7 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1c02d0b759267a494ec6be2a8c9957b9" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap">const <a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a>&amp; other) const -&gt; bool -&gt; auto</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1c02d0b759267a494ec6be2a8c9957b9" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a>&amp; other) const -&gt; bool -&gt; <a href="classpy_1_1_edge_view.html" class="m-doc">auto</a></span>
             </dt>
             <dd>Not equal to.</dd>
             <dt>
@@ -104,7 +93,7 @@
             </dt>
             <dd>The <code><a href="structpy_1_1detail_1_1_enumerate_iterator.html#a73fe0e7047bcd0c975a534711b4e4cd0" class="m-doc">operator++()</a></code> function is an overloaded operator that increments the <code><a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a></code> object. It increases the value of the <code>i</code> member variable by 1 and advances the <code>iter</code> member variable to the next element in the iteration. It then returns a reference to the updated <code><a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a></code> object.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4573473cb3f1571ac57b75931ec22b3d" class="m-doc">operator*</a>(</span><span class="m-doc-wrap">) -&gt; std::pair&lt; size_t, iter_ref &gt; -&gt; auto</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4573473cb3f1571ac57b75931ec22b3d" class="m-doc">operator*</a>(</span><span class="m-doc-wrap">) -&gt; std::pair&lt; size_t, iter_ref &gt; -&gt; <a href="classpy_1_1_edge_view.html" class="m-doc">auto</a></span>
             </dt>
             <dd>The <code><a href="structpy_1_1detail_1_1_enumerate_iterator.html#a4573473cb3f1571ac57b75931ec22b3d" class="m-doc">operator*()</a></code> function is an overloaded operator that returns the current element in the iteration as a <code>std::pair&lt;size_t, iter_ref&gt;</code>. The <code>size_t</code> value represents the index of the element, and the <code>iter_ref</code> value represents a reference to the element itself. This allows you to access both the index and the element in a single expression when using the <code><a href="namespacepy.html#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc">enumerate()</a></code> function.</dd>
           </dl>
@@ -113,7 +102,7 @@
           <h2><a href="#pub-attribs">Public variables</a></h2>
           <dl class="m-doc">
             <dt id="a7ebc55d873676ca34e10b0fb0c2903ae">
-              size_t <a href="#a7ebc55d873676ca34e10b0fb0c2903ae" class="m-doc-self">i</a>
+              <a href="classpy_1_1_edge_view.html" class="m-doc">size_<wbr />t</a> <a href="#a7ebc55d873676ca34e10b0fb0c2903ae" class="m-doc-self">i</a>
             </dt>
             <dd><span></span></dd>
             <dt id="a9f38e5a48d4c05bfea5604d8de525931">
@@ -127,9 +116,9 @@
           <section class="m-doc-details" id="a1c02d0b759267a494ec6be2a8c9957b9"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;typename T&gt;
+                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">T</a> _1&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr />detail::<wbr />EnumerateIterator&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c02d0b759267a494ec6be2a8c9957b9" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a>&amp; other) const -&gt; bool</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classpy_1_1_edge_view.html" class="m-doc">auto</a> py::<wbr />detail::<wbr />EnumerateIterator&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1c02d0b759267a494ec6be2a8c9957b9" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a>&amp; other) const -&gt; bool</span></span>
             </h3>
             <p>Not equal to.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -138,7 +127,7 @@
               </thead>
               <tbody>
                 <tr>
-                  <td style="width: 1%">other</td>
+                  <td style="width: 1%">other&nbsp;<span class="m-label m-flat m-info">in</span></td>
                   <td></td>
                 </tr>
               </tbody>
@@ -154,9 +143,9 @@
           <section class="m-doc-details" id="a73fe0e7047bcd0c975a534711b4e4cd0"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;typename T&gt;
+                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">T</a> _1&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a>&amp; py::<wbr />detail::<wbr />EnumerateIterator&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73fe0e7047bcd0c975a534711b4e4cd0" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper"><a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a>&amp; py::<wbr />detail::<wbr />EnumerateIterator&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a73fe0e7047bcd0c975a534711b4e4cd0" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>The <code><a href="structpy_1_1detail_1_1_enumerate_iterator.html#a73fe0e7047bcd0c975a534711b4e4cd0" class="m-doc">operator++()</a></code> function is an overloaded operator that increments the <code><a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a></code> object. It increases the value of the <code>i</code> member variable by 1 and advances the <code>iter</code> member variable to the next element in the iteration. It then returns a reference to the updated <code><a href="structpy_1_1detail_1_1_enumerate_iterator.html" class="m-doc">EnumerateIterator</a></code> object.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -171,9 +160,9 @@
           <section class="m-doc-details" id="a4573473cb3f1571ac57b75931ec22b3d"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;typename T&gt;
+                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">T</a> _1&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr />detail::<wbr />EnumerateIterator&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4573473cb3f1571ac57b75931ec22b3d" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) -&gt; std::pair&lt; size_t, iter_ref &gt;</span></span>
+              <span class="m-doc-wrap-bumper"><a href="classpy_1_1_edge_view.html" class="m-doc">auto</a> py::<wbr />detail::<wbr />EnumerateIterator&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4573473cb3f1571ac57b75931ec22b3d" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) -&gt; std::pair&lt; size_t, iter_ref &gt;</span></span>
             </h3>
             <p>The <code><a href="structpy_1_1detail_1_1_enumerate_iterator.html#a4573473cb3f1571ac57b75931ec22b3d" class="m-doc">operator*()</a></code> function is an overloaded operator that returns the current element in the iteration as a <code>std::pair&lt;size_t, iter_ref&gt;</code>. The <code>size_t</code> value represents the index of the element, and the <code>iter_ref</code> value represents a reference to the element itself. This allows you to access both the index and the element in a single expression when using the <code><a href="namespacepy.html#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc">enumerate()</a></code> function.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -230,7 +219,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Py2Cpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.7 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Py2Cpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.10.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
