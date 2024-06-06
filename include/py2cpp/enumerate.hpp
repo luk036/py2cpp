@@ -133,8 +133,8 @@ namespace py {
      * @param[in] iterable
      * @return detail::EnumerateIterableWrapper<T>
      */
-    template <typename T> inline auto enumerate(T &iterable)
-        -> detail::EnumerateIterableWrapper<T> {
+    template <typename T>
+    inline auto enumerate(T &iterable) -> detail::EnumerateIterableWrapper<T> {
         return detail::EnumerateIterableWrapper<T>{iterable};
     }
 
@@ -152,8 +152,8 @@ namespace py {
      * @param[in] iterable
      * @return detail::EnumerateIterableWrapper<const T>
      */
-    template <typename T> inline auto const_enumerate(const T &iterable)
-        -> detail::EnumerateIterableWrapper<const T> {
+    template <typename T>
+    inline auto const_enumerate(const T &iterable) -> detail::EnumerateIterableWrapper<const T> {
         return detail::EnumerateIterableWrapper<const T>{iterable};
     }
 
