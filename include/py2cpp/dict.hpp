@@ -185,8 +185,8 @@ namespace py {
      * @return true
      * @return false
      */
-    template <typename Key, typename T> inline auto operator<(const Key &key, const dict<Key, T> &m)
-        -> bool {
+    template <typename Key, typename T>
+    inline auto operator<(const Key &key, const dict<Key, T> &m) -> bool {
         return m.contains(key);
     }
 
