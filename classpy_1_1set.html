@@ -50,9 +50,20 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="set_8hpp.html">&lt;py2cpp/set.hpp&gt;</a></div>
-          <div class="m-doc-template">template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a>&gt;</div>
+          <div class="m-doc-template">template&lt;typename Key&gt;</div>
           <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span>set <span class="m-thin">class</span>
         </h1>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">Key</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
         <nav class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -73,21 +84,21 @@
             </dt>
             <dd>Construct a new set object.</dd>
             <dt id="adf7fb7ca536eae30a80028543dfd14f2">
-              <div class="m-doc-template">template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">FwdIter</a>&gt;</div>
-              <span class="m-doc-wrap-bumper"><a href="#adf7fb7ca536eae30a80028543dfd14f2" class="m-doc-self">set</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="classpy_1_1_edge_view.html" class="m-doc">FwdIter</a>&amp; start,
-              <a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="classpy_1_1_edge_view.html" class="m-doc">FwdIter</a>&amp; stop)</span>
+              <div class="m-doc-template">template&lt;typename FwdIter&gt;</div>
+              <span class="m-doc-wrap-bumper"><a href="#adf7fb7ca536eae30a80028543dfd14f2" class="m-doc-self">set</a>(</span><span class="m-doc-wrap">const FwdIter&amp; start,
+              const FwdIter&amp; stop)</span>
             </dt>
             <dd>Construct a new set object.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a3f4a429b6c3dfbf3440d2b8dc6f309f6" class="m-doc">set</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">Key</a>&gt; init)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a3f4a429b6c3dfbf3440d2b8dc6f309f6" class="m-doc">set</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;Key&gt; init)</span>
             </dt>
             <dd>Construct a new set object.</dd>
             <dt id="adcbb83795453694d79f11fed2529a8c1">
-              <span class="m-doc-wrap-bumper"><a href="#adcbb83795453694d79f11fed2529a8c1" class="m-doc-self">set</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1set.html" class="m-doc">set</a>&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">Key</a>&gt;&amp;&amp;) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-success">noexcept</span></span>
+              <span class="m-doc-wrap-bumper"><a href="#adcbb83795453694d79f11fed2529a8c1" class="m-doc-self">set</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1set.html" class="m-doc">set</a>&lt;Key&gt;&amp;&amp;) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>Move Constructor (default)</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a799076059574f20dac7e8bd7c57561d2" class="m-doc">set</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="classpy_1_1set.html" class="m-doc">set</a>&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">Key</a>&gt;&amp;) <span class="m-label m-flat m-info">defaulted</span></span>
+              <span class="m-doc-wrap-bumper"><a href="#a799076059574f20dac7e8bd7c57561d2" class="m-doc">set</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1set.html" class="m-doc">set</a>&lt;Key&gt;&amp;) <span class="m-label m-flat m-info">defaulted</span></span>
             </dt>
             <dd>Copy Constructor (deleted)</dd>
           </dl>
@@ -96,19 +107,19 @@
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6c77097b7520ceeda3f308c2a42e2bf1" class="m-doc">contains</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a>&amp; key) const -&gt; bool -&gt; <a href="classpy_1_1_edge_view.html" class="m-doc">auto</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6c77097b7520ceeda3f308c2a42e2bf1" class="m-doc">contains</a>(</span><span class="m-doc-wrap">const Key&amp; key) const -&gt; bool -&gt; auto</span>
             </dt>
             <dd></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac550695b622cd725a4e4820abbea68cc" class="m-doc">copy</a>(</span><span class="m-doc-wrap">) const -&gt; set -&gt; <a href="classpy_1_1_edge_view.html" class="m-doc">auto</a></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac550695b622cd725a4e4820abbea68cc" class="m-doc">copy</a>(</span><span class="m-doc-wrap">) const -&gt; set -&gt; auto</span>
             </dt>
             <dd></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a596e11846e8791e7e6d9e4b28d2954e3" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="classpy_1_1set.html" class="m-doc">set</a>&amp;) -&gt; set &amp; -&gt; <a href="classpy_1_1_edge_view.html" class="m-doc">auto</a> <span class="m-label m-flat m-danger">deleted</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a596e11846e8791e7e6d9e4b28d2954e3" class="m-doc">operator=</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1set.html" class="m-doc">set</a>&amp;) -&gt; set &amp; -&gt; auto <span class="m-label m-flat m-danger">deleted</span></span>
             </dt>
             <dd></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a1a569a41b03f93ba1e4d189b75a341f4" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1set.html" class="m-doc">set</a>&amp;&amp;) noexcept -&gt; set &amp; -&gt; <a href="classpy_1_1_edge_view.html" class="m-doc">auto</a> <span class="m-label m-flat m-info">defaulted</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1a569a41b03f93ba1e4d189b75a341f4" class="m-doc">operator=</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1set.html" class="m-doc">set</a>&amp;&amp;) noexcept -&gt; set &amp; -&gt; auto <span class="m-label m-flat m-info">defaulted</span></span>
             </dt>
             <dd></dd>
           </dl>
@@ -118,9 +129,9 @@
           <section class="m-doc-details" id="a3f4a429b6c3dfbf3440d2b8dc6f309f6"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a> _1&gt;
+                template&lt;typename Key&gt;
               </div>
-              <span class="m-doc-wrap-bumper"> py::<wbr />set&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f4a429b6c3dfbf3440d2b8dc6f309f6" class="m-doc-self">set</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">Key</a>&gt; init)</span></span>
+              <span class="m-doc-wrap-bumper"> py::<wbr />set&lt;Key&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3f4a429b6c3dfbf3440d2b8dc6f309f6" class="m-doc-self">set</a>(</span><span class="m-doc-wrap">std::initializer_list&lt;Key&gt; init)</span></span>
             </h3>
             <p>Construct a new set object.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -138,9 +149,9 @@
           <section class="m-doc-details" id="a799076059574f20dac7e8bd7c57561d2"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a> _1&gt;
+                template&lt;typename Key&gt;
               </div>
-              <span class="m-doc-wrap-bumper"> py::<wbr />set&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a799076059574f20dac7e8bd7c57561d2" class="m-doc-self">set</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="classpy_1_1set.html" class="m-doc">set</a>&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">Key</a>&gt;&amp;) <span class="m-label m-info">defaulted</span></span></span>
+              <span class="m-doc-wrap-bumper"> py::<wbr />set&lt;Key&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a799076059574f20dac7e8bd7c57561d2" class="m-doc-self">set</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1set.html" class="m-doc">set</a>&lt;Key&gt;&amp;) <span class="m-label m-info">defaulted</span></span></span>
             </h3>
             <p>Copy Constructor (deleted)</p>
 <p>Copy through explicitly the public <a href="classpy_1_1set.html#ac550695b622cd725a4e4820abbea68cc" class="m-doc">copy()</a> function!!!</p>
@@ -148,9 +159,9 @@
           <section class="m-doc-details" id="a6c77097b7520ceeda3f308c2a42e2bf1"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a> _1&gt;
+                template&lt;typename Key&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="classpy_1_1_edge_view.html" class="m-doc">auto</a> py::<wbr />set&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c77097b7520ceeda3f308c2a42e2bf1" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a>&amp; key) const -&gt; bool</span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />set&lt;Key&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6c77097b7520ceeda3f308c2a42e2bf1" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">const Key&amp; key) const -&gt; bool</span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>
@@ -173,9 +184,9 @@
           <section class="m-doc-details" id="ac550695b622cd725a4e4820abbea68cc"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a> _1&gt;
+                template&lt;typename Key&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="classpy_1_1_edge_view.html" class="m-doc">auto</a> py::<wbr />set&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac550695b622cd725a4e4820abbea68cc" class="m-doc-self">copy</a>(</span><span class="m-doc-wrap">) const -&gt; set</span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />set&lt;Key&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac550695b622cd725a4e4820abbea68cc" class="m-doc-self">copy</a>(</span><span class="m-doc-wrap">) const -&gt; set</span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
@@ -189,9 +200,9 @@
           <section class="m-doc-details" id="a596e11846e8791e7e6d9e4b28d2954e3"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a> _1&gt;
+                template&lt;typename Key&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="classpy_1_1_edge_view.html" class="m-doc">auto</a> py::<wbr />set&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a596e11846e8791e7e6d9e4b28d2954e3" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1_edge_view.html" class="m-doc">const</a> <a href="classpy_1_1set.html" class="m-doc">set</a>&amp;) -&gt; set &amp; <span class="m-label m-danger">deleted</span></span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />set&lt;Key&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a596e11846e8791e7e6d9e4b28d2954e3" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1set.html" class="m-doc">set</a>&amp;) -&gt; set &amp; <span class="m-label m-danger">deleted</span></span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
@@ -205,9 +216,9 @@
           <section class="m-doc-details" id="a1a569a41b03f93ba1e4d189b75a341f4"><div>
             <h3>
               <div class="m-doc-template">
-                template&lt;<a href="classpy_1_1_edge_view.html" class="m-doc">typename</a> <a href="classpy_1_1_edge_view.html" class="m-doc">Key</a> _1&gt;
+                template&lt;typename Key&gt;
               </div>
-              <span class="m-doc-wrap-bumper"><a href="classpy_1_1_edge_view.html" class="m-doc">auto</a> py::<wbr />set&lt;_1&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a569a41b03f93ba1e4d189b75a341f4" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1set.html" class="m-doc">set</a>&amp;&amp;) noexcept -&gt; set &amp; <span class="m-label m-info">defaulted</span></span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />set&lt;Key&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1a569a41b03f93ba1e4d189b75a341f4" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classpy_1_1set.html" class="m-doc">set</a>&amp;&amp;) noexcept -&gt; set &amp; <span class="m-label m-info">defaulted</span></span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
@@ -263,7 +274,7 @@
   <div class="m-container">
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
-        <p>Py2Cpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.10.0 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+        <p>Py2Cpp. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
       </div>
     </div>
   </div>
