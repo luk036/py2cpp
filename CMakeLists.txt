@@ -9,7 +9,7 @@ option(INSTALL_ONLY "Enable for installation only" OFF)
 # Note: update this to your new project's name and version
 project(
   Py2Cpp
-  VERSION 1.4.10
+  VERSION 1.4.11
   LANGUAGES CXX
 )
 
