@@ -1,8 +1,9 @@
-set_languages("c++14")
+set_languages("c++17")
 
 add_rules("mode.debug", "mode.release", "mode.coverage")
 add_requires("doctest", {alias = "doctest"})
 add_requires("fmt", {alias = "fmt"})
+add_requires("boost", {alias = "boost", configs = {cmake = false}})
 -- add_requires("benchmark", {alias = "benchmark"})
 
 if is_mode("coverage") then
@@ -21,7 +22,8 @@ target("test_py2cpp")
     set_kind("binary")
     add_includedirs("include", {public = true})
     add_files("test/source/*.cpp")
-    add_packages("doctest", "fmt")
+    add_files("test/boost/*.cpp")
+    add_packages("doctest", "fmt", "boost")
 
 -- If you want to known more usage about xmake, please see https://xmake.io
 --
