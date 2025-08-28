@@ -1,4 +1,5 @@
 #include <doctest/doctest.h>
+#include <ostream>
 #include <py2cpp/fractions.hpp>
 
 using namespace fun;
