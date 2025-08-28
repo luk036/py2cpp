@@ -1,6 +1,7 @@
 #include <doctest/doctest.h>
-#include <py2cpp/nx2bgl.hpp>
+
 #include <boost/graph/adjacency_list.hpp>
+#include <py2cpp/nx2bgl.hpp>
 
 TEST_CASE("Test GrAdaptor") {
     using Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS>;
