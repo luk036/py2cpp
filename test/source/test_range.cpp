@@ -71,8 +71,7 @@ TEST_CASE("Test Range (pointer)") {
     CHECK(R[1] == &A[0] + 1);
 
     auto count = 0;
-    for (auto _ : R) {
-        static_assert(sizeof _ >= 0, "make comipler happy");
+    for ([[maybe_unused]] auto _ : R) {
         ++count;
     }
     CHECK(count == R.size());

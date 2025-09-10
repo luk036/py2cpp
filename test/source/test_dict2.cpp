@@ -1,4 +1,5 @@
 #include <doctest/doctest.h>
+
 #include <py2cpp/dict.hpp>
 
 TEST_CASE("Test py::dict methods") {
@@ -28,9 +29,7 @@ TEST_CASE("Test py::dict methods") {
         CHECK(S2.size() == 4);
     }
 
-    SUBCASE("len") {
-        CHECK(py::len(S) == 3);
-    }
+    SUBCASE("len") { CHECK(py::len(S) == 3); }
 
     SUBCASE("operator<") {
         CHECK(0.1 < S);
