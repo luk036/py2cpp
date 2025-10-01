@@ -1,5 +1,3 @@
-set_languages("c++17")
-
 add_rules("mode.debug", "mode.release", "mode.coverage")
 add_requires("doctest", {alias = "doctest"})
 add_requires("fmt", {alias = "fmt"})
@@ -11,7 +9,7 @@ if is_mode("coverage") then
 end
 
 if is_plat("linux") then
-    -- set_warnings("all", "error")
+    set_warnings("all", "error")
     add_cxflags("-Wconversion", {force = true})
     -- add_cxflags("-nostdinc++", {force = true})
     -- add_sysincludedirs(os.getenv("PREFIX") .. "/include/c++/v1", {public = true})
@@ -20,13 +18,18 @@ elseif is_plat("windows") then
     add_cxflags("/EHsc /W4 /WX /wd4819 /wd4996", {force = true})
 end
 
+set_optimize("fastest")
 
 target("test_py2cpp")
+    set_languages("c++17")
     set_kind("binary")
     add_includedirs("include", {public = true})
     add_files("test/source/*.cpp")
+    add_packages("doctest", "fmt")
     add_files("test/boost/*.cpp")
-    add_packages("doctest", "fmt", "boost")
+    add_packages("boost")
+    add_tests("default")
+
 
 -- If you want to known more usage about xmake, please see https://xmake.io
 --

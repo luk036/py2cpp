@@ -236,7 +236,9 @@ namespace py {
          * @param[in] u
          * @param[in] v
          */
-        auto add_edge(int u, int v) { return boost::add_edge(u, v, *this); }
+        auto add_edge(int u, int v) {
+            return boost::add_edge(static_cast<Vertex>(u), static_cast<Vertex>(v), *this);
+        }
 
         /**
          * @brief
