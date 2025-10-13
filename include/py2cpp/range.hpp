@@ -192,7 +192,7 @@ namespace py {
          * @return true
          * @return false
          */
-        constexpr auto contains(T n) const -> bool { return !(n < this->start) && n < this->stop; }
+        constexpr auto contains(T n) const noexcept -> bool { return !(n < this->start) && n < this->stop; }
     };
 
     /**

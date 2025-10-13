@@ -18,7 +18,7 @@ namespace py {
     template <typename Iter> struct key_iterator : Iter {
         explicit key_iterator(Iter it) : Iter(it) {}
         auto operator*() const -> const auto & { return Iter::operator*().first; }
-        auto operator*() -> auto & { return Iter::operator*().first; }
+        auto operator*() -> const auto & { return Iter::operator*().first; }
         auto operator++() -> key_iterator & {
             Iter::operator++();
             return *this;
@@ -73,11 +73,11 @@ namespace py {
          * @param[in] default_value
          * @return T
          */
-        auto get(const Key &key, const T &default_value) -> T {
+        auto get(const Key &key, const T &default_value) const -> T {
             if (!contains(key)) {
                 return default_value;
             }
-            return (*this)[key];
+            return this->at(key);
         }
 
         /**
@@ -185,7 +185,7 @@ namespace py {
      * @return true
      * @return false
      */
-    template <typename Key, typename T> inline auto operator<(const Key &key, const dict<Key, T> &m)
+    template <typename Key, typename T> inline auto operator<(const Key &key, const dict<Key, T> &m) noexcept
         -> bool {
         return m.contains(key);
     }
@@ -198,7 +198,7 @@ namespace py {
      * @param[in] m
      * @return size_t
      */
-    template <typename Key, typename T> inline auto len(const dict<Key, T> &m) -> size_t {
+    template <typename Key, typename T> inline auto len(const dict<Key, T> &m) noexcept -> size_t {
         return m.size();
     }
 

@@ -112,7 +112,7 @@ namespace py {
          *   >>> a.contains(2)
          *   true
          */
-        bool contains(const key_type &key) const { return this->_rng.contains(key); }
+        bool contains(const key_type &key) const noexcept { return this->_rng.contains(key); }
 
         /**
          * @brief This function returns the length of the `rng` attribute of the object.
@@ -179,6 +179,23 @@ namespace py {
          *   (3, 6)
          */
         auto items() { return py::enumerate(this->_lst); }
+
+        /**
+         * @brief The function returns an enumeration of the items in the list.
+         *
+         * @return: The `items` method is returning an enumeration of the `lst` attribute.
+         *
+         * Examples:
+         *   >>> const auto a = Lict({1, 4, 3, 6});
+         *   >>> for (const auto& [key, value] : a.items()) {
+         *   ...     fmt::print(key, value);
+         *   ... }
+         *   (0, 1)
+         *   (1, 4)
+         *   (2, 3)
+         *   (3, 6)
+         */
+        auto items() const { return py::const_enumerate(this->_lst); }
     };
 
 }  // namespace py

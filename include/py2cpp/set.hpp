@@ -105,7 +105,7 @@ namespace py {
      * @param[in] m
      * @return size_t
      */
-    template <typename Key> inline auto len(const set<Key> &m) -> size_t { return m.size(); }
+    template <typename Key> inline auto len(const set<Key> &m) noexcept -> size_t { return m.size(); }
 
     /**
      * @brief Template Deduction Guide
