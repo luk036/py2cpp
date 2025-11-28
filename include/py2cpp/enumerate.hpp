@@ -139,7 +139,7 @@ namespace py {
     }
 
     /**
-     * @brief const_enumerate(const T &iterable)
+     * @brief enumerate(const T &iterable)
      *
      * The `const_enumerate(const T &iterable)` function is a utility function that
      * allows you to iterate over a constant container or range and also get the
@@ -152,9 +152,16 @@ namespace py {
      * @param[in] iterable
      * @return detail::EnumerateIterableWrapper<const T>
      */
-    template <typename T> inline auto const_enumerate(const T &iterable)
+    template <typename T> inline auto enumerate(const T &iterable)
         -> detail::EnumerateIterableWrapper<const T> {
         return detail::EnumerateIterableWrapper<const T>{iterable};
     }
 
+    /**
+     * @brief (deprecated) const_enumerate(const T &iterable)
+     */
+    template <typename T> inline auto const_enumerate(const T &iterable)
+        -> detail::EnumerateIterableWrapper<const T> {
+        return detail::EnumerateIterableWrapper<const T>{iterable};
+    }
 }  // namespace py

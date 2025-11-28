@@ -85,6 +85,24 @@ namespace py {
          *
          * @return auto
          */
+        auto begin() -> key_iterator<decltype(Base::begin())> {
+            return key_iterator<decltype(Base::begin())>{Base::begin()};
+        }
+
+        /**
+         * @brief
+         *
+         * @return auto
+         */
+        auto end() -> key_iterator<decltype(Base::end())> {
+            return key_iterator<decltype(Base::end())>{Base::end()};
+        }
+
+        /**
+         * @brief
+         *
+         * @return auto
+         */
         auto begin() const -> key_iterator<decltype(Base::begin())> {
             return key_iterator<decltype(Base::begin())>{Base::begin()};
         }

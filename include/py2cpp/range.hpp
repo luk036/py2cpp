@@ -18,11 +18,11 @@ namespace py {
      * @tparam T
      */
     template <typename T> struct RangeIterator {
-        using iterator_category = std::output_iterator_tag;
+        using iterator_category = std::input_iterator_tag;
         using difference_type = std::ptrdiff_t;
         using value_type = T;
-        using pointer = T *;                // or also value_type*
-        using reference = T &;              // or also value_type&
+        using pointer = const T *;          // or also value_type*
+        using reference = const T &;        // or also value_type&
         using const_reference = const T &;  // or also value_type&
         using key_type = T;                 // luk:
 
@@ -66,15 +66,6 @@ namespace py {
          * that the iterator points to.
          */
         CONSTEXPR14 auto operator*() const -> const_reference { return this->i; }
-
-        /**
-         * The `operator*()` function is used to dereference the iterator and return the value it
-         * points to.
-         *
-         * @return The `operator*()` function is returning a reference to the value that the
-         * iterator points to.
-         */
-        CONSTEXPR14 auto operator*() -> reference { return this->i; }
 
         /**
          * @brief
