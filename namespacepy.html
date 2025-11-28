@@ -132,13 +132,13 @@
           <dl class="m-doc">
             <dt>
               <div class="m-doc-template">template&lt;typename Key, typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ac38449dd1c21d2fbb329780a0f1759f0" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap">const Key&amp; key,
-              const <a href="classpy_1_1dict.html" class="m-doc">dict</a>&lt;Key, T&gt;&amp; m) -&gt; bool -&gt; auto</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1194e70f97599a02ddab7c9b27297041" class="m-doc">operator&lt;</a>(</span><span class="m-doc-wrap">const Key&amp; key,
+              const <a href="classpy_1_1dict.html" class="m-doc">dict</a>&lt;Key, T&gt;&amp; m) noexcept -&gt; bool -&gt; auto</span>
             </dt>
             <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Key, typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a39bbe6395c8348c396be131184f00130" class="m-doc">len</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1dict.html" class="m-doc">dict</a>&lt;Key, T&gt;&amp; m) -&gt; size_t -&gt; auto</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#abe7f4c044003204f02799908474037f8" class="m-doc">len</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1dict.html" class="m-doc">dict</a>&lt;Key, T&gt;&amp; m) noexcept -&gt; size_t -&gt; auto</span>
             </dt>
             <dd></dd>
             <dt>
@@ -148,9 +148,14 @@
             <dd><a href="namespacepy.html#ae52b5f7656b41276a9d47bf0cc63dc9c" class="m-doc">enumerate(T &amp;iterable)</a></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a01f0eaf3e9d65183bd2b16671cd7b19c" class="m-doc">enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt; -&gt; auto</span>
+            </dt>
+            <dd><a href="namespacepy.html#a01f0eaf3e9d65183bd2b16671cd7b19c" class="m-doc">enumerate(const T &amp;iterable)</a></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt; -&gt; auto</span>
             </dt>
-            <dd><a href="namespacepy.html#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_<wbr />enumerate(const T &amp;iterable)</a></dd>
+            <dd>(deprecated) <a href="namespacepy.html#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_<wbr />enumerate(const T &amp;iterable)</a></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#aa3bac90078811ece454df0f02e793c1a" class="m-doc">range</a>(</span><span class="m-doc-wrap">T start,
@@ -170,21 +175,21 @@
             <dd></dd>
             <dt>
               <div class="m-doc-template">template&lt;typename Key&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4343d3551056790cfb5040f71cdf0e55" class="m-doc">len</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1set.html" class="m-doc">set</a>&lt;Key&gt;&amp; m) -&gt; size_t -&gt; auto</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a58329053dc7361a7f8b6bf4c5e0803e4" class="m-doc">len</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1set.html" class="m-doc">set</a>&lt;Key&gt;&amp; m) noexcept -&gt; size_t -&gt; auto</span>
             </dt>
             <dd></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ac38449dd1c21d2fbb329780a0f1759f0"><div>
+          <section class="m-doc-details" id="a1194e70f97599a02ddab7c9b27297041"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="dict_8hpp.html">&lt;py2cpp/dict.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename Key, typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac38449dd1c21d2fbb329780a0f1759f0" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap">const Key&amp; key,
-              const <a href="classpy_1_1dict.html" class="m-doc">dict</a>&lt;Key, T&gt;&amp; m) -&gt; bool</span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1194e70f97599a02ddab7c9b27297041" class="m-doc-self">operator&lt;</a>(</span><span class="m-doc-wrap">const Key&amp; key,
+              const <a href="classpy_1_1dict.html" class="m-doc">dict</a>&lt;Key, T&gt;&amp; m) noexcept -&gt; bool</span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>
@@ -221,13 +226,13 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a39bbe6395c8348c396be131184f00130"><div>
+          <section class="m-doc-details" id="abe7f4c044003204f02799908474037f8"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="dict_8hpp.html">&lt;py2cpp/dict.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename Key, typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39bbe6395c8348c396be131184f00130" class="m-doc-self">len</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1dict.html" class="m-doc">dict</a>&lt;Key, T&gt;&amp; m) -&gt; size_t</span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abe7f4c044003204f02799908474037f8" class="m-doc-self">len</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1dict.html" class="m-doc">dict</a>&lt;Key, T&gt;&amp; m) noexcept -&gt; size_t</span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>
@@ -297,15 +302,15 @@
             </table>
 <p>The <code>enumerate(T &amp;iterable)</code> function is a utility function that allows you to iterate over a container or range and also get the index of each element in the iteration. It returns an instance of the <code><a href="structpy_1_1detail_1_1EnumerateIterableWrapper.html" class="m-doc">detail::<wbr />EnumerateIterableWrapper</a>&lt;T&gt;</code> class, which provides a range-based for loop compatible interface.</p>
           </div></section>
-          <section class="m-doc-details" id="aca0d40275ed3e1783ca1a9c0a2ea8cc5"><div>
+          <section class="m-doc-details" id="a01f0eaf3e9d65183bd2b16671cd7b19c"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="enumerate_8hpp.html">&lt;py2cpp/enumerate.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc-self">const_enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt;</span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a01f0eaf3e9d65183bd2b16671cd7b19c" class="m-doc-self">enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt;</span></span>
             </h3>
-            <p><a href="namespacepy.html#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_<wbr />enumerate(const T &amp;iterable)</a></p>
+            <p><a href="namespacepy.html#a01f0eaf3e9d65183bd2b16671cd7b19c" class="m-doc">enumerate(const T &amp;iterable)</a></p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -333,6 +338,16 @@
               </tfoot>
             </table>
 <p>The <code>const_enumerate(const T &amp;iterable)</code> function is a utility function that allows you to iterate over a constant container or range and also get the index of each element in the iteration. It returns an instance of the <code><a href="structpy_1_1detail_1_1EnumerateIterableWrapper.html" class="m-doc">detail::<wbr />EnumerateIterableWrapper</a>&lt;const T&gt;</code> class, which provides a range-based for loop compatible interface. This function is useful when you want to iterate over a constant container without modifying its elements.</p>
+          </div></section>
+          <section class="m-doc-details" id="aca0d40275ed3e1783ca1a9c0a2ea8cc5"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="enumerate_8hpp.html">&lt;py2cpp/enumerate.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc-self">const_enumerate</a>(</span><span class="m-doc-wrap">const T&amp; iterable) -&gt; detail::EnumerateIterableWrapper&lt; const T &gt;</span></span>
+            </h3>
+            <p>(deprecated) <a href="namespacepy.html#aca0d40275ed3e1783ca1a9c0a2ea8cc5" class="m-doc">const_<wbr />enumerate(const T &amp;iterable)</a></p>
           </div></section>
           <section class="m-doc-details" id="aa3bac90078811ece454df0f02e793c1a"><div>
             <h3>
@@ -453,13 +468,13 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a4343d3551056790cfb5040f71cdf0e55"><div>
+          <section class="m-doc-details" id="a58329053dc7361a7f8b6bf4c5e0803e4"><div>
             <h3>
               <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="set_8hpp.html">&lt;py2cpp/set.hpp&gt;</a></div>
               <div class="m-doc-template">
                 template&lt;typename Key&gt;
               </div>
-              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4343d3551056790cfb5040f71cdf0e55" class="m-doc-self">len</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1set.html" class="m-doc">set</a>&lt;Key&gt;&amp; m) -&gt; size_t</span></span>
+              <span class="m-doc-wrap-bumper">auto py::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58329053dc7361a7f8b6bf4c5e0803e4" class="m-doc-self">len</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1set.html" class="m-doc">set</a>&lt;Key&gt;&amp; m) noexcept -&gt; size_t</span></span>
             </h3>
             <table class="m-table m-fullwidth m-flat">
               <thead>

@@ -133,7 +133,7 @@
             </dt>
             <dd></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a2734efe52a11c1462e09ec770a1b0766" class="m-doc">contains</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1Lict.html#ad25571c852e951339b14e42723ccf840" class="m-doc">key_<wbr />type</a>&amp; key) const -&gt; bool</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a39dea4980c98b790a87ffde26195a4ce" class="m-doc">contains</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1Lict.html#ad25571c852e951339b14e42723ccf840" class="m-doc">key_<wbr />type</a>&amp; key) const -&gt; bool <span class="m-label m-flat m-success">noexcept</span></span>
             </dt>
             <dd>The <code>contains</code> function checks if a given value is present in the <code>rng</code> attribute of the object.</dd>
             <dt>
@@ -150,6 +150,10 @@
             <dd>The <code>values</code> function returns an iterator that yields the elements of the <code>lst</code> attribute of the <code><a href="classpy_1_1Lict.html" class="m-doc">Lict</a></code> object.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a541ba5ef4fc12fa71f40c79d588e20ba" class="m-doc">items</a>(</span><span class="m-doc-wrap">) -&gt; auto</span>
+            </dt>
+            <dd>The function returns an enumeration of the items in the list.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b1d2fdad7b6a444fabd298ce7a188a8" class="m-doc">items</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
             <dd>The function returns an enumeration of the items in the list.</dd>
           </dl>
@@ -283,12 +287,12 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a2734efe52a11c1462e09ec770a1b0766"><div>
+          <section class="m-doc-details" id="a39dea4980c98b790a87ffde26195a4ce"><div>
             <h3>
               <div class="m-doc-template">
                 template&lt;typename T&gt;
               </div>
-              <span class="m-doc-wrap-bumper">bool py::<wbr />Lict&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2734efe52a11c1462e09ec770a1b0766" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1Lict.html#ad25571c852e951339b14e42723ccf840" class="m-doc">key_<wbr />type</a>&amp; key) const</span></span>
+              <span class="m-doc-wrap-bumper">bool py::<wbr />Lict&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a39dea4980c98b790a87ffde26195a4ce" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">const <a href="classpy_1_1Lict.html#ad25571c852e951339b14e42723ccf840" class="m-doc">key_<wbr />type</a>&amp; key) const <span class="m-label m-success">noexcept</span></span></span>
             </h3>
             <p>The <code>contains</code> function checks if a given value is present in the <code>rng</code> attribute of the object.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -381,6 +385,24 @@
               </tfoot>
             </table>
 <p>Examples:</p><blockquote><blockquote><blockquote><p>auto a = <a href="classpy_1_1Lict.html" class="m-doc">Lict</a>({1, 4, 3, 6}); for (auto&amp; [key, value] : a.items()) { ... fmt::print(key, value); ... } (0, 1) (1, 4) (2, 3) (3, 6)</p></blockquote></blockquote></blockquote>
+          </div></section>
+          <section class="m-doc-details" id="a5b1d2fdad7b6a444fabd298ce7a188a8"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />Lict&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5b1d2fdad7b6a444fabd298ce7a188a8" class="m-doc-self">items</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>The function returns an enumeration of the items in the list.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>: The <code>items</code> method is returning an enumeration of the <code>lst</code> attribute.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Examples:</p><blockquote><blockquote><blockquote><p>const auto a = <a href="classpy_1_1Lict.html" class="m-doc">Lict</a>({1, 4, 3, 6}); for (const auto&amp; [key, value] : a.items()) { ... fmt::print(key, value); ... } (0, 1) (1, 4) (2, 3) (3, 6)</p></blockquote></blockquote></blockquote>
           </div></section>
         </section>
       </div>

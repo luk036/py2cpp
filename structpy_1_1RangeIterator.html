@@ -80,8 +80,8 @@
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
-            <dt id="a9c79c7650f9fa10713a670003bbc9465">
-              using <a href="#a9c79c7650f9fa10713a670003bbc9465" class="m-doc-self">iterator_category</a> = std::output_iterator_tag
+            <dt id="a171085c208fce508bcb097acd3452d49">
+              using <a href="#a171085c208fce508bcb097acd3452d49" class="m-doc-self">iterator_category</a> = std::input_iterator_tag
             </dt>
             <dd><span></span></dd>
             <dt id="aa9820409c7a6724a580484573b157863">
@@ -92,12 +92,12 @@
               using <a href="#a3413a7da8d569c1ab80264e34b5f85fa" class="m-doc-self">value_type</a> = T
             </dt>
             <dd><span></span></dd>
-            <dt id="a6fc3cd82c1700619c4ebda09af294825">
-              using <a href="#a6fc3cd82c1700619c4ebda09af294825" class="m-doc-self">pointer</a> = T*
+            <dt id="a7977e135550959245e7803a60afc92a7">
+              using <a href="#a7977e135550959245e7803a60afc92a7" class="m-doc-self">pointer</a> = const T*
             </dt>
             <dd><span></span></dd>
-            <dt id="a238e09c4cf4ec7cfc70999c3dbd028c9">
-              using <a href="#a238e09c4cf4ec7cfc70999c3dbd028c9" class="m-doc-self">reference</a> = T&amp;
+            <dt id="a8c9aa3df99846c546153ceb386915b58">
+              using <a href="#a8c9aa3df99846c546153ceb386915b58" class="m-doc-self">reference</a> = const T&amp;
             </dt>
             <dd><span></span></dd>
             <dt id="a9f2fd52e4bfd209cb534b486e8ffc0f3">
@@ -123,10 +123,6 @@
             <dd>Equal to operator.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3b8e3f0550d03435b200e6b335ba3a4b" class="m-doc">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; const_reference -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
-            </dt>
-            <dd></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5e4262859bdec1e62db9d8b124e7543e" class="m-doc">operator*</a>(</span><span class="m-doc-wrap">) -&gt; reference -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
             <dd></dd>
             <dt>
@@ -215,28 +211,11 @@
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>The <code><a href="structpy_1_1RangeIterator.html#a5e4262859bdec1e62db9d8b124e7543e" class="m-doc">operator*()</a></code> function is returning a <code>const_reference</code>, which is the value that the iterator points to.</td>
+                  <td>The <code><a href="structpy_1_1RangeIterator.html#a3b8e3f0550d03435b200e6b335ba3a4b" class="m-doc">operator*()</a></code> function is returning a <code>const_reference</code>, which is the value that the iterator points to.</td>
                 </tr>
               </tfoot>
             </table>
-<p>The <code><a href="structpy_1_1RangeIterator.html#a5e4262859bdec1e62db9d8b124e7543e" class="m-doc">operator*()</a></code> function is used to dereference the iterator and return the value it points to.</p>
-          </div></section>
-          <section class="m-doc-details" id="a5e4262859bdec1e62db9d8b124e7543e"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;typename T&gt;
-              </div>
-              <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto py::<wbr />RangeIterator&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5e4262859bdec1e62db9d8b124e7543e" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) -&gt; reference</span></span>
-            </h3>
-            <table class="m-table m-fullwidth m-flat">
-              <tfoot>
-                <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>The <code><a href="structpy_1_1RangeIterator.html#a5e4262859bdec1e62db9d8b124e7543e" class="m-doc">operator*()</a></code> function is returning a reference to the value that the iterator points to.</td>
-                </tr>
-              </tfoot>
-            </table>
-<p>The <code><a href="structpy_1_1RangeIterator.html#a5e4262859bdec1e62db9d8b124e7543e" class="m-doc">operator*()</a></code> function is used to dereference the iterator and return the value it points to.</p>
+<p>The <code><a href="structpy_1_1RangeIterator.html#a3b8e3f0550d03435b200e6b335ba3a4b" class="m-doc">operator*()</a></code> function is used to dereference the iterator and return the value it points to.</p>
           </div></section>
           <section class="m-doc-details" id="aab2fbf60f5afc02e9ebf465cf8c8814c"><div>
             <h3>
