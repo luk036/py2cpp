@@ -10,13 +10,12 @@ namespace py {
     namespace detail {
 
         /**
-         * @brief EnumerateIterator
+         * @brief Iterator for enumerated access to container elements
          *
-         * The code defines a struct called `EnumerateIterator` that is used to iterate
-         * over a container or range and provide the index of each element in the
-         * iteration.
+         * Provides iterator functionality that yields index-value pairs when
+         * iterating over containers, similar to Python's enumerate() function.
          *
-         * @tparam T
+         * @tparam T The container or range type to enumerate
          */
         template <typename T> struct EnumerateIterator {
             typedef decltype(std::begin(std::declval<T>())) TIter;
@@ -26,33 +25,23 @@ namespace py {
             TIter iter;
 
             /**
-             * @brief Not equal to
+             * @brief Check inequality between iterators
              *
-             * The `operator!=` function is an overloaded operator that checks for
-             * inequality between two `EnumerateIterator` objects. It compares the
-             * `iter` member of the current object with the `iter` member of the `other`
-             * object. If they are not equal, it returns `true`, indicating that the two
-             * iterators are not pointing to the same element. Otherwise, it returns
-             * `false`, indicating that the two iterators are equal.
+             * Compares the underlying iterators to determine if they point to different elements.
              *
-             * @param[in] other
-             * @return true
-             * @return false
+             * @param[in] other The other iterator to compare with
+             * @return true if the iterators are not equal, false otherwise
              */
             auto operator!=(const EnumerateIterator &other) const -> bool {
                 return iter != other.iter;
             }
 
             /**
-             * @brief
+             * @brief Pre-increment operator
              *
-             * The `operator++()` function is an overloaded operator that increments the
-             * `EnumerateIterator` object. It increases the value of the `i` member
-             * variable by 1 and advances the `iter` member variable to the next element
-             * in the iteration. It then returns a reference to the updated
-             * `EnumerateIterator` object.
+             * Increments both the index counter and the underlying iterator.
              *
-             * @return EnumerateIterator&
+             * @return EnumerateIterator& Reference to this iterator
              */
             EnumerateIterator &operator++() {
                 ++i;
@@ -61,16 +50,11 @@ namespace py {
             }
 
             /**
-             * @brief
+             * @brief Dereference operator
              *
-             * The `operator*()` function is an overloaded operator that returns the
-             * current element in the iteration as a `std::pair<size_t, iter_ref>`. The
-             * `size_t` value represents the index of the element, and the `iter_ref`
-             * value represents a reference to the element itself. This allows you to
-             * access both the index and the element in a single expression when using
-             * the `enumerate()` function.
+             * Returns a pair containing the current index and a reference to the element.
              *
-             * @return std::pair<size_t, iter_ref>
+             * @return std::pair<size_t, iter_ref> Pair of (index, element_reference)
              */
             auto operator*() -> std::pair<size_t, iter_ref> {
                 return std::pair<size_t, iter_ref>{i, *iter};
@@ -78,40 +62,33 @@ namespace py {
         };
 
         /**
-         * @brief EnumerateIterableWrapper
+         * @brief Wrapper for making containers enumerable
          *
-         * The code defines a struct called `EnumerateIterableWrapper` that acts as a
-         * wrapper for an iterable object. It provides two member functions, `begin()`
-         * and `end()`, which return instances of the `EnumerateIterator` struct.
+         * Provides begin/end methods that return EnumerateIterator instances,
+         * enabling range-based for loops with index-value pairs.
          *
-         * @tparam T
+         * @tparam T The container type to wrap
          */
         template <typename T> struct EnumerateIterableWrapper {
             T &iterable;
 
             /**
-             * @brief begin
+             * @brief Get iterator to the beginning
              *
-             * The `begin()` function is a member function of the
-             * `EnumerateIterableWrapper` struct. It returns an instance of the
-             * `EnumerateIterator<T>` struct, which is used to iterate over the elements
-             * of the iterable object.
+             * Returns an EnumerateIterator pointing to the start of the container.
              *
-             * @return EnumerateIterator<T>
+             * @return EnumerateIterator<T> Iterator to the beginning
              */
             auto begin() const -> EnumerateIterator<T> {
                 return EnumerateIterator<T>{0, std::begin(iterable)};
             }
 
             /**
-             * @brief end
+             * @brief Get iterator to the end
              *
-             * The `end()` function is a member function of the
-             * `EnumerateIterableWrapper` struct. It returns an instance of the
-             * `EnumerateIterator<T>` struct, which is used to mark the end of the
-             * iteration over the elements of the iterable object.
+             * Returns an EnumerateIterator pointing past the end of the container.
              *
-             * @return EnumerateIterator<T>
+             * @return EnumerateIterator<T> Iterator past the end
              */
             auto end() const -> EnumerateIterator<T> {
                 return EnumerateIterator<T>{0, std::end(iterable)};
@@ -121,17 +98,14 @@ namespace py {
     }  // namespace detail
 
     /**
-     * @brief enumerate(T &iterable)
+     * @brief Create an enumerable wrapper for a container
      *
-     * The `enumerate(T &iterable)` function is a utility function that allows you
-     * to iterate over a container or range and also get the index of each element
-     * in the iteration. It returns an instance of the
-     * `detail::EnumerateIterableWrapper<T>` class, which provides a range-based for
-     * loop compatible interface.
+     * Returns a wrapper that allows iteration over container elements with their indices,
+     * similar to Python's enumerate() function.
      *
-     * @tparam T
-     * @param[in] iterable
-     * @return detail::EnumerateIterableWrapper<T>
+     * @tparam T The container type
+     * @param[in] iterable Reference to the container to enumerate
+     * @return detail::EnumerateIterableWrapper<T> Wrapper for enumerated iteration
      */
     template <typename T> inline auto enumerate(T &iterable)
         -> detail::EnumerateIterableWrapper<T> {

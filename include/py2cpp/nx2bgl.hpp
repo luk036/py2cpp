@@ -8,37 +8,70 @@
 namespace py {
 
     /**
-     * @brief
+     * @brief Vertex view for Boost Graph Library graphs
      *
-     * @tparam Graph
+     * Provides iterable access to vertices in a BGL graph. This class wraps a graph
+     * and provides iterator interfaces for traversing vertices.
+     *
+     * @tparam Graph The Boost Graph Library graph type
      */
     template <typename Graph> class VertexView : public Graph {
       public:
         /**
          * @brief Construct a new Vertex View object
          *
-         * @param[in] gra
+         * Creates a vertex view from an existing graph by moving it into this wrapper.
+         *
+         * @param[in] gra The graph to wrap (moved into this VertexView)
          */
         explicit VertexView(Graph &&gra) noexcept : Graph{std::forward<Graph>(gra)} {}
 
+        /**
+         * @brief Get iterator to the beginning of vertices
+         *
+         * Returns an iterator to the first vertex in the graph.
+         *
+         * @return Iterator to the first vertex
+         */
         [[nodiscard]] auto begin() const {
             // auto [v_iter, v_end] = boost::vertices(*this);
             // return v_iter;
             return boost::vertices(*this).first;
         }
 
+        /**
+         * @brief Get iterator to the end of vertices
+         *
+         * Returns an iterator past the last vertex in the graph.
+         *
+         * @return Iterator past the last vertex
+         */
         [[nodiscard]] auto end() const {
             // auto [v_iter, v_end] = boost::vertices(*this);
             // return v_end;
             return boost::vertices(*this).second;
         }
 
+        /**
+         * @brief Get const iterator to the beginning of vertices
+         *
+         * Returns a const iterator to the first vertex in the graph.
+         *
+         * @return Const iterator to the first vertex
+         */
         [[nodiscard]] auto cbegin() const {
             // auto [v_iter, v_end] = boost::vertices(*this);
             // return v_iter;
             return boost::vertices(*this).first;
         }
 
+        /**
+         * @brief Get const iterator to the end of vertices
+         *
+         * Returns a const iterator past the last vertex in the graph.
+         *
+         * @return Const iterator past the last vertex
+         */
         [[nodiscard]] auto cend() const {
             // auto [v_iter, v_end] = boost::vertices(*this);
             // return v_end;
@@ -47,9 +80,12 @@ namespace py {
     };
 
     /**
-     * @brief
+     * @brief Edge view for Boost Graph Library graphs
      *
-     * @tparam Graph
+     * Provides iterable access to edges in a BGL graph. This class holds a reference
+     * to a graph and provides iterator interfaces for traversing edges.
+     *
+     * @tparam Graph The Boost Graph Library graph type
      */
     template <typename Graph> class EdgeView {
       private:
@@ -59,10 +95,19 @@ namespace py {
         /**
          * @brief Construct a new Edge View object
          *
-         * @param[in] gra
+         * Creates an edge view from a reference to an existing graph.
+         *
+         * @param[in] gra Reference to the graph to view edges from
          */
         explicit EdgeView(const Graph &gra) : gra{gra} {}
 
+        /**
+         * @brief Get iterator to the beginning of edges
+         *
+         * Returns an iterator to the first edge in the graph.
+         *
+         * @return Iterator to the first edge
+         */
         [[nodiscard]] auto begin() const {
             // auto [e_iter, e_end] = boost::edges(_gra);
             // return e_iter;
@@ -70,9 +115,11 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get iterator to the end of edges
          *
-         * @return auto
+         * Returns an iterator past the last edge in the graph.
+         *
+         * @return Iterator past the last edge
          */
         [[nodiscard]] auto end() const {
             // auto [e_iter, e_end] = boost::edges(_gra);
@@ -81,9 +128,11 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get const iterator to the beginning of edges
          *
-         * @return auto
+         * Returns a const iterator to the first edge in the graph.
+         *
+         * @return Const iterator to the first edge
          */
         [[nodiscard]] auto cbegin() const {
             // auto [e_iter, e_end] = boost::edges(_gra);
@@ -92,9 +141,11 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get const iterator to the end of edges
          *
-         * @return auto
+         * Returns a const iterator past the last edge in the graph.
+         *
+         * @return Const iterator past the last edge
          */
         [[nodiscard]] auto cend() const {
             // auto [e_iter, e_end] = boost::edges(_gra);
@@ -104,10 +155,14 @@ namespace py {
     };
 
     /**
-     * @brief
+     * @brief Atlas view for vertex adjacency in Boost Graph Library graphs
      *
-     * @tparam Vertex
-     * @tparam Graph
+     * Provides iterable access to edges adjacent to a specific vertex in a BGL graph.
+     * This class holds a vertex and a reference to a graph and provides iterator
+     * interfaces for traversing edges connected to that vertex.
+     *
+     * @tparam Vertex The vertex descriptor type
+     * @tparam Graph The Boost Graph Library graph type
      */
     template <typename Vertex, typename Graph> class AtlasView {
       private:
@@ -118,15 +173,19 @@ namespace py {
         /**
          * @brief Construct a new Atlas View object
          *
-         * @param[in] v
-         * @param[in] gra
+         * Creates an atlas view for a specific vertex in a graph.
+         *
+         * @param[in] v The vertex to view adjacency from
+         * @param[in] gra Reference to the graph containing the vertex
          */
         AtlasView(Vertex v, const Graph &gra) : _v{v}, gra{gra} {}
 
         /**
-         * @brief
+         * @brief Get iterator to the beginning of adjacent edges
          *
-         * @return auto
+         * Returns an iterator to the first edge adjacent to the vertex.
+         *
+         * @return Iterator to the first adjacent edge
          */
         auto begin() const {
             // auto [e_iter, e_end] = boost::out_edges(_v, _gra);
@@ -135,9 +194,11 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get iterator to the end of adjacent edges
          *
-         * @return auto
+         * Returns an iterator past the last edge adjacent to the vertex.
+         *
+         * @return Iterator past the last adjacent edge
          */
         auto end() const {
             // auto [e_iter, e_end] = boost::out_edges(_v, _gra);
@@ -146,9 +207,11 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get const iterator to the beginning of adjacent edges
          *
-         * @return auto
+         * Returns a const iterator to the first edge adjacent to the vertex.
+         *
+         * @return Const iterator to the first adjacent edge
          */
         auto cbegin() const {
             // auto [e_iter, e_end] = boost::out_edges(_v, _gra);
@@ -157,9 +220,11 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get const iterator to the end of adjacent edges
          *
-         * @return auto
+         * Returns a const iterator past the last edge adjacent to the vertex.
+         *
+         * @return Const iterator past the last adjacent edge
          */
         auto cend() const {
             // auto [e_iter, e_end] = boost::out_edges(_v, _gra);
@@ -169,9 +234,12 @@ namespace py {
     };
 
     /**
-     * @brief
+     * @brief Graph adapter for Boost Graph Library integration
      *
-     * @tparam _Graph
+     * Provides a unified interface for working with BGL graphs, combining vertex
+     * and edge view functionality with additional graph operations.
+     *
+     * @tparam _Graph The Boost Graph Library graph type
      */
     template <typename _Graph> class GrAdaptor : public VertexView<_Graph> {
       public:
@@ -183,15 +251,18 @@ namespace py {
         // std::declval<_Graph>()) );
 
         /**
-         * @brief Construct a new gr Adaptor object
+         * @brief Default constructor (deleted)
          *
+         * Graph adaptor cannot be default constructed.
          */
         GrAdaptor() = delete;
 
         /**
-         * @brief Construct a new gr Adaptor object
+         * @brief Construct a new graph adaptor object
          *
-         * @param[in] gra
+         * Creates a graph adaptor by moving an existing graph into this wrapper.
+         *
+         * @param[in] gra The graph to wrap (moved into this GrAdaptor)
          */
         explicit GrAdaptor(_Graph &&gra) noexcept : VertexView<_Graph>{std::forward<_Graph>(gra)} {}
 
@@ -200,31 +271,35 @@ namespace py {
         // GrAdaptor(GrAdaptor&&) noexcept = default;                // don't copy
 
         /**
-         * @brief
+         * @brief Get the number of vertices in the graph
          *
-         * @return auto
+         * @return Number of vertices
          */
         [[nodiscard]] auto number_of_nodes() const { return boost::num_vertices(*this); }
 
         /**
-         * @brief
+         * @brief Get the number of edges in the graph
          *
-         * @return auto
+         * @return Number of edges
          */
         [[nodiscard]] auto number_of_edges() const { return boost::num_edges(*this); }
 
         /**
-         * @brief
+         * @brief Get an edge view for the graph
          *
-         * @return EdgeView<_Graph>
+         * Returns an iterable view of all edges in the graph.
+         *
+         * @return EdgeView<_Graph> Iterable edge view
          */
         [[nodiscard]] auto edges() const -> EdgeView<_Graph> { return EdgeView<_Graph>(*this); }
 
         /**
-         * @brief
+         * @brief Get neighbors of a vertex
          *
-         * @param[in] v
-         * @return AtlasView<Vertex, _Graph>
+         * Returns an iterable view of edges adjacent to the specified vertex.
+         *
+         * @param[in] v The vertex to get neighbors for
+         * @return AtlasView<Vertex, _Graph> Iterable view of adjacent edges
          */
         [[nodiscard]] auto neighbors(Vertex v) const -> AtlasView<Vertex, _Graph> {
             return AtlasView<Vertex, _Graph>(v, *this);
@@ -241,29 +316,35 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get the null vertex descriptor
          *
-         * @return Vertex
+         * Returns the special null vertex value used by the graph.
+         *
+         * @return Vertex Null vertex descriptor
          */
         static auto null_vertex() -> Vertex { return boost::graph_traits<_Graph>::null_vertex(); }
 
         /**
-         * @brief
+         * @brief Get the source vertex of an edge
          *
-         * @tparam Edge
-         * @param[in] e
-         * @return Vertex
+         * Returns the source (origin) vertex of the specified edge.
+         *
+         * @tparam Edge The edge descriptor type
+         * @param[in] e The edge to get the source of
+         * @return Vertex Source vertex of the edge
          */
         template <typename Edge> auto source(const Edge &e) const -> Vertex {
             return boost::source(e, *this);
         }
 
         /**
-         * @brief
+         * @brief Get the target vertex of an edge
          *
-         * @tparam Edge
-         * @param[in] e
-         * @return Vertex
+         * Returns the target (destination) vertex of the specified edge.
+         *
+         * @tparam Edge The edge descriptor type
+         * @param[in] e The edge to get the target of
+         * @return Vertex Target vertex of the edge
          */
         template <typename Edge> auto target(const Edge &e) const -> Vertex {
             return boost::target(e, *this);

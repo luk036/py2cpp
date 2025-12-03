@@ -11,9 +11,12 @@
 namespace py {
 
     /**
-     * @brief
+     * @brief Python-like set implementation
      *
-     * @tparam Key
+     * A set class that extends std::unordered_set with Python-like
+     * convenience methods and functionality.
+     *
+     * @tparam Key The element type stored in the set
      */
     template <typename Key> class set : public std::unordered_set<Key> {
         using Self = set<Key>;
@@ -41,11 +44,10 @@ namespace py {
         set(std::initializer_list<Key> init) : Base{init} {}
 
         /**
-         * @brief
+         * @brief Check if the set contains a specific key
          *
          * @param[in] key
-         * @return true
-         * @return false
+         * @return true if the set contains the element, false otherwise
          */
         auto contains(const Key &key) const -> bool { return this->find(key) != this->end(); }
 
@@ -91,8 +93,7 @@ namespace py {
      * @tparam Key
      * @param[in] key
      * @param[in] m
-     * @return true
-     * @return false
+     * @return true if the set contains the element, false otherwise
      */
     template <typename Key> inline auto operator<(const Key &key, const set<Key> &m) -> bool {
         return m.contains(key);

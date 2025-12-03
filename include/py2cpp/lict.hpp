@@ -13,7 +13,7 @@ namespace py {
      * The `Lict` class is a custom implementation of an unordered mapping with integer keys and
      * generic values, which adapts a vector to behave like a dictionary.
      *
-     * @tparam T
+     * @tparam T The value type stored in the Lict
      */
     template <typename T> class Lict {
       public:

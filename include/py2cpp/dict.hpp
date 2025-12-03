@@ -11,18 +11,49 @@
 namespace py {
 
     /**
-     * @brief
+     * @brief Iterator adapter for accessing keys in map-like containers
      *
-     * @tparam Iter
+     * Provides an iterator that dereferences to the key component of
+     * key-value pairs in map-like containers.
+     *
+     * @tparam Iter The underlying iterator type for key-value pairs
      */
     template <typename Iter> struct key_iterator : Iter {
+        /**
+         * @brief Construct a key iterator from an underlying iterator
+         *
+         * @param[in] it The underlying iterator for key-value pairs
+         */
         explicit key_iterator(Iter it) : Iter(it) {}
+
+        /**
+         * @brief Dereference to get the key (const version)
+         *
+         * @return const auto& Reference to the key
+         */
         auto operator*() const -> const auto & { return Iter::operator*().first; }
+
+        /**
+         * @brief Dereference to get the key (non-const version)
+         *
+         * @return const auto& Reference to the key
+         */
         auto operator*() -> const auto & { return Iter::operator*().first; }
+
+        /**
+         * @brief Pre-increment operator
+         *
+         * @return key_iterator& Reference to this iterator
+         */
         auto operator++() -> key_iterator & {
             Iter::operator++();
             return *this;
         }
+        /**
+         * @brief Post-increment operator
+         *
+         * @return key_iterator Copy of this iterator before increment
+         */
         auto operator++(int) -> key_iterator {
             auto old = *this;
             ++*this;
@@ -31,10 +62,13 @@ namespace py {
     };
 
     /**
-     * @brief
+     * @brief Python-like dictionary implementation
      *
-     * @tparam Key
-     * @tparam T
+     * A dictionary class that extends std::unordered_map with Python-like
+     * convenience methods and functionality.
+     *
+     * @tparam Key The key type
+     * @tparam T The value type
      */
     template <typename Key, typename T> class dict : public std::unordered_map<Key, T> {
         using Self = dict<Key, T>;
@@ -45,33 +79,38 @@ namespace py {
         using key_type = Key;
 
         /**
-         * @brief Construct a new dict object
+         * @brief Default constructor
          *
+         * Creates an empty dictionary.
          */
         dict() : Base{} {}
 
         /**
-         * @brief Construct a new dict object
+         * @brief Construct a dict from an initializer list
          *
-         * @param[in] init
+         * Creates a dictionary from a list of key-value pairs.
+         *
+         * @param[in] init Initializer list of key-value pairs
          */
         dict(std::initializer_list<value_type> init) : Base{init} {}
 
         /**
-         * @brief
+         * @brief Check if the dictionary contains a specific key
          *
          * @param[in] key
-         * @return true
-         * @return false
+         * @return true if the key is contained in the dictionary, false otherwise
          */
         auto contains(const Key &key) const -> bool { return this->find(key) != this->end(); }
 
         /**
-         * @brief
+         * @brief Get a value with a default fallback
          *
-         * @param[in] key
-         * @param[in] default_value
-         * @return T
+         * Returns the value associated with the key, or the default value
+         * if the key is not found in the dictionary.
+         *
+         * @param[in] key The key to look up
+         * @param[in] default_value The default value to return if key is not found
+         * @return T The value associated with the key, or the default value
          */
         auto get(const Key &key, const T &default_value) const -> T {
             if (!contains(key)) {
@@ -81,36 +120,44 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get iterator to the beginning of keys
          *
-         * @return auto
+         * Returns an iterator that yields keys from the dictionary.
+         *
+         * @return auto Iterator to the first key
          */
         auto begin() -> key_iterator<decltype(Base::begin())> {
             return key_iterator<decltype(Base::begin())>{Base::begin()};
         }
 
         /**
-         * @brief
+         * @brief Get iterator to the end of keys
          *
-         * @return auto
+         * Returns an iterator past the last key in the dictionary.
+         *
+         * @return auto Iterator past the last key
          */
         auto end() -> key_iterator<decltype(Base::end())> {
             return key_iterator<decltype(Base::end())>{Base::end()};
         }
 
         /**
-         * @brief
+         * @brief Get const iterator to the beginning of keys
          *
-         * @return auto
+         * Returns a const iterator that yields keys from the dictionary.
+         *
+         * @return auto Const iterator to the first key
          */
         auto begin() const -> key_iterator<decltype(Base::begin())> {
             return key_iterator<decltype(Base::begin())>{Base::begin()};
         }
 
         /**
-         * @brief
+         * @brief Get const iterator to the end of keys
          *
-         * @return auto
+         * Returns a const iterator past the last key in the dictionary.
+         *
+         * @return auto Const iterator past the last key
          */
         auto end() const -> key_iterator<decltype(Base::end())> {
             return key_iterator<decltype(Base::end())>{Base::end()};
@@ -200,8 +247,7 @@ namespace py {
      * @tparam T
      * @param[in] key
      * @param[in] m
-     * @return true
-     * @return false
+     * @return true if the key is contained in the dictionary, false otherwise
      */
     template <typename Key, typename T> inline auto operator<(const Key &key, const dict<Key, T> &m) noexcept
         -> bool {

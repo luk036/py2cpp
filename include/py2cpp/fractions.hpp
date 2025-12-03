@@ -1,6 +1,6 @@
 #pragma once
 
-/** @file include/fractions.hpp
+/** @file fractions.hpp
  *  This is a C++ Library header.
  */
 
@@ -90,7 +90,7 @@ namespace fun {
     /**
      * @brief Fraction
      *
-     * @tparam Z
+     * @tparam Z The integer type for numerator and denominator
      */
     template <typename Z> struct Fraction {
         Z _num;
@@ -158,9 +158,7 @@ namespace fun {
         CONSTEXPR14 explicit Fraction(const Z &num) : _num{num}, _den(1) {}
 
         /**
-         * @brief Construct a new Fraction object
-         *
-         * @param[in] num
+         * @brief Construct a new Fraction object (default constructor)
          */
         CONSTEXPR14 Fraction() : _num(0), _den(1) {}
 
@@ -198,8 +196,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs == rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator==(const Fraction &lhs, const Z &rhs) -> bool {
             if (lhs._den == Z(1) || rhs == Z(0)) {
@@ -217,8 +214,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs < rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator<(const Fraction &lhs, const Z &rhs) -> bool {
             if (lhs._den == Z(1) || rhs == Z(0)) {
@@ -236,8 +232,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs < rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator<(const Z &lhs, const Fraction &rhs) -> bool {
             if (rhs._den == Z(1) || lhs == Z(0)) {
@@ -255,8 +250,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs == rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator==(const Z &lhs, const Fraction &rhs) -> bool {
             return rhs == lhs;
@@ -266,8 +260,7 @@ namespace fun {
          * @brief Equal to
          *
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if the fractions are equal, false otherwise
          */
 
         /**
@@ -275,8 +268,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs == rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator==(const Fraction &lhs, const Fraction &rhs) -> bool {
             if (lhs._den == rhs._den) {
@@ -295,8 +287,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs < rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator<(const Fraction &lhs, const Fraction &rhs) -> bool {
             if (lhs._den == rhs._den) {
@@ -314,8 +305,7 @@ namespace fun {
          * @brief
          *
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if the fractions are equal, false otherwise
          */
         CONSTEXPR14 auto operator!=(const Fraction &rhs) const -> bool { return !(*this == rhs); }
 
@@ -323,8 +313,7 @@ namespace fun {
          * @brief Greater than
          *
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if the fractions are equal, false otherwise
          */
         CONSTEXPR14 auto operator>(const Fraction &rhs) const -> bool { return rhs < *this; }
 
@@ -332,8 +321,7 @@ namespace fun {
          * @brief Greater than or euqal to
          *
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if the fractions are equal, false otherwise
          */
         CONSTEXPR14 auto operator>=(const Fraction &rhs) const -> bool { return !(*this < rhs); }
 
@@ -341,8 +329,7 @@ namespace fun {
          * @brief Less than or equal to
          *
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if the fractions are equal, false otherwise
          */
         CONSTEXPR14 auto operator<=(const Fraction &rhs) const -> bool { return !(rhs < *this); }
 
@@ -350,8 +337,7 @@ namespace fun {
          * @brief Greater than
          *
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if the fractions are equal, false otherwise
          */
         CONSTEXPR14 auto operator>(const Z &rhs) const -> bool { return rhs < *this; }
 
@@ -359,8 +345,7 @@ namespace fun {
          * @brief Less than or equal to
          *
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if the fractions are equal, false otherwise
          */
         CONSTEXPR14 auto operator<=(const Z &rhs) const -> bool { return !(rhs < *this); }
 
@@ -368,8 +353,7 @@ namespace fun {
          * @brief Greater than or equal to
          *
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if the fractions are equal, false otherwise
          */
         CONSTEXPR14 auto operator>=(const Z &rhs) const -> bool { return !(*this < rhs); }
 
@@ -378,8 +362,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs > rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator>(const Z &lhs, const Fraction &rhs) -> bool {
             return rhs < lhs;
@@ -390,8 +373,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs <= rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator<=(const Z &lhs, const Fraction &rhs) -> bool {
             return !(rhs < lhs);
@@ -402,8 +384,7 @@ namespace fun {
          *
          * @param[in] lhs
          * @param[in] rhs
-         * @return true
-         * @return false
+         * @return true if lhs >= rhs, false otherwise
          */
         friend CONSTEXPR14 auto operator>=(const Z &lhs, const Fraction &rhs) -> bool {
             return !(lhs < rhs);
@@ -729,7 +710,7 @@ namespace fun {
          * @brief
          *
          * @tparam _Stream
-         * @tparam Z
+         * @tparam Z The integer type for numerator and denominator
          * @param[in] os
          * @param[in] frac
          * @return _Stream&
