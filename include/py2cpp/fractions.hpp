@@ -194,9 +194,9 @@ namespace fun {
         /**
          * @brief Equal to
          *
-         * @param[in] lhs
-         * @param[in] rhs
-         * @return true if lhs == rhs, false otherwise
+         * @param[in] lhs The fraction
+         * @param[in] rhs The integer value
+         * @return true if equal, false otherwise
          */
         friend CONSTEXPR14 auto operator==(const Fraction &lhs, const Z &rhs) -> bool {
             if (lhs._den == Z(1) || rhs == Z(0)) {
@@ -248,9 +248,9 @@ namespace fun {
         /**
          * @brief Equal to
          *
-         * @param[in] lhs
-         * @param[in] rhs
-         * @return true if lhs == rhs, false otherwise
+         * @param[in] lhs The integer value
+         * @param[in] rhs The fraction
+         * @return true if equal, false otherwise
          */
         friend CONSTEXPR14 auto operator==(const Z &lhs, const Fraction &rhs) -> bool {
             return rhs == lhs;
@@ -266,9 +266,9 @@ namespace fun {
         /**
          * @brief Equal to
          *
-         * @param[in] lhs
-         * @param[in] rhs
-         * @return true if lhs == rhs, false otherwise
+         * @param[in] lhs The first fraction
+         * @param[in] rhs The second fraction
+         * @return true if equal, false otherwise
          */
         friend CONSTEXPR14 auto operator==(const Fraction &lhs, const Fraction &rhs) -> bool {
             if (lhs._den == rhs._den) {
@@ -707,13 +707,12 @@ namespace fun {
         }
 
         /**
-         * @brief
+         * @brief Stream output operator for Fraction
          *
-         * @tparam _Stream
-         * @tparam Z The integer type for numerator and denominator
-         * @param[in] os
-         * @param[in] frac
-         * @return _Stream&
+         * @tparam _Stream The stream type
+         * @param[in] os The output stream
+         * @param[in] frac The fraction to output
+         * @return _Stream& Reference to the output stream
          */
         template <typename _Stream> friend auto operator<<(_Stream &os, const Fraction &frac)
             -> _Stream & {
