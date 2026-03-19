@@ -188,9 +188,9 @@ namespace py {
      * `start` to `stop`. It returns a `Range<T>` object that represents the range.
      * The range includes all values from `start` up to, but not including, `stop`.
      *
-     * @tparam T
-     * @param[in] start
-     * @param[in] stop
+     * @tparam T The numeric type for the range values
+     * @param[in] start The starting value of the range (inclusive)
+     * @param[in] stop The ending value of the range (exclusive)
      * @return Range<T>
      */
     template <typename T> CONSTEXPR14 auto range(T start, T stop) -> Range<T> {
@@ -207,8 +207,8 @@ namespace py {
      * It returns a `Range<T>` object that represents the range. The range includes
      * all values from 0 up to, but not including, `stop`.
      *
-     * @tparam T
-     * @param[in] stop
+     * @tparam T The numeric type for the range values
+     * @param[in] stop The ending value of the range (exclusive)
      * @return Range<T>
      */
     template <typename T> CONSTEXPR14 auto range(T stop) -> Range<T> { return range(T(0), stop); }

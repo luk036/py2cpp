@@ -569,8 +569,8 @@ namespace fun {
         /**
          * @brief Add
          *
-         * @param[in] frac
-         * @param[in] i
+         * @param[in] frac The fraction to add to
+         * @param[in] i The integer value to add
          * @return Fraction
          */
         friend CONSTEXPR14 auto operator+(Fraction frac, const Z &i) -> Fraction {
@@ -580,8 +580,8 @@ namespace fun {
         /**
          * @brief Add
          *
-         * @param[in] i
-         * @param[in] frac
+         * @param[in] i The integer value to add
+         * @param[in] frac The fraction to add to
          * @return Fraction
          */
         friend CONSTEXPR14 auto operator+(const Z &i, Fraction frac) -> Fraction {
@@ -589,26 +589,26 @@ namespace fun {
         }
 
         /**
-         * @brief
+         * @brief Subtract an integer from the fraction
          *
-         * @param[in] i
+         * @param[in] i The integer value to subtract
          * @return Fraction
          */
         CONSTEXPR14 auto operator-(const Z &i) const -> Fraction { return *this + (-i); }
 
         /**
-         * @brief
+         * @brief Add and assign a fraction
          *
-         * @param[in] rhs
-         * @return Fraction
+         * @param[in] rhs The fraction to add
+         * @return Fraction& Reference to this fraction
          */
         CONSTEXPR14 auto operator+=(const Fraction &rhs) -> Fraction & { return *this -= (-rhs); }
 
         /**
-         * @brief
+         * @brief Subtract and assign a fraction
          *
-         * @param[in] rhs
-         * @return Fraction
+         * @param[in] rhs The fraction to subtract
+         * @return Fraction& Reference to this fraction
          */
         CONSTEXPR14 auto operator-=(const Fraction &rhs) -> Fraction & {
             if (this->_den == rhs._den) {
@@ -633,18 +633,18 @@ namespace fun {
         }
 
         /**
-         * @brief
+         * @brief Add and assign an integer
          *
-         * @param[in] i
-         * @return Fraction
+         * @param[in] i The integer value to add
+         * @return Fraction& Reference to this fraction
          */
         CONSTEXPR14 auto operator+=(const Z &i) -> Fraction & { return *this -= (-i); }
 
         /**
-         * @brief
+         * @brief Subtract and assign an integer
          *
-         * @param[in] rhs
-         * @return Fraction
+         * @param[in] rhs The integer value to subtract
+         * @return Fraction& Reference to this fraction
          */
         CONSTEXPR14 auto operator-=(const Z &rhs) -> Fraction & {
             if (this->_den == Z(1)) {
@@ -663,10 +663,10 @@ namespace fun {
         }
 
         /**
-         * @brief
+         * @brief Subtract a fraction from an integer
          *
-         * @param[in] c
-         * @param[in] frac
+         * @param[in] c The integer value
+         * @param[in] frac The fraction to subtract
          * @return Fraction
          */
         friend CONSTEXPR14 auto operator-(const Z &c, const Fraction &frac) -> Fraction {
@@ -674,10 +674,10 @@ namespace fun {
         }
 
         /**
-         * @brief
+         * @brief Add a fraction to an integer rvalue
          *
-         * @param[in] c
-         * @param[in] frac
+         * @param[in] c The integer rvalue
+         * @param[in] frac The fraction to add
          * @return Fraction
          */
         friend CONSTEXPR14 auto operator+(int &&c, const Fraction &frac) -> Fraction {
@@ -685,10 +685,10 @@ namespace fun {
         }
 
         /**
-         * @brief
+         * @brief Subtract a fraction from an integer rvalue
          *
-         * @param[in] c
-         * @param[in] frac
+         * @param[in] c The integer rvalue
+         * @param[in] frac The fraction to subtract
          * @return Fraction
          */
         friend CONSTEXPR14 auto operator-(int &&c, const Fraction &frac) -> Fraction {
@@ -696,10 +696,10 @@ namespace fun {
         }
 
         /**
-         * @brief
+         * @brief Multiply a fraction by an integer rvalue
          *
-         * @param[in] c
-         * @param[in] frac
+         * @param[in] c The integer rvalue
+         * @param[in] frac The fraction to multiply
          * @return Fraction<Z>
          */
         friend CONSTEXPR14 auto operator*(int &&c, const Fraction &frac) -> Fraction {
@@ -710,7 +710,7 @@ namespace fun {
          * @brief Stream output operator for Fraction
          *
          * @tparam _Stream The stream type
-         * @param[in] os The output stream
+         * @param[in] os The output stream to write to
          * @param[in] frac The fraction to output
          * @return _Stream& Reference to the output stream
          */
