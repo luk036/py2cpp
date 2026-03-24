@@ -21,10 +21,13 @@
 namespace fun {
 
     /**
-     * @brief absolute (unsigned)
+     * @brief Absolute value for unsigned types
      *
-     * @tparam T
-     * @param[in] a
+     * For unsigned types, the absolute value is the number itself.
+     *
+     * @tparam T The numeric type
+     * @param[in] a The value to compute absolute value of
+     * @return T The absolute value
      */
     template <typename T> CONSTEXPR14 auto abs(const T &a) ->
         typename std::enable_if<std::is_unsigned<T>::value, T>::type {
@@ -32,10 +35,13 @@ namespace fun {
     }
 
     /**
-     * @brief absolute (signed)
+     * @brief Absolute value for signed types
      *
-     * @tparam T
-     * @param[in] a
+     * For signed types, returns the negative value if the input is negative.
+     *
+     * @tparam T The numeric type
+     * @param[in] a The value to compute absolute value of
+     * @return T The absolute value
      */
     template <typename T> CONSTEXPR14 auto abs(const T &a) ->
         typename std::enable_if<!std::is_unsigned<T>::value, T>::type {
@@ -43,12 +49,14 @@ namespace fun {
     }
 
     /**
-     * @brief Greatest common divider
+     * @brief Greatest common divisor (recursive)
      *
-     * @tparam _Mn
-     * @param[in] __m
-     * @param[in] __n
-     * @return _Mn
+     * Computes the greatest common divisor of two numbers using Euclidean algorithm.
+     *
+     * @tparam _Mn The numeric type
+     * @param[in] __m First number
+     * @param[in] __n Second number
+     * @return _Mn The greatest common divisor
      */
     template <typename _Mn> CONSTEXPR14 auto gcd_recur(const _Mn &__m, const _Mn &__n) -> _Mn {
         if (__n == 0) {
@@ -58,12 +66,14 @@ namespace fun {
     }
 
     /**
-     * @brief Greatest common divider
+     * @brief Greatest common divisor
      *
-     * @tparam _Mn
-     * @param[in] __m
-     * @param[in] __n
-     * @return _Mn
+     * Computes the greatest common divisor of two numbers.
+     *
+     * @tparam _Mn The numeric type
+     * @param[in] __m First number
+     * @param[in] __n Second number
+     * @return _Mn The greatest common divisor
      */
     template <typename _Mn> CONSTEXPR14 auto gcd(const _Mn &__m, const _Mn &__n) -> _Mn {
         if (__m == 0) {
@@ -163,16 +173,16 @@ namespace fun {
         CONSTEXPR14 Fraction() : _num(0), _den(1) {}
 
         /**
-         * @brief
+         * @brief Get the numerator
          *
-         * @return const Z&
+         * @return const Z& Reference to the numerator
          */
         CONSTEXPR14 auto num() const noexcept -> const Z & { return _num; }
 
         /**
-         * @brief
+         * @brief Get the denominator
          *
-         * @return const Z&
+         * @return const Z& Reference to the denominator
          */
         CONSTEXPR14 auto den() const noexcept -> const Z & { return _den; }
 
@@ -302,10 +312,10 @@ namespace fun {
         }
 
         /**
-         * @brief
+         * @brief Not equal to
          *
-         * @param[in] rhs
-         * @return true if the fractions are equal, false otherwise
+         * @param[in] rhs The fraction to compare with
+         * @return true if the fractions are not equal, false otherwise
          */
         CONSTEXPR14 auto operator!=(const Fraction &rhs) const -> bool { return !(*this == rhs); }
 

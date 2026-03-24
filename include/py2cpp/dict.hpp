@@ -97,7 +97,7 @@ namespace py {
         /**
          * @brief Check if the dictionary contains a specific key
          *
-         * @param[in] key
+         * @param[in] key The key to look up
          * @return true if the key is contained in the dictionary, false otherwise
          */
         auto contains(const Key &key) const -> bool { return this->find(key) != this->end(); }
@@ -164,62 +164,74 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get the underlying map for iteration
          *
-         * @return std::unordered_map<Key, T>&
+         * @return std::unordered_map<Key, T>& Reference to the underlying map
          */
         auto items() -> Base & { return *this; }
 
         /**
-         * @brief
+         * @brief Get the underlying map for iteration (const version)
          *
-         * @return const std::unordered_map<Key, T>&
+         * @return const std::unordered_map<Key, T>& Const reference to the underlying map
          */
         auto items() const -> const Base & { return *this; }
 
         /**
-         * @brief
+         * @brief Create a copy of the dictionary
          *
-         * @return _Self
+         * @return Self A copy of this dictionary
          */
         auto copy() const -> Self { return *this; }
 
         /**
-         * @brief
+         * @brief Access value by key (const version)
          *
-         * @return _Self&
+         * Returns a const reference to the value associated with the key.
+         * Throws std::out_of_range if the key is not found.
+         *
+         * @param[in] k The key to look up
+         * @return const T& Reference to the value
          */
         auto operator[](const Key &k) const -> const T & {
             return Base::at(k);  // luk: a bug in std::unordered_map?
         }
 
         /**
-         * @brief
+         * @brief Access value by key with bounds checking (const version)
          *
-         * @return _Self&
+         * Returns a const reference to the value associated with the key.
+         * Throws std::out_of_range if the key is not found.
+         *
+         * @param[in] k The key to look up
+         * @return const T& Reference to the value
          */
         auto at(const Key &k) const -> const T & {
             return Base::at(k);  // luk: a bug in std::unordered_map?
         }
 
         /**
-         * @brief
+         * @brief Access or insert value by key
          *
-         * @return _Self&
+         * Returns a reference to the value associated with the key.
+         * If the key does not exist, inserts a default-constructed value.
+         *
+         * @param[in] k The key to look up
+         * @return T& Reference to the value
          */
         auto operator[](const Key &k) -> T & { return Base::operator[](k); }
 
         /**
-         * @brief
+         * @brief Copy assignment operator (deleted)
          *
-         * @return _Self&
+         * Use copy() method instead for explicit copying.
          */
         auto operator=(const Self &) -> Self & = delete;
 
         /**
-         * @brief
+         * @brief Move assignment operator
          *
-         * @return _Self&
+         * @return Self& Reference to this dictionary
          */
         auto operator=(Self &&) noexcept -> dict & = default;
 
@@ -241,12 +253,12 @@ namespace py {
     };
 
     /**
-     * @brief
+     * @brief Check if a key is contained in a dictionary
      *
-     * @tparam Key
-     * @tparam T
-     * @param[in] key
-     * @param[in] m
+     * @tparam Key The key type
+     * @tparam T The value type
+     * @param[in] key The key to check
+     * @param[in] m The dictionary to search
      * @return true if the key is contained in the dictionary, false otherwise
      */
     template <typename Key, typename T> inline auto operator<(const Key &key, const dict<Key, T> &m) noexcept
@@ -255,12 +267,12 @@ namespace py {
     }
 
     /**
-     * @brief
+     * @brief Get the number of key-value pairs in a dictionary
      *
-     * @tparam Key
-     * @tparam T
-     * @param[in] m
-     * @return size_t
+     * @tparam Key The key type
+     * @tparam T The value type
+     * @param[in] m The dictionary
+     * @return size_t Number of key-value pairs
      */
     template <typename Key, typename T> inline auto len(const dict<Key, T> &m) noexcept -> size_t {
         return m.size();

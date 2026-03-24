@@ -71,13 +71,11 @@ namespace py {
         CONSTEXPR14 auto operator*() const -> const_reference { return this->i; }
 
         /**
-         * @brief
+         * @brief Pre-increment operator
          *
-         * The code snippet you provided is defining the pre-increment operator
-         * (`operator++()`) for the `RangeIterator` struct. This operator is used to
-         * increment the iterator to the next element in the range.
+         * Increments the iterator to the next element in the range.
          *
-         * @return RangeIterator&
+         * @return RangeIterator& Reference to this iterator
          */
         CONSTEXPR14 auto operator++() -> RangeIterator & {
             ++this->i;
@@ -85,14 +83,12 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Post-increment operator
          *
-         * The code snippet you provided is defining the post-increment operator
-         * (`operator++(int)`) for the `RangeIterator` struct. This operator is used
-         * to increment the iterator to the next element in the range, but it
-         * returns a copy of the iterator before the increment.
+         * Increments the iterator to the next element in the range,
+         * returning a copy of the iterator before the increment.
          *
-         * @return RangeIterator
+         * @return RangeIterator Copy of this iterator before increment
          */
         CONSTEXPR14 auto operator++(int) -> RangeIterator {
             auto temp = *this;
@@ -128,15 +124,11 @@ namespace py {
         constexpr auto begin() const -> iterator { return iterator{this->start}; }
 
         /**
-         * @brief end
+         * @brief Get iterator to the end of the range
          *
-         * The `end()` function is a member function of the `Range` struct template.
-         * It returns an iterator pointing to the end of the range. In this case, it
-         * creates a `RangeIterator` object with the `stop` value of the range and
-         * returns it. This iterator represents the position one past the last
-         * element in the range.
+         * Returns an iterator pointing past the last element in the range.
          *
-         * @return iterator
+         * @return iterator Iterator past the last element
          */
         constexpr auto end() const -> iterator { return iterator{this->stop}; }
 
@@ -173,10 +165,10 @@ namespace py {
         }  // no bounds checking
 
         /**
-         * @brief
+         * @brief Check if the range contains a value
          *
-         * @param[in] n
-         * @return true if the range is empty, false otherwise
+         * @param[in] n The value to check
+         * @return true if the range contains the value, false otherwise
          */
         constexpr auto contains(T n) const noexcept -> bool { return !(n < this->start) && n < this->stop; }
     };

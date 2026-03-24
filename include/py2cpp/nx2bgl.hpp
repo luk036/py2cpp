@@ -306,10 +306,11 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Add an edge between two vertices
          *
-         * @param[in] u
-         * @param[in] v
+         * @param[in] u Source vertex index
+         * @param[in] v Target vertex index
+         * @return auto Edge descriptor of the newly added edge
          */
         auto add_edge(int u, int v) {
             return boost::add_edge(static_cast<Vertex>(u), static_cast<Vertex>(v), *this);
@@ -351,10 +352,11 @@ namespace py {
         }
 
         /**
-         * @brief
+         * @brief Get the source and target vertices of an edge
          *
-         * @tparam Edge
-         * @param[in] e
+         * @tparam Edge The edge descriptor type
+         * @param[in] e The edge
+         * @return std::pair<Vertex, Vertex> Pair of (source, target) vertices
          */
         template <typename Edge> [[nodiscard]] auto end_points(const Edge &e) const {
             auto s = boost::source(e, *this);

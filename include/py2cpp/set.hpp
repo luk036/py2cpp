@@ -37,38 +37,38 @@ namespace py {
             : Base(start, stop) {}
 
         /**
-         * @brief Construct a new set object
+         * @brief Construct a new set object from an initializer list
          *
-         * @param[in] init
+         * @param[in] init Initializer list of elements
          */
         set(std::initializer_list<Key> init) : Base{init} {}
 
         /**
-         * @brief Check if the set contains a specific key
+         * @brief Check if the set contains a specific element
          *
-         * @param[in] key
+         * @param[in] key The element to check
          * @return true if the set contains the element, false otherwise
          */
         auto contains(const Key &key) const -> bool { return this->find(key) != this->end(); }
 
         /**
-         * @brief
+         * @brief Create a copy of the set
          *
-         * @return _Self
+         * @return Self A copy of this set
          */
         auto copy() const -> set { return *this; }
 
         /**
-         * @brief
+         * @brief Copy assignment operator (deleted)
          *
-         * @return _Self&
+         * Use copy() method instead for explicit copying.
          */
         auto operator=(const set &) -> set & = delete;
 
         /**
-         * @brief
+         * @brief Move assignment operator
          *
-         * @return _Self&
+         * @return Self& Reference to this set
          */
         auto operator=(set &&) noexcept -> set & = default;
 
@@ -88,11 +88,11 @@ namespace py {
     };
 
     /**
-     * @brief
+     * @brief Check if an element is contained in a set
      *
-     * @tparam Key
-     * @param[in] key
-     * @param[in] m
+     * @tparam Key The element type stored in the set
+     * @param[in] key The element to check
+     * @param[in] m The set to search
      * @return true if the set contains the element, false otherwise
      */
     template <typename Key> inline auto operator<(const Key &key, const set<Key> &m) -> bool {
@@ -100,11 +100,11 @@ namespace py {
     }
 
     /**
-     * @brief
+     * @brief Get the number of elements in a set
      *
-     * @tparam Key
-     * @param[in] m
-     * @return size_t
+     * @tparam Key The element type stored in the set
+     * @param[in] m The set
+     * @return size_t Number of elements in the set
      */
     template <typename Key> inline auto len(const set<Key> &m) noexcept -> size_t { return m.size(); }
 

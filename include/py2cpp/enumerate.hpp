@@ -113,18 +113,14 @@ namespace py {
     }
 
     /**
-     * @brief enumerate(const T &iterable)
+     * @brief Create an enumerable wrapper for a const container
      *
-     * The `const_enumerate(const T &iterable)` function is a utility function that
-     * allows you to iterate over a constant container or range and also get the
-     * index of each element in the iteration. It returns an instance of the
-     * `detail::EnumerateIterableWrapper<const T>` class, which provides a
-     * range-based for loop compatible interface. This function is useful when you
-     * want to iterate over a constant container without modifying its elements.
+     * Returns a wrapper that allows iteration over container elements with their indices,
+     * similar to Python's enumerate() function. Used for const containers.
      *
-     * @tparam T
-     * @param[in] iterable
-     * @return detail::EnumerateIterableWrapper<const T>
+     * @tparam T The container type
+     * @param[in] iterable Const reference to the container to enumerate
+     * @return detail::EnumerateIterableWrapper<const T> Wrapper for enumerated iteration
      */
     template <typename T> inline auto enumerate(const T &iterable)
         -> detail::EnumerateIterableWrapper<const T> {
@@ -132,7 +128,13 @@ namespace py {
     }
 
     /**
-     * @brief (deprecated) const_enumerate(const T &iterable)
+     * @brief (deprecated) Create an enumerable wrapper for a const container
+     *
+     * @deprecated Use enumerate() instead. This function is provided for backward compatibility.
+     *
+     * @tparam T The container type
+     * @param[in] iterable Const reference to the container to enumerate
+     * @return detail::EnumerateIterableWrapper<const T> Wrapper for enumerated iteration
      */
     template <typename T> inline auto const_enumerate(const T &iterable)
         -> detail::EnumerateIterableWrapper<const T> {

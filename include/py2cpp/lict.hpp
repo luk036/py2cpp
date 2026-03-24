@@ -85,16 +85,16 @@ namespace py {
         // void erase() { throw std::runtime_error("NotImplementedError"); }
 
         /**
-         * @brief
+         * @brief Get iterator to the beginning of indices
          *
-         * @return iterator
+         * @return iterator Iterator to the first index
          */
         iterator begin() const { return this->_rng.begin(); }
 
         /**
-         * @brief
+         * @brief Get iterator to the end of indices
          *
-         * @return iterator
+         * @return iterator Iterator past the last index
          */
         iterator end() const { return this->_rng.end(); }
 
