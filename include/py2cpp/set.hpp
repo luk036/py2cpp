@@ -33,7 +33,7 @@ namespace py {
          * @brief Construct a new set object
          *
          */
-        template <typename FwdIter> set(const FwdIter &start, const FwdIter &stop)
+        template <typename FwdIter> set(const FwdIter& start, const FwdIter& stop)
             : Base(start, stop) {}
 
         /**
@@ -49,7 +49,7 @@ namespace py {
          * @param[in] key The element to check
          * @return true if the set contains the element, false otherwise
          */
-        auto contains(const Key &key) const -> bool { return this->find(key) != this->end(); }
+        auto contains(const Key& key) const -> bool { return this->find(key) != this->end(); }
 
         /**
          * @brief Create a copy of the set
@@ -63,20 +63,20 @@ namespace py {
          *
          * Use copy() method instead for explicit copying.
          */
-        auto operator=(const set &) -> set & = delete;
+        auto operator=(const set&) -> set& = delete;
 
         /**
          * @brief Move assignment operator
          *
          * @return Self& Reference to this set
          */
-        auto operator=(set &&) noexcept -> set & = default;
+        auto operator=(set&&) noexcept -> set& = default;
 
         /**
          * @brief Move Constructor (default)
          *
          */
-        set(set<Key> &&) noexcept = default;
+        set(set<Key>&&) noexcept = default;
 
         // private:
         /**
@@ -84,7 +84,7 @@ namespace py {
          *
          * Copy through explicitly the public copy() function!!!
          */
-        set(const set<Key> &) = default;
+        set(const set<Key>&) = default;
     };
 
     /**
@@ -95,7 +95,7 @@ namespace py {
      * @param[in] m The set to search
      * @return true if the set contains the element, false otherwise
      */
-    template <typename Key> inline auto operator<(const Key &key, const set<Key> &m) -> bool {
+    template <typename Key> inline auto operator<(const Key& key, const set<Key>& m) -> bool {
         return m.contains(key);
     }
 
@@ -106,7 +106,9 @@ namespace py {
      * @param[in] m The set
      * @return size_t Number of elements in the set
      */
-    template <typename Key> inline auto len(const set<Key> &m) noexcept -> size_t { return m.size(); }
+    template <typename Key> inline auto len(const set<Key>& m) noexcept -> size_t {
+        return m.size();
+    }
 
     /**
      * @brief Template Deduction Guide

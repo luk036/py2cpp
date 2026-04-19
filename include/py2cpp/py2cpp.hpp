@@ -21,5 +21,5 @@
  * and utilities that make C++ programming more convenient and Python-like.
  */
 namespace py {
-// Empty namespace - all functionality is provided by the included headers
+    // Empty namespace - all functionality is provided by the included headers
 }

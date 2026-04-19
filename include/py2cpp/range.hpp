@@ -24,10 +24,10 @@ namespace py {
         using iterator_category = std::input_iterator_tag;
         using difference_type = std::ptrdiff_t;
         using value_type = T;
-        using pointer = const T *;          // or also value_type*
-        using reference = const T &;        // or also value_type&
-        using const_reference = const T &;  // or also value_type&
-        using key_type = T;                 // luk:
+        using pointer = const T*;          // or also value_type*
+        using reference = const T&;        // or also value_type&
+        using const_reference = const T&;  // or also value_type&
+        using key_type = T;                // luk:
 
         T i;
 
@@ -42,7 +42,7 @@ namespace py {
          * @return The `operator!=` function returns a boolean value indicating whether the two
          * iterators are not equal.
          */
-        constexpr auto operator!=(const RangeIterator &other) const -> bool {
+        constexpr auto operator!=(const RangeIterator& other) const -> bool {
             return this->i != other.i;
         }
 
@@ -57,7 +57,7 @@ namespace py {
          * @return The `operator==` function returns a boolean value indicating whether the two
          * iterators are equal.
          */
-        constexpr auto operator==(const RangeIterator &other) const -> bool {
+        constexpr auto operator==(const RangeIterator& other) const -> bool {
             return this->i == other.i;
         }
 
@@ -77,7 +77,7 @@ namespace py {
          *
          * @return RangeIterator& Reference to this iterator
          */
-        CONSTEXPR14 auto operator++() -> RangeIterator & {
+        CONSTEXPR14 auto operator++() -> RangeIterator& {
             ++this->i;
             return *this;
         }
@@ -170,7 +170,9 @@ namespace py {
          * @param[in] n The value to check
          * @return true if the range contains the value, false otherwise
          */
-        constexpr auto contains(T n) const noexcept -> bool { return !(n < this->start) && n < this->stop; }
+        constexpr auto contains(T n) const noexcept -> bool {
+            return !(n < this->start) && n < this->stop;
+        }
     };
 
     /**

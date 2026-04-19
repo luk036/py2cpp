@@ -6,7 +6,7 @@
 #include <string>
 #include <unordered_map>
 
-auto main(int argc, char **argv) -> int {
+auto main(int argc, char** argv) -> int {
     const std::unordered_map<std::string, py2cpp::LanguageCode> languages{
         {"en", py2cpp::LanguageCode::EN},
         {"de", py2cpp::LanguageCode::DE},

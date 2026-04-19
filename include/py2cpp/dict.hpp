@@ -31,21 +31,21 @@ namespace py {
          *
          * @return const auto& Reference to the key
          */
-        auto operator*() const -> const auto & { return Iter::operator*().first; }
+        auto operator*() const -> const auto& { return Iter::operator*().first; }
 
         /**
          * @brief Dereference to get the key (non-const version)
          *
          * @return const auto& Reference to the key
          */
-        auto operator*() -> const auto & { return Iter::operator*().first; }
+        auto operator*() -> const auto& { return Iter::operator*().first; }
 
         /**
          * @brief Pre-increment operator
          *
          * @return key_iterator& Reference to this iterator
          */
-        auto operator++() -> key_iterator & {
+        auto operator++() -> key_iterator& {
             Iter::operator++();
             return *this;
         }
@@ -100,7 +100,7 @@ namespace py {
          * @param[in] key The key to look up
          * @return true if the key is contained in the dictionary, false otherwise
          */
-        auto contains(const Key &key) const -> bool { return this->find(key) != this->end(); }
+        auto contains(const Key& key) const -> bool { return this->find(key) != this->end(); }
 
         /**
          * @brief Get a value with a default fallback
@@ -112,7 +112,7 @@ namespace py {
          * @param[in] default_value The default value to return if key is not found
          * @return T The value associated with the key, or the default value
          */
-        auto get(const Key &key, const T &default_value) const -> T {
+        auto get(const Key& key, const T& default_value) const -> T {
             if (!contains(key)) {
                 return default_value;
             }
@@ -168,14 +168,14 @@ namespace py {
          *
          * @return std::unordered_map<Key, T>& Reference to the underlying map
          */
-        auto items() -> Base & { return *this; }
+        auto items() -> Base& { return *this; }
 
         /**
          * @brief Get the underlying map for iteration (const version)
          *
          * @return const std::unordered_map<Key, T>& Const reference to the underlying map
          */
-        auto items() const -> const Base & { return *this; }
+        auto items() const -> const Base& { return *this; }
 
         /**
          * @brief Create a copy of the dictionary
@@ -193,7 +193,7 @@ namespace py {
          * @param[in] k The key to look up
          * @return const T& Reference to the value
          */
-        auto operator[](const Key &k) const -> const T & {
+        auto operator[](const Key& k) const -> const T& {
             return Base::at(k);  // luk: a bug in std::unordered_map?
         }
 
@@ -206,7 +206,7 @@ namespace py {
          * @param[in] k The key to look up
          * @return const T& Reference to the value
          */
-        auto at(const Key &k) const -> const T & {
+        auto at(const Key& k) const -> const T& {
             return Base::at(k);  // luk: a bug in std::unordered_map?
         }
 
@@ -219,27 +219,27 @@ namespace py {
          * @param[in] k The key to look up
          * @return T& Reference to the value
          */
-        auto operator[](const Key &k) -> T & { return Base::operator[](k); }
+        auto operator[](const Key& k) -> T& { return Base::operator[](k); }
 
         /**
          * @brief Copy assignment operator (deleted)
          *
          * Use copy() method instead for explicit copying.
          */
-        auto operator=(const Self &) -> Self & = delete;
+        auto operator=(const Self&) -> Self& = delete;
 
         /**
          * @brief Move assignment operator
          *
          * @return Self& Reference to this dictionary
          */
-        auto operator=(Self &&) noexcept -> dict & = default;
+        auto operator=(Self&&) noexcept -> dict& = default;
 
         /**
          * @brief Move Constructor (default)
          *
          */
-        dict(dict<Key, T> &&) noexcept = default;
+        dict(dict<Key, T>&&) noexcept = default;
 
         ~dict() = default;
 
@@ -249,7 +249,7 @@ namespace py {
          *
          * Copy through explicitly the public copy() function!!!
          */
-        dict(const dict<Key, T> &) = default;
+        dict(const dict<Key, T>&) = default;
     };
 
     /**
@@ -261,8 +261,8 @@ namespace py {
      * @param[in] m The dictionary to search
      * @return true if the key is contained in the dictionary, false otherwise
      */
-    template <typename Key, typename T> inline auto operator<(const Key &key, const dict<Key, T> &m) noexcept
-        -> bool {
+    template <typename Key, typename T>
+    inline auto operator<(const Key& key, const dict<Key, T>& m) noexcept -> bool {
         return m.contains(key);
     }
 
@@ -274,7 +274,7 @@ namespace py {
      * @param[in] m The dictionary
      * @return size_t Number of key-value pairs
      */
-    template <typename Key, typename T> inline auto len(const dict<Key, T> &m) noexcept -> size_t {
+    template <typename Key, typename T> inline auto len(const dict<Key, T>& m) noexcept -> size_t {
         return m.size();
     }
 

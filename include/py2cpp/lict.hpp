@@ -49,7 +49,7 @@ namespace py {
          *   3
          *
          */
-        const T &operator[](const key_type &key) const { return this->_lst.at(key); }
+        const T& operator[](const key_type& key) const { return this->_lst.at(key); }
 
         /**
          * @brief This function sets the value at a given index in a list-like object.
@@ -64,7 +64,7 @@ namespace py {
          *   7
          *
          */
-        T &operator[](const key_type &key) { return this->_lst[key]; }
+        T& operator[](const key_type& key) { return this->_lst[key]; }
 
         /**
          * @brief This function allows you to access an element in a Lict object by its index.
@@ -80,7 +80,7 @@ namespace py {
          *   3
          *
          */
-        const T &at(const key_type &key) const { return this->_lst.at(key); }
+        const T& at(const key_type& key) const { return this->_lst.at(key); }
 
         // void erase() { throw std::runtime_error("NotImplementedError"); }
 
@@ -112,7 +112,7 @@ namespace py {
          *   >>> a.contains(2)
          *   true
          */
-        bool contains(const key_type &key) const noexcept { return this->_rng.contains(key); }
+        bool contains(const key_type& key) const noexcept { return this->_rng.contains(key); }
 
         /**
          * @brief This function returns the length of the `rng` attribute of the object.
@@ -142,7 +142,7 @@ namespace py {
          *   3
          *   6
          */
-        const auto &values() const { return this->_lst; }
+        const auto& values() const { return this->_lst; }
 
         /**
          * @brief The `values` function returns an iterator that yields the elements of the `lst`
@@ -161,7 +161,7 @@ namespace py {
          *   4
          *   7
          */
-        auto &values() { return this->_lst; }
+        auto& values() { return this->_lst; }
 
         /**
          * @brief The function returns an enumeration of the items in the list.

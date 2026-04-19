@@ -32,7 +32,7 @@ namespace py {
              * @param[in] other The other iterator to compare with
              * @return true if the iterators are not equal, false otherwise
              */
-            auto operator!=(const EnumerateIterator &other) const -> bool {
+            auto operator!=(const EnumerateIterator& other) const -> bool {
                 return iter != other.iter;
             }
 
@@ -43,7 +43,7 @@ namespace py {
              *
              * @return EnumerateIterator& Reference to this iterator
              */
-            EnumerateIterator &operator++() {
+            EnumerateIterator& operator++() {
                 ++i;
                 ++iter;
                 return *this;
@@ -70,7 +70,7 @@ namespace py {
          * @tparam T The container type to wrap
          */
         template <typename T> struct EnumerateIterableWrapper {
-            T &iterable;
+            T& iterable;
 
             /**
              * @brief Get iterator to the beginning
@@ -107,7 +107,7 @@ namespace py {
      * @param[in] iterable Reference to the container to enumerate
      * @return detail::EnumerateIterableWrapper<T> Wrapper for enumerated iteration
      */
-    template <typename T> inline auto enumerate(T &iterable)
+    template <typename T> inline auto enumerate(T& iterable)
         -> detail::EnumerateIterableWrapper<T> {
         return detail::EnumerateIterableWrapper<T>{iterable};
     }
@@ -122,7 +122,7 @@ namespace py {
      * @param[in] iterable Const reference to the container to enumerate
      * @return detail::EnumerateIterableWrapper<const T> Wrapper for enumerated iteration
      */
-    template <typename T> inline auto enumerate(const T &iterable)
+    template <typename T> inline auto enumerate(const T& iterable)
         -> detail::EnumerateIterableWrapper<const T> {
         return detail::EnumerateIterableWrapper<const T>{iterable};
     }
@@ -136,7 +136,7 @@ namespace py {
      * @param[in] iterable Const reference to the container to enumerate
      * @return detail::EnumerateIterableWrapper<const T> Wrapper for enumerated iteration
      */
-    template <typename T> inline auto const_enumerate(const T &iterable)
+    template <typename T> inline auto const_enumerate(const T& iterable)
         -> detail::EnumerateIterableWrapper<const T> {
         return detail::EnumerateIterableWrapper<const T>{iterable};
     }

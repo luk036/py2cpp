@@ -8,7 +8,7 @@
 TEST_CASE("Test enumerate") {
     auto R = py::range(10);
     auto count = 0;
-    for (const auto &p : py::enumerate(R)) {
+    for (const auto& p : py::enumerate(R)) {
         static_assert(sizeof p.first >= 0, "make comipler happy");
         CHECK(p.first == count);
         ++count;
@@ -19,7 +19,7 @@ TEST_CASE("Test enumerate") {
 TEST_CASE("Test enumerate with const vector") {
     const std::vector<int> V = {10, 20, 30, 40, 50};
     size_t count = 0;
-    for (const auto &p : py::enumerate(V)) {
+    for (const auto& p : py::enumerate(V)) {
         CHECK(p.first == count);
         CHECK(p.second == V[count]);
         ++count;
@@ -30,7 +30,7 @@ TEST_CASE("Test enumerate with const vector") {
 TEST_CASE("Test enumerate with const vector") {
     const std::vector<int> V = {10, 20, 30, 40, 50};
     size_t count = 0;
-    for (const auto &p : py::const_enumerate(V)) {
+    for (const auto& p : py::const_enumerate(V)) {
         CHECK(p.first == count);
         CHECK(p.second == V[count]);
         ++count;

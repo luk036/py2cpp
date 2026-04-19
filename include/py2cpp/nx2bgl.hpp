@@ -24,7 +24,7 @@ namespace py {
          *
          * @param[in] gra The graph to wrap (moved into this VertexView)
          */
-        explicit VertexView(Graph &&gra) noexcept : Graph{std::forward<Graph>(gra)} {}
+        explicit VertexView(Graph&& gra) noexcept : Graph{std::forward<Graph>(gra)} {}
 
         /**
          * @brief Get iterator to the beginning of vertices
@@ -89,7 +89,7 @@ namespace py {
      */
     template <typename Graph> class EdgeView {
       private:
-        const Graph &gra;
+        const Graph& gra;
 
       public:
         /**
@@ -99,7 +99,7 @@ namespace py {
          *
          * @param[in] gra Reference to the graph to view edges from
          */
-        explicit EdgeView(const Graph &gra) : gra{gra} {}
+        explicit EdgeView(const Graph& gra) : gra{gra} {}
 
         /**
          * @brief Get iterator to the beginning of edges
@@ -167,7 +167,7 @@ namespace py {
     template <typename Vertex, typename Graph> class AtlasView {
       private:
         Vertex _v;
-        const Graph &gra;
+        const Graph& gra;
 
       public:
         /**
@@ -178,7 +178,7 @@ namespace py {
          * @param[in] v The vertex to view adjacency from
          * @param[in] gra Reference to the graph containing the vertex
          */
-        AtlasView(Vertex v, const Graph &gra) : _v{v}, gra{gra} {}
+        AtlasView(Vertex v, const Graph& gra) : _v{v}, gra{gra} {}
 
         /**
          * @brief Get iterator to the beginning of adjacent edges
@@ -264,7 +264,7 @@ namespace py {
          *
          * @param[in] gra The graph to wrap (moved into this GrAdaptor)
          */
-        explicit GrAdaptor(_Graph &&gra) noexcept : VertexView<_Graph>{std::forward<_Graph>(gra)} {}
+        explicit GrAdaptor(_Graph&& gra) noexcept : VertexView<_Graph>{std::forward<_Graph>(gra)} {}
 
         // GrAdaptor(const GrAdaptor&) = delete;            // don't copy
         // GrAdaptor& operator=(const GrAdaptor&) = delete; // don't assign
@@ -334,7 +334,7 @@ namespace py {
          * @param[in] e The edge to get the source of
          * @return Vertex Source vertex of the edge
          */
-        template <typename Edge> auto source(const Edge &e) const -> Vertex {
+        template <typename Edge> auto source(const Edge& e) const -> Vertex {
             return boost::source(e, *this);
         }
 
@@ -347,7 +347,7 @@ namespace py {
          * @param[in] e The edge to get the target of
          * @return Vertex Target vertex of the edge
          */
-        template <typename Edge> auto target(const Edge &e) const -> Vertex {
+        template <typename Edge> auto target(const Edge& e) const -> Vertex {
             return boost::target(e, *this);
         }
 
@@ -358,7 +358,7 @@ namespace py {
          * @param[in] e The edge
          * @return std::pair<Vertex, Vertex> Pair of (source, target) vertices
          */
-        template <typename Edge> [[nodiscard]] auto end_points(const Edge &e) const {
+        template <typename Edge> [[nodiscard]] auto end_points(const Edge& e) const {
             auto s = boost::source(e, *this);
             auto t = boost::target(e, *this);
             return std::make_pair(s, t);
