@@ -206,8 +206,8 @@ namespace py {
 //     a[i] = i * i;
 //   }
 //   for (auto i : a) {
-//     std::cout << i << ": " << a[i] << std::endl;
+//     std::cout << i << ": " << a[i] << '\n';
 //   }
-//   std::cout << a.__contains__(3) << std::endl;
+//   std::cout << a.__contains__(3) << '\n';
 //   return 0;
 // }

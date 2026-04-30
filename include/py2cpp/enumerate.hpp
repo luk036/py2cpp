@@ -2,7 +2,6 @@
 
 #include <cstddef>   // import size_t
 #include <iterator>  // import std::begin() std::end()
-#include <type_traits>
 #include <utility>
 
 namespace py {
@@ -18,7 +17,7 @@ namespace py {
          * @tparam T The container or range type to enumerate
          */
         template <typename T> struct EnumerateIterator {
-            typedef decltype(std::begin(std::declval<T>())) TIter;
+            using TIter = decltype(std::begin(std::declval<T>()));
             using iter_ref = typename std::iterator_traits<TIter>::reference;
 
             size_t i;
