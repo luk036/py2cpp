@@ -49,10 +49,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="nx2bgl_8hpp.html">&lt;py2cpp/nx2bgl.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename Vertex, typename Graph&gt;</div>
           <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span>AtlasView <span class="m-thin">class</span>
         </h1>
+        <p>Atlas view for vertex adjacency in Boost Graph Library graphs.</p>
         <table class="m-table m-fullwidth m-flat">
           <thead>
             <tr><th colspan="2">Template parameters</th></tr>
@@ -60,11 +60,11 @@
           <tbody>
             <tr>
               <td style="width: 1%">Vertex</td>
-              <td></td>
+              <td>The vertex descriptor type</td>
             </tr>
             <tr>
               <td>Graph</td>
-              <td></td>
+              <td>The Boost Graph Library graph type</td>
             </tr>
           </tbody>
         </table>
@@ -80,6 +80,7 @@
             </li>
           </ul>
         </nav>
+<p>Provides iterable access to edges adjacent to a specific vertex in a BGL graph. This class holds a vertex and a reference to a graph and provides iterator interfaces for traversing edges connected to that vertex.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -96,19 +97,19 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a987781262abe5873972c0e2c3b336d07" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd></dd>
+            <dd>Get iterator to the beginning of adjacent edges.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a01ed062bb1960ee7045945ce537698e4" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd></dd>
+            <dd>Get iterator to the end of adjacent edges.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aab0939c260ec88442fd61f94b2de208b" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd></dd>
+            <dd>Get const iterator to the beginning of adjacent edges.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a277af61654ab50f54341f194a4ada511" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd></dd>
+            <dd>Get const iterator to the end of adjacent edges.</dd>
           </dl>
         </section>
         <section>
@@ -129,14 +130,15 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">v&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The vertex to view adjacency from</td>
                 </tr>
                 <tr>
                   <td>gra&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>Reference to the graph containing the vertex</td>
                 </tr>
               </tbody>
             </table>
+<p>Creates an atlas view for a specific vertex in a graph.</p>
           </div></section>
           <section class="m-doc-details" id="a987781262abe5873972c0e2c3b336d07"><div>
             <h3>
@@ -145,14 +147,16 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />AtlasView&lt;Vertex, Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a987781262abe5873972c0e2c3b336d07" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
+            <p>Get iterator to the beginning of adjacent edges.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>auto</td>
+                  <td>Iterator to the first adjacent edge</td>
                 </tr>
               </tfoot>
             </table>
+<p>Returns an iterator to the first edge adjacent to the vertex.</p>
           </div></section>
           <section class="m-doc-details" id="a01ed062bb1960ee7045945ce537698e4"><div>
             <h3>
@@ -161,14 +165,16 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />AtlasView&lt;Vertex, Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a01ed062bb1960ee7045945ce537698e4" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
+            <p>Get iterator to the end of adjacent edges.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>auto</td>
+                  <td>Iterator past the last adjacent edge</td>
                 </tr>
               </tfoot>
             </table>
+<p>Returns an iterator past the last edge adjacent to the vertex.</p>
           </div></section>
           <section class="m-doc-details" id="aab0939c260ec88442fd61f94b2de208b"><div>
             <h3>
@@ -177,14 +183,16 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />AtlasView&lt;Vertex, Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aab0939c260ec88442fd61f94b2de208b" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
+            <p>Get const iterator to the beginning of adjacent edges.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>auto</td>
+                  <td>Const iterator to the first adjacent edge</td>
                 </tr>
               </tfoot>
             </table>
+<p>Returns a const iterator to the first edge adjacent to the vertex.</p>
           </div></section>
           <section class="m-doc-details" id="a277af61654ab50f54341f194a4ada511"><div>
             <h3>
@@ -193,14 +201,16 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />AtlasView&lt;Vertex, Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a277af61654ab50f54341f194a4ada511" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
+            <p>Get const iterator to the end of adjacent edges.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>auto</td>
+                  <td>Const iterator past the last adjacent edge</td>
                 </tr>
               </tfoot>
             </table>
+<p>Returns a const iterator past the last edge adjacent to the vertex.</p>
           </div></section>
         </section>
       </div>

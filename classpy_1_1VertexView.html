@@ -49,10 +49,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="nx2bgl_8hpp.html">&lt;py2cpp/nx2bgl.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename Graph&gt;</div>
           <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span>VertexView <span class="m-thin">class</span>
         </h1>
+        <p>Vertex view for Boost Graph Library graphs.</p>
         <table class="m-table m-fullwidth m-flat">
           <thead>
             <tr><th colspan="2">Template parameters</th></tr>
@@ -60,7 +60,7 @@
           <tbody>
             <tr>
               <td style="width: 1%">Graph</td>
-              <td></td>
+              <td>The Boost Graph Library graph type</td>
             </tr>
           </tbody>
         </table>
@@ -76,6 +76,7 @@
             </li>
           </ul>
         </nav>
+<p>Provides iterable access to vertices in a BGL graph. This class wraps a graph and provides iterator interfaces for traversing vertices.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -88,22 +89,22 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="ad9edfe1264854068c592970a8915a647">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad9edfe1264854068c592970a8915a647" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad9edfe1264854068c592970a8915a647" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="aae1188f7ec00ad01ae427dcf0295feb8">
-              <span class="m-doc-wrap-bumper">auto <a href="#aae1188f7ec00ad01ae427dcf0295feb8" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
+            <dd>Get iterator to the beginning of vertices.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aae1188f7ec00ad01ae427dcf0295feb8" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a83d3937af210741658042442755f72a2">
-              <span class="m-doc-wrap-bumper">auto <a href="#a83d3937af210741658042442755f72a2" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
+            <dd>Get iterator to the end of vertices.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a83d3937af210741658042442755f72a2" class="m-doc">cbegin</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a3cd856a98c1cb4adbc0eded19922b1a4">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3cd856a98c1cb4adbc0eded19922b1a4" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
+            <dd>Get const iterator to the beginning of vertices.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3cd856a98c1cb4adbc0eded19922b1a4" class="m-doc">cend</a>(</span><span class="m-doc-wrap">) const -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Get const iterator to the end of vertices.</dd>
           </dl>
         </section>
         <section>
@@ -123,10 +124,83 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">gra&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The graph to wrap (moved into this <a href="classpy_1_1VertexView.html" class="m-doc">VertexView</a>)</td>
                 </tr>
               </tbody>
             </table>
+<p>Creates a vertex view from an existing graph by moving it into this wrapper.</p>
+          </div></section>
+          <section class="m-doc-details" id="ad9edfe1264854068c592970a8915a647"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Graph&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />VertexView&lt;Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad9edfe1264854068c592970a8915a647" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Get iterator to the beginning of vertices.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Iterator to the first vertex</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns an iterator to the first vertex in the graph.</p>
+          </div></section>
+          <section class="m-doc-details" id="aae1188f7ec00ad01ae427dcf0295feb8"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Graph&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />VertexView&lt;Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae1188f7ec00ad01ae427dcf0295feb8" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Get iterator to the end of vertices.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Iterator past the last vertex</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns an iterator past the last vertex in the graph.</p>
+          </div></section>
+          <section class="m-doc-details" id="a83d3937af210741658042442755f72a2"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Graph&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />VertexView&lt;Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a83d3937af210741658042442755f72a2" class="m-doc-self">cbegin</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Get const iterator to the beginning of vertices.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Const iterator to the first vertex</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns a const iterator to the first vertex in the graph.</p>
+          </div></section>
+          <section class="m-doc-details" id="a3cd856a98c1cb4adbc0eded19922b1a4"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Graph&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />VertexView&lt;Graph&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3cd856a98c1cb4adbc0eded19922b1a4" class="m-doc-self">cend</a>(</span><span class="m-doc-wrap">) const</span></span>
+            </h3>
+            <p>Get const iterator to the end of vertices.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Const iterator past the last vertex</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Returns a const iterator past the last vertex in the graph.</p>
           </div></section>
         </section>
       </div>

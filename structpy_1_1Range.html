@@ -49,11 +49,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="range_8hpp.html">&lt;py2cpp/range.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename T&gt;</div>
           <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span>Range <span class="m-thin">struct</span>
         </h1>
-        <p><a href="structpy_1_1Range.html" class="m-doc">Range</a>.</p>
+        <p>Python-like range implementation.</p>
         <table class="m-table m-fullwidth m-flat">
           <thead>
             <tr><th colspan="2">Template parameters</th></tr>
@@ -61,7 +60,7 @@
           <tbody>
             <tr>
               <td style="width: 1%">T</td>
-              <td></td>
+              <td>The numeric type for the range values</td>
             </tr>
           </tbody>
         </table>
@@ -71,71 +70,39 @@
             <li>
               Reference
               <ul>
-                <li><a href="#pub-types">Public types</a></li>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </nav>
-<p>The code snippet defines a struct template called <code><a href="structpy_1_1Range.html" class="m-doc">Range</a></code> that represents a range of values. It has two template parameters, <code>T</code> which represents the type of the values in the range.</p>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
-            <dt id="a346a047b8f0b0e4f9365aa13f8f84fcc">
-              using <a href="#a346a047b8f0b0e4f9365aa13f8f84fcc" class="m-doc-self">iterator</a> = <a href="structpy_1_1RangeIterator.html" class="m-doc">RangeIterator</a>&lt;T&gt;
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a026203c90a4eed48024ffc78def39f23">
-              using <a href="#a026203c90a4eed48024ffc78def39f23" class="m-doc-self">value_type</a> = T
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a23e5c8c3067ae4adb33a68952d677e76">
-              using <a href="#a23e5c8c3067ae4adb33a68952d677e76" class="m-doc-self">key_type</a> = T
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
+<p>Represents a sequence of numbers from start to stop (exclusive), similar to Python&#x27;s <a href="namespacepy.html#aa3bac90078811ece454df0f02e793c1a" class="m-doc">range()</a> function.</p>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a48943ccca57cab44d6d770341e7f598b" class="m-doc">begin</a>(</span><span class="m-doc-wrap">) const -&gt; iterator -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>begin</dd>
+            <dd>Get iterator to the beginning of the range.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a184303f2ad9999699675d02eb8f7615c" class="m-doc">end</a>(</span><span class="m-doc-wrap">) const -&gt; iterator -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>end</dd>
+            <dd>Get iterator to the end of the range.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a8635d708684f2296823ae0b4677be56f" class="m-doc">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>empty</dd>
+            <dd>Check if the range is empty.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a528c312d10223444e652795bd5ec1c3c" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd>size</dd>
+            <dd>Get the size of the range.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab8ba8efc844ec1843233f7bac3b88ee5" class="m-doc">operator[]</a>(</span><span class="m-doc-wrap">size_t n) const -&gt; T -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd></dd>
+            <dd>Get element at index.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a30426bb3d77ba2c4b4bf2ffc6ede3100" class="m-doc">contains</a>(</span><span class="m-doc-wrap">T n) const noexcept -&gt; bool -&gt; auto <span class="m-label m-flat m-primary">constexpr</span></span>
             </dt>
-            <dd></dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a0790f69171b6f2beb7e5a7a632bfe72d">
-              T <a href="#a0790f69171b6f2beb7e5a7a632bfe72d" class="m-doc-self">start</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="aad409638e69266b9368235f2e5569acd">
-              T <a href="#aad409638e69266b9368235f2e5569acd" class="m-doc-self">stop</a>
-            </dt>
-            <dd><span></span></dd>
+            <dd>Check if the range contains a value.</dd>
           </dl>
         </section>
         <section>
@@ -147,16 +114,16 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />Range&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a48943ccca57cab44d6d770341e7f598b" class="m-doc-self">begin</a>(</span><span class="m-doc-wrap">) const -&gt; iterator <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
-            <p>begin</p>
+            <p>Get iterator to the beginning of the range.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>iterator</td>
+                  <td>iterator Iterator to the beginning</td>
                 </tr>
               </tfoot>
             </table>
-<p>The <code><a href="structpy_1_1Range.html#a48943ccca57cab44d6d770341e7f598b" class="m-doc">begin()</a></code> function is a member function of the <code><a href="structpy_1_1Range.html" class="m-doc">Range</a></code> struct template. It returns an iterator pointing to the beginning of the range. In this case, it creates a <code><a href="structpy_1_1RangeIterator.html" class="m-doc">RangeIterator</a></code> object with the <code>start</code> value of the range and returns it.</p>
+<p>Returns an iterator pointing to the start value of the range.</p>
           </div></section>
           <section class="m-doc-details" id="a184303f2ad9999699675d02eb8f7615c"><div>
             <h3>
@@ -165,16 +132,16 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />Range&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a184303f2ad9999699675d02eb8f7615c" class="m-doc-self">end</a>(</span><span class="m-doc-wrap">) const -&gt; iterator <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
-            <p>end</p>
+            <p>Get iterator to the end of the range.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>iterator</td>
+                  <td>iterator Iterator past the last element</td>
                 </tr>
               </tfoot>
             </table>
-<p>The <code><a href="structpy_1_1Range.html#a184303f2ad9999699675d02eb8f7615c" class="m-doc">end()</a></code> function is a member function of the <code><a href="structpy_1_1Range.html" class="m-doc">Range</a></code> struct template. It returns an iterator pointing to the end of the range. In this case, it creates a <code><a href="structpy_1_1RangeIterator.html" class="m-doc">RangeIterator</a></code> object with the <code>stop</code> value of the range and returns it. This iterator represents the position one past the last element in the range.</p>
+<p>Returns an iterator pointing past the last element in the range.</p>
           </div></section>
           <section class="m-doc-details" id="a8635d708684f2296823ae0b4677be56f"><div>
             <h3>
@@ -183,16 +150,16 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />Range&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8635d708684f2296823ae0b4677be56f" class="m-doc-self">empty</a>(</span><span class="m-doc-wrap">) const -&gt; bool <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
-            <p>empty</p>
+            <p>Check if the range is empty.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>true</td>
+                  <td>true if the range is empty, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
-<p>The <code><a href="structpy_1_1Range.html#a8635d708684f2296823ae0b4677be56f" class="m-doc">empty()</a></code> function is a member function of the <code><a href="structpy_1_1Range.html" class="m-doc">Range</a></code> struct template. It checks if the range is empty, meaning if the <code>start</code> and <code>stop</code> values are equal.</p>
+<p>Returns true if the range has no elements (start equals stop).</p>
           </div></section>
           <section class="m-doc-details" id="a528c312d10223444e652795bd5ec1c3c"><div>
             <h3>
@@ -201,16 +168,16 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />Range&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a528c312d10223444e652795bd5ec1c3c" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
-            <p>size</p>
+            <p>Get the size of the range.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>size_t</td>
+                  <td>size_t Number of elements in the range</td>
                 </tr>
               </tfoot>
             </table>
-<p>The <code><a href="structpy_1_1Range.html#a528c312d10223444e652795bd5ec1c3c" class="m-doc">size()</a></code> function is a member function of the <code><a href="structpy_1_1Range.html" class="m-doc">Range</a></code> struct template. It calculates and returns the size of the range, which is the number of elements in the range.</p>
+<p>Returns the number of elements in the range.</p>
           </div></section>
           <section class="m-doc-details" id="ab8ba8efc844ec1843233f7bac3b88ee5"><div>
             <h3>
@@ -219,6 +186,7 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />Range&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab8ba8efc844ec1843233f7bac3b88ee5" class="m-doc-self">operator[]</a>(</span><span class="m-doc-wrap">size_t n) const -&gt; T <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
+            <p>Get element at index.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -226,16 +194,17 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">n&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The index</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>T</td>
+                  <td>T The value at the index</td>
                 </tr>
               </tfoot>
             </table>
+<p>Returns the value at the specified index in the range.</p>
           </div></section>
           <section class="m-doc-details" id="a30426bb3d77ba2c4b4bf2ffc6ede3100"><div>
             <h3>
@@ -244,6 +213,7 @@
               </div>
               <span class="m-doc-wrap-bumper">auto py::<wbr />Range&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a30426bb3d77ba2c4b4bf2ffc6ede3100" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">T n) const noexcept -&gt; bool <span class="m-label m-primary">constexpr</span></span></span>
             </h3>
+            <p>Check if the range contains a value.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -251,13 +221,13 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">n&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The value to check</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the range contains the value, false otherwise</td>
                 </tr>
               </tfoot>
             </table>

@@ -49,10 +49,10 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="dict_8hpp.html">&lt;py2cpp/dict.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename Iter&gt;</div>
           <span class="m-breadcrumb"><a href="namespacepy.html">py</a>::<wbr/></span>key_iterator <span class="m-thin">struct</span>
         </h1>
+        <p>Iterator adapter for accessing keys in map-like containers.</p>
         <table class="m-table m-fullwidth m-flat">
           <thead>
             <tr><th colspan="2">Template parameters</th></tr>
@@ -60,7 +60,7 @@
           <tbody>
             <tr>
               <td style="width: 1%">Iter</td>
-              <td></td>
+              <td>The underlying iterator type for key-value pairs</td>
             </tr>
           </tbody>
         </table>
@@ -76,35 +76,127 @@
             </li>
           </ul>
         </nav>
+<p>Provides an iterator that dereferences to the key component of key-value pairs in map-like containers.</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="ad063ab1cd29cd3b5ca62ab65cb4d6665">
-              <span class="m-doc-wrap-bumper"><a href="#ad063ab1cd29cd3b5ca62ab65cb4d6665" class="m-doc-self">key_iterator</a>(</span><span class="m-doc-wrap">Iter it) <span class="m-label m-flat m-info">explicit</span> </span>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ad063ab1cd29cd3b5ca62ab65cb4d6665" class="m-doc">key_iterator</a>(</span><span class="m-doc-wrap">Iter it) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Construct a key iterator from an underlying iterator.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a2d33b75aac416aed06e34677081508dc">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2d33b75aac416aed06e34677081508dc" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; const auto &amp; -&gt; auto</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2d33b75aac416aed06e34677081508dc" class="m-doc">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; const auto &amp; -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a675b6ceae5a5a9f1627f3db31eb5f6fd">
-              <span class="m-doc-wrap-bumper">auto <a href="#a675b6ceae5a5a9f1627f3db31eb5f6fd" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) -&gt; const auto &amp; -&gt; auto</span>
+            <dd>Dereference to get the key (const version)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a675b6ceae5a5a9f1627f3db31eb5f6fd" class="m-doc">operator*</a>(</span><span class="m-doc-wrap">) -&gt; const auto &amp; -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="af64f6abe20264aa17f929c9dab53804e">
-              <span class="m-doc-wrap-bumper">auto <a href="#af64f6abe20264aa17f929c9dab53804e" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">) -&gt; key_iterator &amp; -&gt; auto</span>
+            <dd>Dereference to get the key (non-const version)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af64f6abe20264aa17f929c9dab53804e" class="m-doc">operator++</a>(</span><span class="m-doc-wrap">) -&gt; key_iterator &amp; -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ad452a2ebb02a134b47ebe43767554b09">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad452a2ebb02a134b47ebe43767554b09" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">int) -&gt; key_iterator -&gt; auto</span>
+            <dd>Pre-increment operator.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad452a2ebb02a134b47ebe43767554b09" class="m-doc">operator++</a>(</span><span class="m-doc-wrap">int) -&gt; key_iterator -&gt; auto</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Post-increment operator.</dd>
           </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ad063ab1cd29cd3b5ca62ab65cb4d6665"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Iter&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> py::<wbr />key_iterator&lt;Iter&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad063ab1cd29cd3b5ca62ab65cb4d6665" class="m-doc-self">key_iterator</a>(</span><span class="m-doc-wrap">Iter it) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Construct a key iterator from an underlying iterator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">it&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>The underlying iterator for key-value pairs</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a2d33b75aac416aed06e34677081508dc"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Iter&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />key_iterator&lt;Iter&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d33b75aac416aed06e34677081508dc" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) const -&gt; const auto &amp;</span></span>
+            </h3>
+            <p>Dereference to get the key (const version)</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>const auto&amp; Reference to the key</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a675b6ceae5a5a9f1627f3db31eb5f6fd"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Iter&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />key_iterator&lt;Iter&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a675b6ceae5a5a9f1627f3db31eb5f6fd" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">) -&gt; const auto &amp;</span></span>
+            </h3>
+            <p>Dereference to get the key (non-const version)</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>const auto&amp; Reference to the key</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="af64f6abe20264aa17f929c9dab53804e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Iter&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />key_iterator&lt;Iter&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af64f6abe20264aa17f929c9dab53804e" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">) -&gt; key_iterator &amp;</span></span>
+            </h3>
+            <p>Pre-increment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><a href="structpy_1_1key__iterator.html" class="m-doc">key_<wbr />iterator</a>&amp; Reference to this iterator</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="ad452a2ebb02a134b47ebe43767554b09"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Iter&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto py::<wbr />key_iterator&lt;Iter&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad452a2ebb02a134b47ebe43767554b09" class="m-doc-self">operator++</a>(</span><span class="m-doc-wrap">int) -&gt; key_iterator</span></span>
+            </h3>
+            <p>Post-increment operator.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td><a href="structpy_1_1key__iterator.html" class="m-doc">key_<wbr />iterator</a> Copy of this iterator before increment</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
         </section>
       </div>
     </div>

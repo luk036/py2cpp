@@ -61,7 +61,7 @@
           <tbody>
             <tr>
               <td style="width: 1%">Z</td>
-              <td></td>
+              <td>The integer type for numerator and denominator</td>
             </tr>
           </tbody>
         </table>
@@ -72,7 +72,6 @@
               Reference
               <ul>
                 <li><a href="#pub-methods">Public functions</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
                 <li><a href="#comparison-operators">Comparison operators</a></li>
                 <li><a href="#friends">Friends</a></li>
               </ul>
@@ -110,15 +109,15 @@
             <dt id="a8befd626c7a7a887418d99a89ba9139f">
               <span class="m-doc-wrap-bumper">auto <a href="#a8befd626c7a7a887418d99a89ba9139f" class="m-doc-self">Fraction</a>(</span><span class="m-doc-wrap">) -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a></span>
             </dt>
-            <dd>Construct a new <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a> object.</dd>
+            <dd>Construct a new <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a> object (default constructor)</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a3916939722b107728321cbc26fbaa44b" class="m-doc">num</a>(</span><span class="m-doc-wrap">) const noexcept -&gt; const Z &amp; -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Get the numerator.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#af7e12977ccba7ffb3d084e2c0bc5329d" class="m-doc">den</a>(</span><span class="m-doc-wrap">) const noexcept -&gt; const Z &amp; -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Get the denominator.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a846bebfe321304caa335bd3743773f67" class="m-doc">cross</a>(</span><span class="m-doc-wrap">const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; rhs) const -&gt; Z -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
@@ -158,36 +157,23 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ab08337aca9b98b726e8383c6c0ad70a4" class="m-doc">operator-</a>(</span><span class="m-doc-wrap">const Z&amp; i) const -&gt; Fraction -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Subtract an integer from the fraction.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aee58fab90c8d25253aae2c4a6a8a7308" class="m-doc">operator+=</a>(</span><span class="m-doc-wrap">const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; rhs) -&gt; Fraction &amp; -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Add and assign a fraction.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a41a4449ee173517ea7853132bfdb9295" class="m-doc">operator-=</a>(</span><span class="m-doc-wrap">const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; rhs) -&gt; Fraction &amp; -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Subtract and assign a fraction.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a26633c0c1165b6041335e39c000ff746" class="m-doc">operator+=</a>(</span><span class="m-doc-wrap">const Z&amp; i) -&gt; Fraction &amp; -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Add and assign an integer.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa387436a4d45cd613a7e0d31c3c6cb1c" class="m-doc">operator-=</a>(</span><span class="m-doc-wrap">const Z&amp; rhs) -&gt; Fraction &amp; -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a76d796fd5d4f81342ae4772ed1303d31">
-              Z <a href="#a76d796fd5d4f81342ae4772ed1303d31" class="m-doc-self">_num</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a159f9429323537c11bfb06bc20609473">
-              Z <a href="#a159f9429323537c11bfb06bc20609473" class="m-doc-self">_den</a>
-            </dt>
-            <dd><span></span></dd>
+            <dd>Subtract and assign an integer.</dd>
           </dl>
         </section>
         <section id="comparison-operators">
@@ -197,7 +183,7 @@
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a37a34fd56d2a8132b72378c6cac2a381" class="m-doc">operator!=</a>(</span><span class="m-doc-wrap">const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; rhs) const -&gt; bool -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Not equal to.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a1adf6895214e8da09b88d22d4892c93e" class="m-doc">operator&gt;</a>(</span><span class="m-doc-wrap">const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; rhs) const -&gt; bool -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
@@ -316,28 +302,28 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a4acdb15f2b4266c664077e8b81087fb7" class="m-doc">operator-</a>(</span><span class="m-doc-wrap">const Z&amp; c,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; Fraction -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Subtract a fraction from an integer.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ada02190f68bf9934e4cb8f7900e1637c" class="m-doc">operator+</a>(</span><span class="m-doc-wrap">int&amp;&amp; c,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; Fraction -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Add a fraction to an integer rvalue.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac399a6da70959378753751dea75b186b" class="m-doc">operator-</a>(</span><span class="m-doc-wrap">int&amp;&amp; c,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; Fraction -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Subtract a fraction from an integer rvalue.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aacfef41fbee681507c2725924bad22cf" class="m-doc">operator*</a>(</span><span class="m-doc-wrap">int&amp;&amp; c,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; Fraction -&gt; <a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto</span>
             </dt>
-            <dd></dd>
+            <dd>Multiply a fraction by an integer rvalue.</dd>
             <dt>
               <div class="m-doc-template">template&lt;typename _Stream&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#ae98c788cab3edde96a4d944a71de0c66" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">_Stream&amp; os,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; _Stream &amp; -&gt; auto</span>
             </dt>
-            <dd></dd>
+            <dd>Stream output operator for <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>.</dd>
           </dl>
         </section>
         <section>
@@ -444,11 +430,12 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr />Fraction&lt;Z&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3916939722b107728321cbc26fbaa44b" class="m-doc-self">num</a>(</span><span class="m-doc-wrap">) const noexcept -&gt; const Z &amp;</span></span>
             </h3>
+            <p>Get the numerator.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>const Z&amp;</td>
+                  <td>const Z&amp; Reference to the numerator</td>
                 </tr>
               </tfoot>
             </table>
@@ -460,11 +447,12 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr />Fraction&lt;Z&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af7e12977ccba7ffb3d084e2c0bc5329d" class="m-doc-self">den</a>(</span><span class="m-doc-wrap">) const noexcept -&gt; const Z &amp;</span></span>
             </h3>
+            <p>Get the denominator.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>const Z&amp;</td>
+                  <td>const Z&amp; Reference to the denominator</td>
                 </tr>
               </tfoot>
             </table>
@@ -675,6 +663,7 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr />Fraction&lt;Z&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab08337aca9b98b726e8383c6c0ad70a4" class="m-doc-self">operator-</a>(</span><span class="m-doc-wrap">const Z&amp; i) const -&gt; Fraction</span></span>
             </h3>
+            <p>Subtract an integer from the fraction.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -682,7 +671,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">i&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer value to subtract</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -700,6 +689,7 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr />Fraction&lt;Z&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee58fab90c8d25253aae2c4a6a8a7308" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; rhs) -&gt; Fraction &amp;</span></span>
             </h3>
+            <p>Add and assign a fraction.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -707,13 +697,13 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to add</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a></td>
+                  <td><a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; Reference to this fraction</td>
                 </tr>
               </tfoot>
             </table>
@@ -725,6 +715,7 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr />Fraction&lt;Z&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a41a4449ee173517ea7853132bfdb9295" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; rhs) -&gt; Fraction &amp;</span></span>
             </h3>
+            <p>Subtract and assign a fraction.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -732,13 +723,13 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to subtract</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a></td>
+                  <td><a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; Reference to this fraction</td>
                 </tr>
               </tfoot>
             </table>
@@ -750,6 +741,7 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr />Fraction&lt;Z&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a26633c0c1165b6041335e39c000ff746" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">const Z&amp; i) -&gt; Fraction &amp;</span></span>
             </h3>
+            <p>Add and assign an integer.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -757,13 +749,13 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">i&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer value to add</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a></td>
+                  <td><a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; Reference to this fraction</td>
                 </tr>
               </tfoot>
             </table>
@@ -775,6 +767,7 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr />Fraction&lt;Z&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa387436a4d45cd613a7e0d31c3c6cb1c" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">const Z&amp; rhs) -&gt; Fraction &amp;</span></span>
             </h3>
+            <p>Subtract and assign an integer.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -782,13 +775,13 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer value to subtract</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td><a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a></td>
+                  <td><a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; Reference to this fraction</td>
                 </tr>
               </tfoot>
             </table>
@@ -800,6 +793,7 @@
               </div>
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto fun::<wbr />Fraction&lt;Z&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a37a34fd56d2a8132b72378c6cac2a381" class="m-doc-self">operator!=</a>(</span><span class="m-doc-wrap">const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; rhs) const -&gt; bool</span></span>
             </h3>
+            <p>Not equal to.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -807,13 +801,13 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to compare with</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the fractions are not equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -839,7 +833,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the fractions are equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -865,7 +859,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the fractions are equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -891,7 +885,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the fractions are equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -917,7 +911,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the fractions are equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -943,7 +937,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the fractions are equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -969,7 +963,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the fractions are equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -990,17 +984,17 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction</td>
                 </tr>
                 <tr>
                   <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer value</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1031,7 +1025,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if lhs &lt; rhs, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1062,7 +1056,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if lhs &lt; rhs, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1083,17 +1077,17 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer value</td>
                 </tr>
                 <tr>
                   <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1114,17 +1108,17 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">lhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The first fraction</td>
                 </tr>
                 <tr>
                   <td>rhs&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The second fraction</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if the fractions are equal, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1156,7 +1150,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if lhs &lt; rhs, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1187,7 +1181,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if lhs &gt; rhs, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1218,7 +1212,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if lhs &lt;= rhs, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1249,7 +1243,7 @@
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>true</td>
+                  <td>true if lhs &gt;= rhs, false otherwise</td>
                 </tr>
               </tfoot>
             </table>
@@ -1456,11 +1450,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">frac&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to add to</td>
                 </tr>
                 <tr>
                   <td>i&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer value to add</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -1487,11 +1481,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">i&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer value to add</td>
                 </tr>
                 <tr>
                   <td>frac&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to add to</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -1510,6 +1504,7 @@
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4acdb15f2b4266c664077e8b81087fb7" class="m-doc-self">operator-</a>(</span><span class="m-doc-wrap">const Z&amp; c,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; Fraction</span></span>
             </h3>
+            <p>Subtract a fraction from an integer.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -1517,11 +1512,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">c&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer value</td>
                 </tr>
                 <tr>
                   <td>frac&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to subtract</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -1540,6 +1535,7 @@
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ada02190f68bf9934e4cb8f7900e1637c" class="m-doc-self">operator+</a>(</span><span class="m-doc-wrap">int&amp;&amp; c,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; Fraction</span></span>
             </h3>
+            <p>Add a fraction to an integer rvalue.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -1547,11 +1543,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">c&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer rvalue</td>
                 </tr>
                 <tr>
                   <td>frac&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to add</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -1570,6 +1566,7 @@
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac399a6da70959378753751dea75b186b" class="m-doc-self">operator-</a>(</span><span class="m-doc-wrap">int&amp;&amp; c,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; Fraction</span></span>
             </h3>
+            <p>Subtract a fraction from an integer rvalue.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -1577,11 +1574,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">c&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer rvalue</td>
                 </tr>
                 <tr>
                   <td>frac&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to subtract</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -1600,6 +1597,7 @@
               <span class="m-doc-wrap-bumper"><a href="fractions_8hpp.html#a46d983a6cf6b8e418426de1b7e33dc46" class="m-doc">CONSTEXPR14</a> auto </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aacfef41fbee681507c2725924bad22cf" class="m-doc-self">operator*</a>(</span><span class="m-doc-wrap">int&amp;&amp; c,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; Fraction</span></span>
             </h3>
+            <p>Multiply a fraction by an integer rvalue.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -1607,11 +1605,11 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">c&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The integer rvalue</td>
                 </tr>
                 <tr>
                   <td>frac&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to multiply</td>
                 </tr>
               </tbody>
               <tfoot>
@@ -1631,6 +1629,7 @@
               <span class="m-doc-wrap-bumper">auto </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae98c788cab3edde96a4d944a71de0c66" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">_Stream&amp; os,
               const <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>&amp; frac) -&gt; _Stream &amp;</span></span>
             </h3>
+            <p>Stream output operator for <a href="structfun_1_1Fraction.html" class="m-doc">Fraction</a>.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Template parameters</th></tr>
@@ -1638,7 +1637,7 @@
               <tbody>
                 <tr>
                   <td style="width: 1%">_Stream</td>
-                  <td></td>
+                  <td>The stream type</td>
                 </tr>
               </tbody>
               <thead>
@@ -1647,17 +1646,17 @@
               <tbody>
                 <tr>
                   <td>os&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The output stream to write to</td>
                 </tr>
                 <tr>
                   <td>frac&nbsp;<span class="m-label m-flat m-info">in</span></td>
-                  <td></td>
+                  <td>The fraction to output</td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
                   <th>Returns</th>
-                  <td>_Stream&amp;</td>
+                  <td>_Stream&amp; Reference to the output stream</td>
                 </tr>
               </tfoot>
             </table>
