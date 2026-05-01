@@ -9,5 +9,5 @@ TEST_CASE("Test set") {
         static_assert(sizeof(_) >= 0, "make compiler happy");
         ++count;
     }
-    CHECK(count == 4);
+    CHECK_EQ(count, 4);
 }

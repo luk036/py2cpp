@@ -20,8 +20,8 @@
 //     auto a5 = T(a4 + v);
 //     auto z5 = T(z4 + v);
 //
-//     CHECK(a == a5);
-//     CHECK(z == z5);
+//     CHECK_EQ(a, a5);
+//     CHECK_EQ(z, z5);
 // }
 //
 // TEST_CASE("test unsigned long long") { check_unsigned<unsigned long long>();

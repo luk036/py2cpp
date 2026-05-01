@@ -12,5 +12,5 @@ TEST_CASE("Test py::dict") {
         static_assert(sizeof(p) >= 0, "make compiler happy");
         ++count;
     }
-    CHECK(count == 3);
+    CHECK_EQ(count, 3);
 }

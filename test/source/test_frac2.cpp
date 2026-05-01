@@ -11,51 +11,51 @@ TEST_CASE("Test Fraction methods") {
 
     SUBCASE("reciprocal") {
         p.reciprocal();
-        CHECK(p == Fraction<int>{4, 3});
+        CHECK_EQ(p, Fraction<int>{4, 3});
     }
 
     SUBCASE("operator*") {
-        CHECK(p * q == Fraction<int>{15, 24});
-        CHECK(p * 2 == Fraction<int>{6, 4});
-        CHECK(2 * p == Fraction<int>{6, 4});
+        CHECK_EQ(p * q, Fraction<int>{15, 24});
+        CHECK_EQ(p * 2, Fraction<int>{6, 4});
+        CHECK_EQ(2 * p, Fraction<int>{6, 4});
     }
 
     SUBCASE("operator/") {
-        CHECK(p / q == Fraction<int>{18, 20});
-        CHECK(p / 2 == Fraction<int>{3, 8});
-        CHECK(2 / p == Fraction<int>{8, 3});
+        CHECK_EQ(p / q, Fraction<int>{18, 20});
+        CHECK_EQ(p / 2, Fraction<int>{3, 8});
+        CHECK_EQ(2 / p, Fraction<int>{8, 3});
     }
 
     SUBCASE("operator+") {
-        CHECK(p + q == Fraction<int>{38, 24});
-        CHECK(p + 2 == Fraction<int>{11, 4});
-        CHECK(2 + p == Fraction<int>{11, 4});
+        CHECK_EQ(p + q, Fraction<int>{38, 24});
+        CHECK_EQ(p + 2, Fraction<int>{11, 4});
+        CHECK_EQ(2 + p, Fraction<int>{11, 4});
     }
 
     SUBCASE("operator-") {
-        CHECK(p - q == Fraction<int>{-2, 24});
-        CHECK(p - 2 == Fraction<int>{-5, 4});
-        CHECK(2 - p == Fraction<int>{5, 4});
+        CHECK_EQ(p - q, Fraction<int>{-2, 24});
+        CHECK_EQ(p - 2, Fraction<int>{-5, 4});
+        CHECK_EQ(2 - p, Fraction<int>{5, 4});
     }
 
     SUBCASE("operator+=") {
         p += q;
-        CHECK(p == Fraction<int>{38, 24});
+        CHECK_EQ(p, Fraction<int>{38, 24});
     }
 
     SUBCASE("operator-=") {
         p -= q;
-        CHECK(p == Fraction<int>{-2, 24});
+        CHECK_EQ(p, Fraction<int>{-2, 24});
     }
 
     SUBCASE("operator*=") {
         p *= q;
-        CHECK(p == Fraction<int>{15, 24});
+        CHECK_EQ(p, Fraction<int>{15, 24});
     }
 
     SUBCASE("operator/=") {
         p /= q;
-        CHECK(p == Fraction<int>{18, 20});
+        CHECK_EQ(p, Fraction<int>{18, 20});
     }
 
     SUBCASE("comparison") {
@@ -63,7 +63,7 @@ TEST_CASE("Test Fraction methods") {
         CHECK(Fraction<int>{1, 2} <= Fraction<int>{2, 3});
         CHECK(Fraction<int>{2, 3} > Fraction<int>{1, 2});
         CHECK(Fraction<int>{2, 3} >= Fraction<int>{1, 2});
-        CHECK(Fraction<int>{1, 2} == Fraction<int>{2, 4});
-        CHECK(Fraction<int>{1, 2} != Fraction<int>{2, 3});
+        CHECK_EQ(Fraction<int>{1, 2}, Fraction<int>{2, 4});
+        CHECK_NE(Fraction<int>{1, 2}, Fraction<int>{2, 3});
     }
 }

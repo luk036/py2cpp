@@ -24,10 +24,10 @@ TEST_CASE("Fraction") {
     const auto p = Fraction<int>{a, b};
     const auto q = Fraction<int>{c, d};
 
-    CHECK(p == Fraction<int>(30U, 40U));
-    CHECK(p + q == Fraction<int>(19U, 12U));
-    CHECK((p - q) + q == p);
-    // CHECK(p != 0);
+    CHECK_EQ(p, Fraction<int>(30U, 40U));
+    CHECK_EQ(p + q, Fraction<int>(19U, 12U));
+    CHECK_EQ((p - q) + q, p);
+    // CHECK_NE(p, 0);
 }
 
 TEST_CASE("Fraction Special Cases") {
@@ -40,20 +40,20 @@ TEST_CASE("Fraction Special Cases") {
     CHECK(zero < inf);
     CHECK(-inf < p);
     CHECK(p < inf);
-    CHECK(inf == inf);
+    CHECK_EQ(inf, inf);
     CHECK(-inf < inf);
-    CHECK(inf == inf * p);
-    CHECK(inf == inf * inf);
-    CHECK(inf == p / zero);
-    CHECK(inf == inf / zero);
-    CHECK(nan == nan);
-    CHECK(nan == inf * zero);
-    CHECK(nan == -inf * zero);
-    CHECK(nan == inf / inf);
-    CHECK(nan == nan * zero);
-    CHECK(nan == nan * nan);
-    CHECK(inf == inf + inf);
-    CHECK(nan == inf - inf);
-    CHECK(inf - p == inf);
-    CHECK(-inf + p == -inf);
+    CHECK_EQ(inf, inf * p);
+    CHECK_EQ(inf, inf * inf);
+    CHECK_EQ(inf, p / zero);
+    CHECK_EQ(inf, inf / zero);
+    CHECK_EQ(nan, nan);
+    CHECK_EQ(nan, inf * zero);
+    CHECK_EQ(nan, -inf * zero);
+    CHECK_EQ(nan, inf / inf);
+    CHECK_EQ(nan, nan * zero);
+    CHECK_EQ(nan, nan * nan);
+    CHECK_EQ(inf, inf + inf);
+    CHECK_EQ(nan, inf - inf);
+    CHECK_EQ(inf - p, inf);
+    CHECK_EQ(-inf + p, -inf);
 }

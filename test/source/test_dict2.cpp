@@ -12,24 +12,24 @@ TEST_CASE("Test py::dict methods") {
     }
 
     SUBCASE("get") {
-        CHECK(S.get(0.1, 0) == 1);
-        CHECK(S.get(0.2, 0) == 0);
+        CHECK_EQ(S.get(0.1, 0), 1);
+        CHECK_EQ(S.get(0.2, 0), 0);
     }
 
     SUBCASE("items") {
         auto items = S.items();
-        CHECK(items.size() == 3);
+        CHECK_EQ(items.size(), 3);
     }
 
     SUBCASE("copy") {
         auto S2 = S.copy();
-        CHECK(S2.size() == 3);
+        CHECK_EQ(S2.size(), 3);
         S2[0.5] = 5;
-        CHECK(S.size() == 3);
-        CHECK(S2.size() == 4);
+        CHECK_EQ(S.size(), 3);
+        CHECK_EQ(S2.size(), 4);
     }
 
-    SUBCASE("len") { CHECK(py::len(S) == 3); }
+    SUBCASE("len") { CHECK_EQ(py::len(S), 3); }
 
     SUBCASE("operator<") {
         CHECK(0.1 < S);

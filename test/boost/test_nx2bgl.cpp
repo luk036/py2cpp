@@ -6,21 +6,21 @@
 TEST_CASE("Test GrAdaptor") {
     using Graph = boost::adjacency_list<boost::vecS, boost::vecS, boost::directedS>;
     auto G = py::GrAdaptor<Graph>(Graph(3));
-    CHECK(G.number_of_nodes() == 3);
-    CHECK(G.number_of_edges() == 0);
+    CHECK_EQ(G.number_of_nodes(), 3);
+    CHECK_EQ(G.number_of_edges(), 0);
 
     auto [e, inserted] = G.add_edge(0, 1);
     CHECK(inserted);
-    CHECK(G.number_of_edges() == 1);
+    CHECK_EQ(G.number_of_edges(), 1);
 
     auto s = G.source(e);
     auto t = G.target(e);
-    CHECK(s == 0);
-    CHECK(t == 1);
+    CHECK_EQ(s, 0);
+    CHECK_EQ(t, 1);
 
     auto [s2, t2] = G.end_points(e);
-    CHECK(s2 == 0);
-    CHECK(t2 == 1);
+    CHECK_EQ(s2, 0);
+    CHECK_EQ(t2, 1);
 }
 
 TEST_CASE("Test VertexView") {
@@ -35,7 +35,7 @@ TEST_CASE("Test VertexView") {
         (void)v;
         count++;
     }
-    CHECK(count == 4);
+    CHECK_EQ(count, 4);
 }
 
 TEST_CASE("Test EdgeView") {
@@ -49,7 +49,7 @@ TEST_CASE("Test EdgeView") {
         (void)e;
         count++;
     }
-    CHECK(count == 2);
+    CHECK_EQ(count, 2);
 }
 
 TEST_CASE("Test AtlasView") {
@@ -64,5 +64,5 @@ TEST_CASE("Test AtlasView") {
         (void)e;
         count++;
     }
-    CHECK(count == 3);
+    CHECK_EQ(count, 3);
 }

@@ -22,14 +22,14 @@ TEST_CASE("Test Range") {
 
     // CHECK(!R.empty());
     // CHECK(R.contains(4U));
-    // CHECK(R[3] == 3);
+    // CHECK_EQ(R[3], 3);
 
     auto count = 0;
     for (auto&& a : R) {
         static_assert(sizeof a >= 0, "make comipler happy");
         ++count;
     }
-    CHECK(count == R.size());
+    CHECK_EQ(count, R.size());
 }
 
 TEST_CASE("Test Range2") {
@@ -37,14 +37,14 @@ TEST_CASE("Test Range2") {
 
     CHECK(!R.empty());
     CHECK(R.contains(4));
-    // CHECK(R[3] == -7);
+    // CHECK_EQ(R[3], -7);
 
     auto count = 0;
     for (auto&& a : R) {
         static_assert(sizeof a >= 0, "make comipler happy");
         ++count;
     }
-    CHECK(count == R.size());
+    CHECK_EQ(count, R.size());
 }
 
 TEST_CASE("Test Range (char)") {
@@ -52,14 +52,14 @@ TEST_CASE("Test Range (char)") {
 
     // CHECK(!R.empty());
     CHECK(R.contains('B'));
-    // CHECK(R[3] == 'D');
+    // CHECK_EQ(R[3], 'D');
 
     auto count = 0;
     for (auto&& a : R) {
         static_assert(sizeof a >= 0, "make comipler happy");
         ++count;
     }
-    CHECK(count == R.size());
+    CHECK_EQ(count, R.size());
 }
 
 TEST_CASE("Test Range (pointer)") {
@@ -68,11 +68,11 @@ TEST_CASE("Test Range (pointer)") {
 
     CHECK(!R.empty());
     // CHECK(R.contains(&A + 2));
-    CHECK(R[1] == &A[0] + 1);
+    CHECK_EQ(R[1], &A[0] + 1);
 
     auto count = 0;
     for ([[maybe_unused]] auto _ : R) {
         ++count;
     }
-    CHECK(count == R.size());
+    CHECK_EQ(count, R.size());
 }

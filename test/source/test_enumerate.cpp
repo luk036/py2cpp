@@ -10,30 +10,30 @@ TEST_CASE("Test enumerate") {
     auto count = 0;
     for (const auto& p : py::enumerate(R)) {
         static_assert(sizeof p.first >= 0, "make comipler happy");
-        CHECK(p.first == count);
+        CHECK_EQ(p.first, count);
         ++count;
     }
-    CHECK(count == R.size());
+    CHECK_EQ(count, R.size());
 }
 
 TEST_CASE("Test enumerate with const vector") {
     const std::vector<int> V = {10, 20, 30, 40, 50};
     size_t count = 0;
     for (const auto& p : py::enumerate(V)) {
-        CHECK(p.first == count);
-        CHECK(p.second == V[count]);
+        CHECK_EQ(p.first, count);
+        CHECK_EQ(p.second, V[count]);
         ++count;
     }
-    CHECK(count == V.size());
+    CHECK_EQ(count, V.size());
 }
 
 TEST_CASE("Test enumerate with const vector") {
     const std::vector<int> V = {10, 20, 30, 40, 50};
     size_t count = 0;
     for (const auto& p : py::const_enumerate(V)) {
-        CHECK(p.first == count);
-        CHECK(p.second == V[count]);
+        CHECK_EQ(p.first, count);
+        CHECK_EQ(p.second, V[count]);
         ++count;
     }
-    CHECK(count == V.size());
+    CHECK_EQ(count, V.size());
 }
