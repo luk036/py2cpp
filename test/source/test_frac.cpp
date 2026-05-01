@@ -36,12 +36,12 @@ TEST_CASE("Fraction Special Cases") {
     const auto nan = Fraction<int>{0, 0};
     const auto zero = Fraction<int>{0, 1};
 
-    CHECK(-inf < zero);
-    CHECK(zero < inf);
-    CHECK(-inf < p);
-    CHECK(p < inf);
+    CHECK_LT(-inf, zero);
+    CHECK_LT(zero, inf);
+    CHECK_LT(-inf, p);
+    CHECK_LT(p, inf);
     CHECK_EQ(inf, inf);
-    CHECK(-inf < inf);
+    CHECK_LT(-inf, inf);
     CHECK_EQ(inf, inf * p);
     CHECK_EQ(inf, inf * inf);
     CHECK_EQ(inf, p / zero);

@@ -8,7 +8,7 @@ TEST_CASE("Test py::dict methods") {
 
     SUBCASE("contains") {
         CHECK(S.contains(0.1));
-        CHECK(!S.contains(0.2));
+        CHECK_FALSE(S.contains(0.2));
     }
 
     SUBCASE("get") {
@@ -32,7 +32,7 @@ TEST_CASE("Test py::dict methods") {
     SUBCASE("len") { CHECK_EQ(py::len(S), 3); }
 
     SUBCASE("operator<") {
-        CHECK(0.1 < S);
-        CHECK(!(0.2 < S));
+        CHECK_LT(0.1, S);
+        CHECK_FALSE(0.2 < S);
     }
 }
