@@ -64,14 +64,14 @@ TEST_CASE("Test Range (char)") {
 
 TEST_CASE("Test Range (pointer)") {
     auto A = std::array<double, 4>{0.2, 0.4, 0.1, 0.9};
-    auto R = py::range(&A[0], &A[0] + 4);
+    auto R = py::range(A.data(), A.data() + 4);
 
     CHECK_FALSE(R.empty());
     // CHECK(R.contains(&A + 2));
-    CHECK_EQ(R[1], &A[0] + 1);
+    CHECK_EQ(R[1], A.data() + 1);
 
     auto count = 0;
-    for ([[maybe_unused]] auto _ : R) {
+    for ([[maybe_unused]] auto *_ : R) {
         ++count;
     }
     CHECK_EQ(count, R.size());

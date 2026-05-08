@@ -17,7 +17,7 @@ TEST_CASE("Test py::dict methods") {
     }
 
     SUBCASE("items") {
-        auto items = S.items();
+        const auto& items = S.items();
         CHECK_EQ(items.size(), 3);
     }
 

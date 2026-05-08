@@ -53,16 +53,16 @@ namespace fun {
      *
      * Computes the greatest common divisor of two numbers using Euclidean algorithm.
      *
-     * @tparam _Mn The numeric type
-     * @param[in] __m First number
-     * @param[in] __n Second number
-     * @return _Mn The greatest common divisor
+     * @tparam Mn The numeric type
+     * @param[in] _m First number
+     * @param[in] _n Second number
+     * @return Mn The greatest common divisor
      */
-    template <typename _Mn> CONSTEXPR14 auto gcd_recur(const _Mn& __m, const _Mn& __n) -> _Mn {
-        if (__n == 0) {
-            return abs(__m);
+    template <typename Mn> CONSTEXPR14 auto gcd_recur(const Mn& _m, const Mn& _n) -> Mn {
+        if (_n == 0) {
+            return abs(_m);
         }
-        return gcd_recur(__n, __m % __n);
+        return gcd_recur(_n, _m % _n);
     }
 
     /**
@@ -70,31 +70,31 @@ namespace fun {
      *
      * Computes the greatest common divisor of two numbers.
      *
-     * @tparam _Mn The numeric type
-     * @param[in] __m First number
-     * @param[in] __n Second number
-     * @return _Mn The greatest common divisor
+     * @tparam Mn The numeric type
+     * @param[in] _m First number
+     * @param[in] _n Second number
+     * @return Mn The greatest common divisor
      */
-    template <typename _Mn> CONSTEXPR14 auto gcd(const _Mn& __m, const _Mn& __n) -> _Mn {
-        if (__m == 0) {
-            return abs(__n);
+    template <typename Mn> CONSTEXPR14 auto gcd(const Mn& _m, const Mn& _n) -> Mn {
+        if (_m == 0) {
+            return abs(_n);
         }
-        return gcd_recur(__m, __n);
+        return gcd_recur(_m, _n);
     }
 
     /**
      * @brief Least common multiple
      *
-     * @tparam _Mn
-     * @param[in] __m
-     * @param[in] __n
-     * @return _Mn
+     * @tparam Mn
+     * @param[in] _m
+     * @param[in] _n
+     * @return Mn
      */
-    template <typename _Mn> CONSTEXPR14 auto lcm(const _Mn& __m, const _Mn& __n) -> _Mn {
-        if (__m == 0 || __n == 0) {
+    template <typename Mn> CONSTEXPR14 auto lcm(const Mn& _m, const Mn& _n) -> Mn {
+        if (_m == 0 || _n == 0) {
             return 0;
         }
-        return (abs(__m) / gcd(__m, __n)) * abs(__n);
+        return (abs(_m) / gcd(_m, _n)) * abs(_n);
     }
 
     /**
