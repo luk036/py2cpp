@@ -71,7 +71,7 @@ TEST_CASE("Test Range (pointer)") {
     CHECK_EQ(R[1], A.data() + 1);
 
     auto count = 0;
-    for ([[maybe_unused]] auto *_ : R) {
+    for ([[maybe_unused]] auto* _ : R) {
         ++count;
     }
     CHECK_EQ(count, R.size());
