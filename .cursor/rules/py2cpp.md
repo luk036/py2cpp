@@ -34,7 +34,7 @@ cmake --build build --target fix-format  # Auto-format
 ```
 include/py2cpp/
 ├── dict.hpp       # Python dict
-├── fractions.hpp # Fraction arithmetic  
+├── fractions.hpp # Fraction arithmetic
 ├── set.hpp       # Python set
 ├── range.hpp    # Python range/enumerate
 ├── enumerate.hpp # enumerate wrapper
