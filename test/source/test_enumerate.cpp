@@ -8,8 +8,7 @@
 TEST_CASE("Test enumerate") {
     auto R = py::range(10);
     auto count = 0;
-    for (const auto& p : py::enumerate(R)) {
-        static_assert(sizeof p.first >= 0, "make comipler happy");
+    for ([[maybe_unused]] const auto& p : py::enumerate(R)) {
         CHECK_EQ(p.first, count);
         ++count;
     }

@@ -719,13 +719,13 @@ namespace fun {
         /**
          * @brief Stream output operator for Fraction
          *
-         * @tparam _Stream The stream type
+         * @tparam Stream The stream type
          * @param[in] os The output stream to write to
          * @param[in] frac The fraction to output
-         * @return _Stream& Reference to the output stream
+         * @return Stream& Reference to the output stream
          */
-        template <typename _Stream> friend auto operator<<(_Stream& os, const Fraction& frac)
-            -> _Stream& {
+        template <typename Stream> friend auto operator<<(Stream& os, const Fraction& frac)
+            -> Stream& {
             os << "(" << frac.num() << "/" << frac.den() << ")";
             return os;
         }

@@ -25,8 +25,7 @@ TEST_CASE("Test Range") {
     // CHECK_EQ(R[3], 3);
 
     auto count = 0;
-    for (auto&& a : R) {
-        static_assert(sizeof a >= 0, "make comipler happy");
+    for ([[maybe_unused]] auto&& a : R) {
         ++count;
     }
     CHECK_EQ(count, R.size());
@@ -40,8 +39,7 @@ TEST_CASE("Test Range2") {
     // CHECK_EQ(R[3], -7);
 
     auto count = 0;
-    for (auto&& a : R) {
-        static_assert(sizeof a >= 0, "make comipler happy");
+    for ([[maybe_unused]] auto&& a : R) {
         ++count;
     }
     CHECK_EQ(count, R.size());
@@ -55,14 +53,13 @@ TEST_CASE("Test Range (char)") {
     // CHECK_EQ(R[3], 'D');
 
     auto count = 0;
-    for (auto&& a : R) {
-        static_assert(sizeof a >= 0, "make comipler happy");
+    for ([[maybe_unused]] auto&& a : R) {
         ++count;
     }
     CHECK_EQ(count, R.size());
 }
 
-TEST_CASE("Test Range (pointer)") {
+TEST_CASE("Test Range (pointer arithmetic)") {
     auto A = std::array<double, 4>{0.2, 0.4, 0.1, 0.9};
     auto R = py::range(A.data(), A.data() + 4);
 
