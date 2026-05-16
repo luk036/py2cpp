@@ -9,7 +9,7 @@ option(INSTALL_ONLY "Enable for installation only" OFF)
 # Note: update this to your new project's name and version
 project(
   Py2Cpp
-  VERSION 1.5.2
+  VERSION 1.6.0
   LANGUAGES CXX
 )
 
@@ -45,7 +45,7 @@ file(GLOB_RECURSE sources CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/source/
 # target: add_library(${PROJECT_NAME} INTERFACE)
 add_library(${PROJECT_NAME} INTERFACE)
 
-# set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
+# set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 20)
 
 # being a cross-platform target, we enforce standards conformance on MSVC
 target_compile_options(${PROJECT_NAME} INTERFACE "$<$<COMPILE_LANG_AND_ID:CXX,MSVC>:/permissive->")

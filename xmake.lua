@@ -25,7 +25,7 @@ end
 set_optimize("fastest")
 
 target("test_py2cpp")
-    set_languages("c++17")
+    set_languages("c++20")
     set_kind("binary")
     add_includedirs("include", {public = true})
     add_files("test/source/*.cpp")
