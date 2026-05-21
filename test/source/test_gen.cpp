@@ -1,7 +1,6 @@
 #include <doctest/doctest.h>
 
 #include <py2cpp/gen.hpp>
-
 #include <string>
 
 py::Generator<int> range_gen(int n) {
