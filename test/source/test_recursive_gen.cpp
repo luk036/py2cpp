@@ -6,14 +6,14 @@
 
 // --- Non-recursive baseline (same as Generator) ---
 
-py::RecursiveGenerator<int> range_gen(int n) {
+py::RecursiveGenerator<int> rec_range_gen(int n) {
     for (int i = 0; i < n; ++i) {
         co_yield i;
     }
 }
 
 TEST_CASE("Test RecursiveGenerator iterate integers") {
-    auto gen = range_gen(5);
+    auto gen = rec_range_gen(5);
     auto count = 0;
     for (auto val : gen) {
         CHECK_EQ(val, count);
@@ -23,12 +23,12 @@ TEST_CASE("Test RecursiveGenerator iterate integers") {
 }
 
 TEST_CASE("Test RecursiveGenerator empty") {
-    auto gen = range_gen(0);
+    auto gen = rec_range_gen(0);
     CHECK(gen.begin() == gen.end());
 }
 
 TEST_CASE("Test RecursiveGenerator single element") {
-    auto gen = range_gen(1);
+    auto gen = rec_range_gen(1);
     auto it = gen.begin();
     CHECK_EQ(*it, 0);
     ++it;
@@ -36,7 +36,7 @@ TEST_CASE("Test RecursiveGenerator single element") {
 }
 
 TEST_CASE("Test RecursiveGenerator move semantics") {
-    auto gen1 = range_gen(3);
+    auto gen1 = rec_range_gen(3);
     auto gen2 = std::move(gen1);
     auto count = 0;
     for ([[maybe_unused]] auto val : gen2) {
@@ -178,7 +178,7 @@ TEST_CASE("Test RecursiveGenerator strings") {
 
 py::RecursiveGenerator<int> with_empty_sub() {
     co_yield 1;
-    co_yield range_gen(0);  // yields nothing
+    co_yield rec_range_gen(0);  // yields nothing
     co_yield 2;
 }
 
