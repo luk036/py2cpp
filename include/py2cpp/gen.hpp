@@ -3,6 +3,7 @@
 #include <coroutine>
 #include <exception>
 #include <iterator>
+#include <type_traits>
 #include <utility>
 
 namespace py {
@@ -13,15 +14,27 @@ namespace py {
      * Models a Python-style generator that lazily yields values of type T.
      * Used with co_yield inside a coroutine function.
      *
+     * Supports both value types (Generator<int>) and reference types
+     * (Generator<Container&>), using pointer storage to avoid copies.
+     *
      * @tparam T Value type to yield
      */
     template <typename T> class Generator {
       public:
         struct promise_type {
-            T current_value;
+            using value_type = std::remove_reference_t<T>;
+            using reference_type = std::conditional_t<std::is_reference_v<T>, T, T&>;
+            using pointer_type = value_type*;
 
-            auto yield_value(T value) noexcept {
-                current_value = std::move(value);
+            pointer_type m_value{};
+
+            auto yield_value(std::remove_reference_t<T>& value) noexcept {
+                m_value = std::addressof(value);
+                return std::suspend_always{};
+            }
+
+            auto yield_value(std::remove_reference_t<T>&& value) noexcept {
+                m_value = std::addressof(value);
                 return std::suspend_always{};
             }
 
@@ -64,8 +77,10 @@ namespace py {
 
           public:
             using iterator_category = std::input_iterator_tag;
-            using value_type = T;
+            using value_type = std::remove_reference_t<T>;
             using difference_type = std::ptrdiff_t;
+            using reference = std::conditional_t<std::is_reference_v<T>, T, T&>;
+            using pointer = std::add_pointer_t<value_type>;
 
             iterator() noexcept = default;
             explicit iterator(handle_type coro) noexcept : coro_(coro) {}
@@ -77,8 +92,11 @@ namespace py {
             }
             void operator++(int) { ++*this; }
 
-            const T& operator*() const noexcept { return coro_.promise().current_value; }
-            T& operator*() noexcept { return coro_.promise().current_value; }
+            reference operator*() const noexcept {
+                return static_cast<reference>(*coro_.promise().m_value);
+            }
+
+            pointer operator->() const noexcept { return std::addressof(operator*()); }
 
             bool operator==(const iterator& other) const noexcept { return coro_ == other.coro_; }
             bool operator!=(const iterator& other) const noexcept { return !(*this == other); }
@@ -94,4 +112,4 @@ namespace py {
         iterator end() noexcept { return iterator{}; }
     };
 
-}  // namespace py
+}
