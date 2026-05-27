@@ -112,4 +112,4 @@ namespace py {
         iterator end() noexcept { return iterator{}; }
     };
 
-}
+}  // namespace py

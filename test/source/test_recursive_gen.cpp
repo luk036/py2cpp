@@ -63,8 +63,7 @@ py::RecursiveGenerator<int> traverse(const TreeNode& node) {
 TEST_CASE("Test RecursiveGenerator tree traversal") {
     // Tree: 1 -> children 2,3,4; 2 -> children 5,6
     TreeNode tree{
-        1,
-        {TreeNode{2, {TreeNode{5, {}}, TreeNode{6, {}}}}, TreeNode{3, {}}, TreeNode{4, {}}}};
+        1, {TreeNode{2, {TreeNode{5, {}}, TreeNode{6, {}}}}, TreeNode{3, {}}, TreeNode{4, {}}}};
 
     auto gen = traverse(tree);
     auto expected = std::vector{1, 2, 5, 6, 3, 4};

@@ -30,8 +30,7 @@ namespace py {
             promise_type(promise_type&&) = delete;
 
             RecursiveGenerator get_return_object() noexcept {
-                return RecursiveGenerator{
-                    std::coroutine_handle<promise_type>::from_promise(*this)};
+                return RecursiveGenerator{std::coroutine_handle<promise_type>::from_promise(*this)};
             }
 
             std::suspend_always initial_suspend() noexcept { return {}; }
@@ -228,9 +227,8 @@ namespace py {
         promise_type* m_promise;
     };
 
-    template <typename T>
-    void swap(RecursiveGenerator<T>& a, RecursiveGenerator<T>& b) noexcept {
+    template <typename T> void swap(RecursiveGenerator<T>& a, RecursiveGenerator<T>& b) noexcept {
         a.swap(b);
     }
 
-}
+}  // namespace py
