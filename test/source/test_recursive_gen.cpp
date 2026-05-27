@@ -63,9 +63,9 @@ py::RecursiveGenerator<int> traverse(const TreeNode& node) {
 TEST_CASE("Test RecursiveGenerator tree traversal") {
     // Build a small tree:
     //       1
-    //     / | \
+    //     / | \ 
     //    2  3  4
-    //   / \
+    //   / \ 
     //  5   6
     TreeNode tree{
         1,
