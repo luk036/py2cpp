@@ -114,7 +114,6 @@ const T& at(const key_type& key) const {
 Tests in `test/source/*.cpp`, use doctest:
 
 ```cpp
-#define DOCTEST_CONFIG_USE_STD_HEADERS
 #include <doctest/doctest.h>
 
 TEST_CASE("description") { REQUIRE(a == b); }
