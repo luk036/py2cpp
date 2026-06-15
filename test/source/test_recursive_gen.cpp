@@ -63,7 +63,11 @@ py::RecursiveGenerator<int> traverse(const TreeNode& node) {
 TEST_CASE("Test RecursiveGenerator tree traversal") {
     // Tree: 1 -> children 2,3,4; 2 -> children 5,6
     TreeNode tree{
-        .value=1, .children={TreeNode{.value=2, .children={TreeNode{.value=5, .children={}}, TreeNode{.value=6, .children={}}}}, TreeNode{.value=3, .children={}}, TreeNode{.value=4, .children={}}}};
+        .value = 1,
+        .children = {TreeNode{.value = 2,
+                              .children = {TreeNode{.value = 5, .children = {}},
+                                           TreeNode{.value = 6, .children = {}}}},
+                     TreeNode{.value = 3, .children = {}}, TreeNode{.value = 4, .children = {}}}};
 
     auto gen = traverse(tree);
     auto expected = std::vector{1, 2, 5, 6, 3, 4};
@@ -76,7 +80,7 @@ TEST_CASE("Test RecursiveGenerator tree traversal") {
 }
 
 TEST_CASE("Test RecursiveGenerator single leaf") {
-    TreeNode leaf{.value=42, .children={}};
+    TreeNode leaf{.value = 42, .children = {}};
     auto gen = traverse(leaf);
     auto it = gen.begin();
     CHECK_EQ(*it, 42);
@@ -87,10 +91,10 @@ TEST_CASE("Test RecursiveGenerator single leaf") {
 TEST_CASE("Test RecursiveGenerator deep recursion") {
     // Build a chain: 1 -> 2 -> 3 -> ... -> 100
     // Each node has exactly one child
-    TreeNode root{.value=1, .children={}};
+    TreeNode root{.value = 1, .children = {}};
     auto* current = &root;
     for (int i = 2; i <= 100; ++i) {
-        current->children.push_back(TreeNode{.value=i, .children={}});
+        current->children.push_back(TreeNode{.value = i, .children = {}});
         current = current->children.data();
     }
 
@@ -162,7 +166,9 @@ py::RecursiveGenerator<std::string> str_traverse(const TreeNode& node) {
 }
 
 TEST_CASE("Test RecursiveGenerator strings") {
-    TreeNode tree{.value=1, .children={TreeNode{.value=2, .children={}}, TreeNode{.value=3, .children={}}}};
+    TreeNode tree{
+        .value = 1,
+        .children = {TreeNode{.value = 2, .children = {}}, TreeNode{.value = 3, .children = {}}}};
     auto gen = str_traverse(tree);
     auto expected = std::vector<std::string>{"1", "2", "3"};
     auto idx = size_t{0};
