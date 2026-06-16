@@ -35,7 +35,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 20)
 if(NOT TEST_INSTALLED_VERSION)
   if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "GNU")
     target_compile_options(
-      Py2Cpp INTERFACE -Wall -Wpedantic -Wextra -Werror -Wno-deprecated-literal-operator
+      Py2Cpp INTERFACE -Wall -Wpedantic -Wextra -Werror
     )
   elseif(MSVC)
     target_compile_options(Py2Cpp INTERFACE /utf-8 /W4 /WX)
