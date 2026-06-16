@@ -1,3 +1,11 @@
+/**
+ * @file range.hpp
+ * @brief Python-like range implementation for C++
+ *
+ * Provides RangeIterator and Range templates that mimic Python's range()
+ * function for generating sequential integer sequences.
+ */
+
 #pragma once
 
 #include <cstddef>

@@ -1,3 +1,11 @@
+/**
+ * @file recursive_gen.hpp
+ * @brief Recursive C++20 coroutine generator with symmetric transfer
+ *
+ * Provides a RecursiveGenerator template that supports yielding sub-generators
+ * via co_yield, enabling stackless recursive generation for tree/graph traversal.
+ */
+
 #pragma once
 
 #include <cassert>

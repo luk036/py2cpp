@@ -1,3 +1,11 @@
+/**
+ * @file lict.hpp
+ * @brief Dict-like data structure backed by std::vector and Range
+ *
+ * Provides the Lict class — a mapping from integer indices to values,
+ * combining std::vector storage with a Range-based key interface.
+ */
+
 #pragma once
 
 #include <vector>

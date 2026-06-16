@@ -1,7 +1,15 @@
+/**
+ * @file enumerate.hpp
+ * @brief Python-like enumerate implementation for C++
+ *
+ * Provides EnumerateIterator, EnumerateIterableWrapper, and enumerate()
+ * function templates that mimic Python's enumerate() for indexed iteration.
+ */
+
 #pragma once
 
-#include <cstddef>   // import size_t
-#include <iterator>  // import std::begin() std::end()
+#include <cstddef>
+#include <iterator>
 #include <utility>
 
 namespace py {

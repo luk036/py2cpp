@@ -1,8 +1,15 @@
+/**
+ * @file set.hpp
+ * @brief Python-like set implementation for C++
+ *
+ * Provides a set template that extends std::unordered_set
+ * with Python-like convenience methods.
+ */
+
 #pragma once
 
-#include <cstddef>  // import size_t
+#include <cstddef>
 #include <initializer_list>
-// #include <type_traits>
 #include <unordered_set>
 // #include <utility>
 

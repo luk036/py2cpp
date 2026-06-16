@@ -1,3 +1,11 @@
+/**
+ * @file nx2bgl.hpp
+ * @brief Boost Graph Library adapters for XNetwork integration
+ *
+ * Provides VertexView, EdgeView, AtlasView, and GrAdaptor classes
+ * that bridge XNetwork graph concepts with the Boost Graph Library.
+ */
+
 #pragma once
 
 #include <boost/graph/adjacency_list.hpp>

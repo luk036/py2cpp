@@ -1,3 +1,11 @@
+/**
+ * @file gen.hpp
+ * @brief Minimal C++20 coroutine-based generator
+ *
+ * Provides a Generator template that mimics Python-style generators
+ * using C++20 coroutines with co_yield support.
+ */
+
 #pragma once
 
 #include <coroutine>

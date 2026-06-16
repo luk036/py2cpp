@@ -1,8 +1,15 @@
+/**
+ * @file dict.hpp
+ * @brief Python-like dictionary implementation for C++
+ *
+ * Provides key_iterator and dict templates that extend std::unordered_map
+ * with Python-like convenience methods.
+ */
+
 #pragma once
 
 #include <cstddef>
 #include <initializer_list>
-// #include <type_traits>
 #include <unordered_map>
 #include <utility>
 
