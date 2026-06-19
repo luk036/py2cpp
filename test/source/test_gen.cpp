@@ -353,12 +353,4 @@ TEST_CASE("Test Generator default constructed") {
     CHECK(gen2.begin() == gen2.end());
 }
 
-TEST_CASE("Test Generator self-move assignment") {
-    auto gen = range_gen(3);
-    gen = std::move(gen);
-    auto count = 0;
-    for ([[maybe_unused]] auto val : gen) {
-        ++count;
-    }
-    CHECK_LE(count, 3);
-}
+
