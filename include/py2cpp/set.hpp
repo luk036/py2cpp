@@ -85,9 +85,15 @@ namespace py {
          */
         set(set<Key>&&) noexcept = default;
 
+        /**
+         * @brief Destructor (default)
+         *
+         */
+        ~set() noexcept = default;
+
         // private:
         /**
-         * @brief Copy Constructor (deleted)
+         * @brief Copy Constructor (default)
          *
          * Copy through explicitly the public copy() function!!!
          */
