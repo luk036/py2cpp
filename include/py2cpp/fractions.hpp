@@ -35,13 +35,10 @@ namespace fun {
     }
 
     /**
-     * @brief Absolute value for signed types
+     * @overload
      *
+     * Absolute value for signed types.
      * For signed types, returns the negative value if the input is negative.
-     *
-     * @tparam T The numeric type
-     * @param[in] a The value to compute absolute value of
-     * @return T The absolute value
      */
     template <typename T> CONSTEXPR14 auto abs(const T& a) ->
         typename std::enable_if<!std::is_unsigned<T>::value, T>::type {
@@ -265,13 +262,6 @@ namespace fun {
         friend CONSTEXPR14 auto operator==(const Z& lhs, const Fraction& rhs) -> bool {
             return rhs == lhs;
         }
-
-        /**
-         * @brief Equal to
-         *
-         * @param[in] rhs
-         * @return true if the fractions are equal, false otherwise
-         */
 
         /**
          * @brief Equal to
