@@ -1,0 +1,9 @@
+<map id="py2cpp/enumerate.hpp" name="py2cpp/enumerate.hpp">
+<area shape="rect" id="Node000001" title="Python&#45;like enumerate implementation for C++." alt="" coords="49,5,221,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,33,69,72,66,68,119,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="100,79,171,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,31,138,65,133,65,133,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="195,79,255,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,29,201,68,198,72,148,33"/>
+</map>

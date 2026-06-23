@@ -1,0 +1,29 @@
+<map id="py2cpp/py2cpp.hpp" name="py2cpp/py2cpp.hpp">
+<area shape="rect" id="Node000001" title="Main header for the py2cpp library." alt="" coords="205,5,353,31"/>
+<area shape="rect" id="Node000002" href="$dict_8hpp.html" title="Python&#45;like dictionary implementation for C++." alt="" coords="295,79,370,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="290,29,318,66,314,69,286,33"/>
+<area shape="rect" id="Node000007" href="$enumerate_8hpp.html" title="Python&#45;like enumerate implementation for C++." alt="" coords="39,79,160,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="251,33,142,76,140,71,249,28"/>
+<area shape="rect" id="Node000009" href="$range_8hpp.html" title="Python&#45;like range implementation for C++." alt="" coords="184,79,271,104"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="273,33,246,69,242,66,269,29"/>
+<area shape="rect" id="Node000010" href="$set_8hpp.html" title="Python&#45;like set implementation for C++." alt="" coords="424,79,495,104"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="309,28,418,71,416,76,307,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="184,152,255,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="316,106,251,147,248,142,313,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="427,152,537,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="358,102,446,144,444,148,356,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="279,152,403,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="337,104,341,138,335,139,331,105"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="100,152,160,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="301,107,174,151,172,146,299,102"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="120,102,189,142,186,147,117,106"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="107,103,122,139,117,141,102,105"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,152,76,177"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="92,106,61,143,57,140,88,103"/>
+<area shape="poly" id="edge11_Node000009_Node000003" title=" " alt="" coords="229,105,225,139,219,138,223,104"/>
+<area shape="poly" id="edge12_Node000009_Node000008" title=" " alt="" coords="198,107,85,149,83,145,196,102"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="425,106,269,152,267,146,423,101"/>
+<area shape="poly" id="edge15_Node000010_Node000004" title=" " alt="" coords="466,104,477,138,472,140,461,105"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="562,152,677,177"/>
+<area shape="poly" id="edge16_Node000010_Node000011" title=" " alt="" coords="486,102,582,144,580,149,484,106"/>
+</map>
