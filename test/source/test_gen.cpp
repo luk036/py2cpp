@@ -1,8 +1,8 @@
 #include <doctest/doctest.h>
 
-#include <py2cpp/gen.hpp>
 #include <array>
 #include <cmath>
+#include <py2cpp/gen.hpp>
 #include <string>
 #include <utility>
 #include <vector>
@@ -111,7 +111,7 @@ TEST_CASE("Test Generator fibonacci") {
 
 py::Generator<int> squares(int n) {
     for (int i = 0; i < n; ++i) {
-        co_yield i * i;
+        co_yield i* i;
     }
 }
 
@@ -199,9 +199,7 @@ TEST_CASE("Test Generator with pairs") {
     CHECK(it == gen.end());
 }
 
-py::Generator<int> no_yield() {
-    co_return;
-}
+py::Generator<int> no_yield() { co_return; }
 
 TEST_CASE("Test Generator no yield") {
     auto gen = no_yield();
@@ -252,8 +250,8 @@ TEST_CASE("Test Generator large iteration values") {
     auto expected = 0;
     for (auto val : gen) {
         CHECK_EQ(val, expected);
-        expected = (static_cast<int>(std::sqrt(expected)) + 1) *
-                   (static_cast<int>(std::sqrt(expected)) + 1);
+        expected = (static_cast<int>(std::sqrt(expected)) + 1)
+                   * (static_cast<int>(std::sqrt(expected)) + 1);
     }
     CHECK_EQ(expected, N * N);
 }
@@ -328,8 +326,7 @@ TEST_CASE("Test Generator arrow operator") {
     CHECK_EQ(it->y, 4);
 }
 
-template <typename T>
-std::vector<T> collect(py::Generator<T> gen) {
+template <typename T> std::vector<T> collect(py::Generator<T> gen) {
     std::vector<T> result;
     for (auto val : gen) {
         result.push_back(std::move(val));
@@ -352,5 +349,3 @@ TEST_CASE("Test Generator default constructed") {
     py::Generator<int> gen2 = std::move(gen);
     CHECK(gen2.begin() == gen2.end());
 }
-
-
