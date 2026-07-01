@@ -136,7 +136,7 @@ py::Generator<typename Container::const_reference> yield_from(const Container& c
 TEST_CASE("Test Generator yield from vector") {
     const std::vector<int> vec = {10, 20, 30, 40, 50};
     auto gen = yield_from(vec);
-    auto count = 0;
+    auto count = size_t{0};
     for (auto val : gen) {
         CHECK_EQ(val, vec[count]);
         ++count;
@@ -147,7 +147,7 @@ TEST_CASE("Test Generator yield from vector") {
 TEST_CASE("Test Generator yield from array") {
     const std::array<int, 4> arr = {7, 14, 21, 28};
     auto gen = yield_from(arr);
-    auto count = 0;
+    auto count = size_t{0};
     for (auto val : gen) {
         CHECK_EQ(val, arr[count]);
         ++count;
@@ -341,7 +341,7 @@ TEST_CASE("Test Generator collect to vector") {
     auto gen = range_gen(5);
     auto vec = collect(std::move(gen));
     REQUIRE_EQ(vec.size(), size_t{5});
-    for (auto i = 0; i < 5; ++i) {
+    for (auto i = size_t{0}; i < 5; ++i) {
         CHECK_EQ(vec[i], i);
     }
 }
