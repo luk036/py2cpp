@@ -314,8 +314,8 @@ struct Point {
 };
 
 py::Generator<Point> generate_points() {
-    co_yield Point{1, 2};
-    co_yield Point{3, 4};
+    co_yield Point{.x=1, .y=2};
+    co_yield Point{.x=3, .y=4};
 }
 
 TEST_CASE("Test Generator arrow operator") {
