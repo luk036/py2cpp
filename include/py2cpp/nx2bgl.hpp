@@ -11,7 +11,6 @@
 #include <boost/graph/adjacency_list.hpp>
 #include <boost/graph/graph_traits.hpp>
 #include <boost/graph/graph_utility.hpp>
-#include <type_traits>
 
 namespace py {
 
@@ -32,7 +31,7 @@ namespace py {
          *
          * @param[in] gra The graph to wrap (moved into this VertexView)
          */
-        explicit VertexView(Graph&& gra) noexcept : Graph{std::forward<Graph>(gra)} {}
+        explicit VertexView(Graph&& gra) noexcept : Graph{std::move(gra)} {}
 
         /**
          * @brief Get iterator to the beginning of vertices
@@ -247,16 +246,16 @@ namespace py {
      * Provides a unified interface for working with BGL graphs, combining vertex
      * and edge view functionality with additional graph operations.
      *
-     * @tparam _Graph The Boost Graph Library graph type
+     * @tparam Graph The Boost Graph Library graph type
      */
-    template <typename _Graph> class GrAdaptor : public VertexView<_Graph> {
+    template <typename Graph> class GrAdaptor : public VertexView<Graph> {
       public:
-        using Vertex = typename boost::graph_traits<_Graph>::vertex_descriptor;
+        using Vertex = typename boost::graph_traits<Graph>::vertex_descriptor;
         using node_t = Vertex;
-        using edge_t = typename boost::graph_traits<_Graph>::edge_descriptor;
+        using edge_t = typename boost::graph_traits<Graph>::edge_descriptor;
 
         // using edge_wt_t = decltype( boost::get(boost::edge_weight,
-        // std::declval<_Graph>()) );
+        // std::declval<Graph>()) );
 
         /**
          * @brief Default constructor (deleted)
@@ -272,7 +271,7 @@ namespace py {
          *
          * @param[in] gra The graph to wrap (moved into this GrAdaptor)
          */
-        explicit GrAdaptor(_Graph&& gra) noexcept : VertexView<_Graph>{std::forward<_Graph>(gra)} {}
+        explicit GrAdaptor(Graph&& gra) noexcept : VertexView<Graph>{std::move(gra)} {}
 
         // GrAdaptor(const GrAdaptor&) = delete;            // don't copy
         // GrAdaptor& operator=(const GrAdaptor&) = delete; // don't assign
@@ -297,9 +296,9 @@ namespace py {
          *
          * Returns an iterable view of all edges in the graph.
          *
-         * @return EdgeView<_Graph> Iterable edge view
+         * @return EdgeView<Graph> Iterable edge view
          */
-        [[nodiscard]] auto edges() const -> EdgeView<_Graph> { return EdgeView<_Graph>(*this); }
+        [[nodiscard]] auto edges() const -> EdgeView<Graph> { return EdgeView<Graph>(*this); }
 
         /**
          * @brief Get neighbors of a vertex
@@ -307,10 +306,10 @@ namespace py {
          * Returns an iterable view of edges adjacent to the specified vertex.
          *
          * @param[in] v The vertex to get neighbors for
-         * @return AtlasView<Vertex, _Graph> Iterable view of adjacent edges
+         * @return AtlasView<Vertex, Graph> Iterable view of adjacent edges
          */
-        [[nodiscard]] auto neighbors(Vertex v) const -> AtlasView<Vertex, _Graph> {
-            return AtlasView<Vertex, _Graph>(v, *this);
+        [[nodiscard]] auto neighbors(Vertex v) const -> AtlasView<Vertex, Graph> {
+            return AtlasView<Vertex, Graph>(v, *this);
         }
 
         /**
@@ -331,7 +330,7 @@ namespace py {
          *
          * @return Vertex Null vertex descriptor
          */
-        static auto null_vertex() -> Vertex { return boost::graph_traits<_Graph>::null_vertex(); }
+        static auto null_vertex() -> Vertex { return boost::graph_traits<Graph>::null_vertex(); }
 
         /**
          * @brief Get the source vertex of an edge
