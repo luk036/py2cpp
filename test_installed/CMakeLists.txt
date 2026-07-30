@@ -15,10 +15,14 @@ project(Py2Cpp LANGUAGES CXX)
 
 include(../cmake/tools.cmake)
 
-# ---- Dependencies ----
+# ---- Dependencies (all installed by the parent build) ----
 
 include(../cmake/CPM.cmake)
 
+# Find dependencies first — Py2CppConfig.cmake references fmt::fmt etc.
+find_package(fmt REQUIRED)
 find_package(${PROJECT_NAME} REQUIRED)
+
+set(SPECIFIC_LIBS fmt::fmt)
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/../standalone ${CMAKE_BINARY_DIR}/test_installed)
