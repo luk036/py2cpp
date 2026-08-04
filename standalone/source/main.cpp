@@ -1,53 +1,32 @@
-#include <py2cpp/greeter.h>
-#include <py2cpp/version.h>
+#include <py2cpp/py2cpp.hpp>
 
 #include <cxxopts.hpp>
 #include <iostream>
 #include <string>
-#include <unordered_map>
 
 auto main(int argc, char** argv) -> int {
-    const std::unordered_map<std::string, py2cpp::LanguageCode> languages{
-        {"en", py2cpp::LanguageCode::EN},
-        {"de", py2cpp::LanguageCode::DE},
-        {"es", py2cpp::LanguageCode::ES},
-        {"fr", py2cpp::LanguageCode::FR},
-    };
+    cxxopts::Options options("Py2Cpp", "Python-like data structures for C++");
+    options.add_options()("h,help", "Print usage")(
+        "n,count", "Range length", cxxopts::value<int>()->default_value("10"));
 
-    cxxopts::Options options(*argv, "A program to welcome the world!");
-
-    std::string language;
-    std::string name;
-
-    // clang-format off
-  options.add_options()
-    ("h,help", "Show help")
-    ("v,version", "Print the current version number")
-    ("n,name", "Name to greet", cxxopts::value(name)->default_value("World"))
-    ("l,lang", "Language code to use", cxxopts::value(language)->default_value("en"))
-  ;
-    // clang-format on
-
-    auto result = options.parse(argc, argv);
-
-    if (result["help"].as<bool>()) {
+    const auto result = options.parse(argc, argv);
+    if (result.count("help") > 0) {
         std::cout << options.help() << '\n';
         return 0;
     }
 
-    if (result["version"].as<bool>()) {
-        std::cout << "Py2Cpp, version " << PY2CPP_VERSION << '\n';
-        return 0;
+    const int count = result["count"].as<int>();
+    py::dict<int, int> d;
+    for (const auto i : py::range(count)) {
+        d[i] = i * i;
     }
 
-    auto langIt = languages.find(language);
-    if (langIt == languages.end()) {
-        std::cerr << "unknown language code: " << language << '\n';
-        return 1;
+    std::cout << "py2cpp: dict size = " << d.size() << '\n';
+    std::cout << "py2cpp: range(0.." << count << ") squares:";
+    for (const auto i : py::range(count)) {
+        std::cout << ' ' << d[i];
     }
-
-    // py2cpp::Py2Cpp py2cpp(name);
-    // std::cout << py2cpp.greet(langIt->second) << '\n';
+    std::cout << '\n';
 
     return 0;
 }
