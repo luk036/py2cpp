@@ -1,5 +1,7 @@
 <map id="py::VertexView&lt; Graph &gt;" name="py::VertexView&lt; Graph &gt;">
 <area shape="rect" id="Node000001" title="Vertex view for Boost Graph Library graphs." alt="" coords="5,79,193,104"/>
+<area shape="rect" id="Node000003" href="$classpy_1_1GrAdaptor.html" title="Graph adapter for Boost Graph Library integration." alt="" coords="9,152,189,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,118,102,152,97,152,97,118"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="69,5,130,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,44,102,79,97,79,97,44"/>
 </map>

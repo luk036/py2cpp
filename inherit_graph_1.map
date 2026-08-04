@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" href="$structfun_1_1Fraction.html" title="Fraction." alt="" coords="5,5,148,31"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,67,31"/>
+<area shape="rect" id="Node000001" href="$classpy_1_1VertexView.html" title="Vertex view for Boost Graph Library graphs." alt="" coords="115,5,303,31"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="80,15,115,15,115,21,80,21"/>
+<area shape="rect" id="Node000002" href="$classpy_1_1GrAdaptor.html" title="Graph adapter for Boost Graph Library integration." alt="" coords="351,5,531,31"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="317,15,351,15,351,21,317,21"/>
 </map>

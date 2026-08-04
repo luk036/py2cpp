@@ -3,7 +3,7 @@ var searchData=
   ['about_0',['About',['../about.html',1,'']]],
   ['about_2edox_1',['about.dox',['../about_8dox.html',1,'']]],
   ['abs_2',['abs',['../namespacefun.html#a783990e74152591373e36fe57afb561d',1,'fun']]],
-  ['add_5fedge_3',['add_edge',['../classpy_1_1GrAdaptor.html#a2742d59858e7f03555864fda69a317c6',1,'py::GrAdaptor']]],
+  ['add_5fedge_3',['add_edge',['../classpy_1_1GrAdaptor.html#a515f48a86ed71c6f2797f84d4ec5a783',1,'py::GrAdaptor']]],
   ['additional_20tools_4',['Additional tools',['../index.html#autotoc_md9',1,'']]],
   ['adjust_20the_20template_20to_20your_20needs_5',['Adjust the template to your needs',['../index.html#autotoc_md3',1,'']]],
   ['alternatives_6',['Related projects and alternatives',['../index.html#autotoc_md14',1,'']]],
