@@ -36,6 +36,9 @@ namespace py {
 
             promise_type(const promise_type&) = delete;
             promise_type(promise_type&&) = delete;
+            promise_type& operator=(const promise_type&) = delete;
+            promise_type& operator=(promise_type&&) = delete;
+            ~promise_type() = default;
 
             RecursiveGenerator get_return_object() noexcept {
                 return RecursiveGenerator{std::coroutine_handle<promise_type>::from_promise(*this)};
@@ -67,7 +70,7 @@ namespace py {
 
                     bool await_ready() noexcept { return this->m_childPromise == nullptr; }
 
-                    void await_suspend(std::coroutine_handle<promise_type>) noexcept {}
+                    void await_suspend(std::coroutine_handle<promise_type> /*unused*/) noexcept {}
 
                     void await_resume() {
                         if (this->m_childPromise != nullptr) {
@@ -103,7 +106,7 @@ namespace py {
 
             void throw_if_exception() {
                 if (m_exception != nullptr) {
-                    std::rethrow_exception(std::move(m_exception));
+                    std::rethrow_exception(m_exception);
                 }
             }
 
