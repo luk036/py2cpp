@@ -16,9 +16,9 @@ Guidelines for agentic coding agents in the py2cpp repository.
 ### CMake (Primary)
 
 ```bash
-cmake -S all -B build && cmake --build build  # Build all targets
-./build/test/Py2CppTests             # Run tests
-CTEST_OUTPUT_ON_FAILURE=1 cmake --build build --target test  # Verbose tests
+cmake -B build && cmake --build build  # Build all targets
+./build/Py2CppTests                    # Run tests
+ctest --test-dir build --output-on-failure  # Verbose tests
 ```
 
 ### XMake
@@ -30,14 +30,14 @@ xmake f -m release -y && xmake && xmake run test_py2cpp
 ### Single Test
 
 ```bash
-./build/test/Py2CppTests -tc="pattern*"  # CMake
+./build/Py2CppTests -tc="pattern*"  # CMake
 xmake run test_py2cpp -tc "pattern*"      # XMake
 ```
 
 ### Code Formatting
 
 ```bash
-cmake -S all -B build
+cmake -B build
 cmake --build build --target format   # Check
 cmake --build build --target fix-format  # Apply
 ```
@@ -46,16 +46,17 @@ Requires: `clang-format==18.1.2`, `cmake_format==0.6.13`, `pyyaml`
 ### Documentation
 
 ```bash
-cmake -S documentation -B build/doc && cmake --build build/doc --target GenerateDocs
-# Output: build/doc/doxygen/html/index.html
+cmake -B build -DPY2CPP_BUILD_DOCS=ON
+cmake --build build --target GenerateDocs
+# Output: build/doxygen/html/index.html
 ```
-Requires: Doxygen, jinja2, Pygments
+Requires: Doxygen, Graphviz
 
 ### Static Analysis
 
 ```bash
-cmake -S all -B build -DUSE_STATIC_ANALYZER=clang-tidy && cmake --build build
-cmake -S all -B build -DUSE_SANITIZER=Address && cmake --build build
+cmake -B build -DPY2CPP_ENABLE_CLANG_TIDY=ON
+cmake --build build --target clang-tidy
 ```
 
 ---
