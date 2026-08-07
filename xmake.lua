@@ -1,7 +1,7 @@
 add_rules("mode.debug", "mode.release", "mode.coverage")
 add_requires("doctest", {alias = "doctest"})
 add_requires("fmt", {alias = "fmt"})
-add_requires("boost", {alias = "boost", configs = {cmake = false}})
+add_requires("boost", {alias = "boost", configs = {graph = true, filesystem = false}})
 -- add_requires("benchmark", {alias = "benchmark"})
 
 if is_mode("coverage") then
