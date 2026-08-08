@@ -1,6 +1,5 @@
-#include <py2cpp/py2cpp.hpp>
-
 #include <iostream>
+#include <py2cpp/py2cpp.hpp>
 
 auto main() -> int {
     py::dict<int, int> d;
