@@ -246,6 +246,10 @@ namespace py {
      * Provides a unified interface for working with BGL graphs, combining vertex
      * and edge view functionality with additional graph operations.
      *
+     * @note Adapter pattern: adapts a Boost Graph Library graph to the
+     * xnetwork VertexView interface (inherited base), bridging two graph
+     * libraries. Note the explicit 'Adaptor' name documenting the pattern.
+     *
      * @tparam Graph The Boost Graph Library graph type
      */
     template <typename Graph> class GrAdaptor : public VertexView<Graph> {
