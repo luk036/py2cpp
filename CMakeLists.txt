@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14...3.22)
 
 project(
   Py2Cpp
-  VERSION 1.6.4
+  VERSION 1.6.5
   LANGUAGES CXX
 )
 
