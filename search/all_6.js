@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['faq_0',['❓ FAQ',['../index.html#autotoc_md13',1,'']]],
+  ['faq_0',['❓ FAQ',['../index.html#autotoc_md10',1,'']]],
   ['features_1',['✨ Features',['../index.html#autotoc_md1',1,'']]],
   ['final_5fsuspend_2',['final_suspend',['../structpy_1_1Generator_1_1promise__type.html#a5fa5c4a245c68ceeb28a7331eb82283a',1,'py::Generator::promise_type::final_suspend()'],['../classpy_1_1RecursiveGenerator_1_1promise__type.html#a628e314f977b9c10378353a6aad94436',1,'py::RecursiveGenerator::promise_type::final_suspend()']]],
   ['format_3',['Run clang-format',['../index.html#autotoc_md6',1,'']]],
