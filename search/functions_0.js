@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['abs_0',['abs',['../namespacefun.html#a783990e74152591373e36fe57afb561d',1,'fun']]],
+  ['abs_0',['abs',['../namespacefun.html#a783990e74152591373e36fe57afb561d',1,'fun::abs(const T &amp;a) -&gt; typename std::enable_if&lt; std::is_unsigned&lt; T &gt;::value, T &gt;::type'],['../namespacefun.html#a88c270b5121542939cfdba84d274cee9',1,'fun::abs(const T &amp;a) -&gt; typename std::enable_if&lt;!std::is_unsigned&lt; T &gt;::value, T &gt;::type']]],
   ['add_5fedge_1',['add_edge',['../classpy_1_1GrAdaptor.html#a515f48a86ed71c6f2797f84d4ec5a783',1,'py::GrAdaptor']]],
   ['at_2',['at',['../classpy_1_1dict.html#affb82d239acfdf4983252bbf1f56360d',1,'py::dict']]],
   ['atlasview_3',['AtlasView',['../classpy_1_1AtlasView.html#a1275b6d64636c5657fbe4d036aa59ea1',1,'py::AtlasView']]],

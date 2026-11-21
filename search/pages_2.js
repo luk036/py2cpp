@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['list_0',['Deprecated List',['../deprecated.html',1,'']]]
+  ['clang_20format_0',['Run clang-format',['../index.html#autotoc_md6',1,'']]]
 ];

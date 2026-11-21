@@ -1,9 +1,9 @@
 <map id="py2cpp/nx2bgl.hpp" name="py2cpp/nx2bgl.hpp">
-<area shape="rect" id="Node000001" title="Boost Graph Library adapters for XNetwork integration." alt="" coords="231,5,376,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,175,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,33,155,76,153,71,271,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="199,86,408,111"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="306,31,306,72,301,72,301,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="433,86,643,111"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="338,28,492,79,490,84,337,33"/>
+<area shape="rect" id="Node000001" title="Boost Graph Library adapters for XNetwork integration." alt="" coords="229,5,374,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,174,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,33,161,77,159,72,265,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="197,90,406,117"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="303,32,304,75,299,73,300,36"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="430,90,640,117"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="339,31,486,84,481,84,339,36"/>
 </map>

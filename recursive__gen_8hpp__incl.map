@@ -1,13 +1,13 @@
 <map id="py2cpp/recursive_gen.hpp" name="py2cpp/recursive_gen.hpp">
-<area shape="rect" id="Node000001" title="Recursive C++20 coroutine generator with symmetric transfer." alt="" coords="153,5,345,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,75,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,33,88,77,86,72,215,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="99,79,181,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="233,33,171,73,168,69,230,28"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="206,79,293,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,31,252,65,247,65,247,31"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="317,79,387,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="267,28,325,68,322,73,264,33"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="411,79,471,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="281,28,399,72,397,77,279,33"/>
+<area shape="rect" id="Node000001" title="Recursive C++20 coroutine generator with symmetric transfer." alt="" coords="152,5,343,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,74,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,36,89,79,87,74,210,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="98,81,181,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,33,172,74,170,70,226,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="205,81,290,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="249,32,250,67,245,64,246,35"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="314,81,384,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="266,31,321,72,316,72,265,36"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="407,81,466,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="282,31,395,76,390,77,281,36"/>
 </map>

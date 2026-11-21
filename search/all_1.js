@@ -2,7 +2,7 @@ var searchData=
 [
   ['about_0',['About',['../about.html',1,'']]],
   ['about_2edox_1',['about.dox',['../about_8dox.html',1,'']]],
-  ['abs_2',['abs',['../namespacefun.html#a783990e74152591373e36fe57afb561d',1,'fun']]],
+  ['abs_2',['abs',['../namespacefun.html#a783990e74152591373e36fe57afb561d',1,'fun::abs(const T &amp;a) -&gt; typename std::enable_if&lt; std::is_unsigned&lt; T &gt;::value, T &gt;::type'],['../namespacefun.html#a88c270b5121542939cfdba84d274cee9',1,'fun::abs(const T &amp;a) -&gt; typename std::enable_if&lt;!std::is_unsigned&lt; T &gt;::value, T &gt;::type']]],
   ['add_5fedge_3',['add_edge',['../classpy_1_1GrAdaptor.html#a515f48a86ed71c6f2797f84d4ec5a783',1,'py::GrAdaptor']]],
   ['adjust_20the_20template_20to_20your_20needs_4',['Adjust the template to your needs',['../index.html#autotoc_md3',1,'']]],
   ['alternatives_5',['Related projects and alternatives',['../index.html#autotoc_md11',1,'']]],
@@ -12,6 +12,6 @@ var searchData=
   ['and_20run_20the_20standalone_20target_9',['Build and run the standalone target',['../index.html#autotoc_md4',1,'']]],
   ['at_10',['at',['../classpy_1_1dict.html#affb82d239acfdf4983252bbf1f56360d',1,'py::dict']]],
   ['at_20once_11',['Build everything at once',['../index.html#autotoc_md8',1,'']]],
-  ['atlasview_12',['atlasview',['../classpy_1_1AtlasView.html',1,'py::AtlasView&lt; Vertex, Graph &gt;'],['../classpy_1_1AtlasView.html#a1275b6d64636c5657fbe4d036aa59ea1',1,'py::AtlasView::AtlasView()']]],
+  ['atlasview_12',['AtlasView',['../classpy_1_1AtlasView.html',1,'py::AtlasView&lt; Vertex, Graph &gt;'],['../classpy_1_1AtlasView.html#a1275b6d64636c5657fbe4d036aa59ea1',1,'py::AtlasView::AtlasView()']]],
   ['await_5ftransform_13',['await_transform',['../classpy_1_1RecursiveGenerator_1_1promise__type.html#a69e34d3ab678716dc3fa1f8b06b900f3',1,'py::RecursiveGenerator::promise_type']]]
 ];
