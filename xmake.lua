@@ -1,7 +1,8 @@
 add_rules("mode.debug", "mode.release", "mode.coverage")
 add_requires("doctest", {alias = "doctest"})
 add_requires("fmt", {alias = "fmt"})
-add_requires("boost", {alias = "boost", configs = {graph = true, filesystem = false}})
+-- py2cpp/nx2bgl.hpp is an optional adapter that expects Boost.Graph to be provided
+-- by the consumer; the library, tests, and standalone executable do not require Boost.
 -- add_requires("benchmark", {alias = "benchmark"})
 
 if is_mode("coverage") then
@@ -30,8 +31,6 @@ target("test_py2cpp")
     add_includedirs("include", {public = true})
     add_files("test/source/*.cpp")
     add_packages("doctest", "fmt")
-    add_files("test/boost/*.cpp")
-    add_packages("boost")
     add_tests("default")
 
 

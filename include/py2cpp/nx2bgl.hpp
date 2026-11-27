@@ -4,6 +4,10 @@
  *
  * Provides VertexView, EdgeView, AtlasView, and GrAdaptor classes
  * that bridge XNetwork graph concepts with the Boost Graph Library.
+ *
+ * @note This is an optional header. It is not included by py2cpp.hpp and is the
+ * only part of the library that requires Boost (Boost.Graph). Projects that do
+ * not use these adapters do not need Boost installed.
  */
 
 #pragma once

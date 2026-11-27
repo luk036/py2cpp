@@ -67,6 +67,10 @@ ctest --test-dir build --output-on-failure
 
 To collect code coverage information, run CMake with the `-DPY2CPP_ENABLE_COVERAGE=1` option.
 
+> **Optional Boost:** The core library does not require Boost. Only the optional
+> `py2cpp/nx2bgl.hpp` adapter uses Boost.Graph; projects that do not include that
+> header do not need Boost installed.
+
 ### Run clang-format
 
 Use the following commands from the project's root directory to check and fix C++ and CMake source style.
